@@ -32,10 +32,6 @@ namespace DieMedialen\DmSimplecalendar\Domain\Repository;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class AppointmentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
-
-    const STR_STARTDATE = 'startdate';
-    const STR_ENDDATE = 'enddate';
-
     /**
      * Get all appointments from calendar.
      * 
@@ -117,26 +113,26 @@ class AppointmentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
         $queryContraints[] = $query->logicalOr(
             $query->logicalAnd(
-                $query->greaterThanOrEqual(STR_STARTDATE, $viewCalendar->getStartDate()),
-                $query->lessThanOrEqual(STR_ENDDATE, $viewCalendar->getEndDate())
+                $query->greaterThanOrEqual('startdate', $viewCalendar->getStartDate()),
+                $query->lessThanOrEqual('enddate', $viewCalendar->getEndDate())
             ),
             $query->logicalAnd(
-                $query->lessThanOrEqual(STR_STARTDATE, $viewCalendar->getStartDate()),
-                $query->lessThanOrEqual(STR_ENDDATE, $viewCalendar->getEndDate())
+                $query->lessThanOrEqual('startdate', $viewCalendar->getStartDate()),
+                $query->lessThanOrEqual('enddate', $viewCalendar->getEndDate())
             ),
             $query->logicalAnd(
-                $query->lessThanOrEqual(STR_STARTDATE, $viewCalendar->getStartDate()),
-                $query->greaterThanOrEqual(STR_ENDDATE, $viewCalendar->getEndDate())
+                $query->lessThanOrEqual('startdate', $viewCalendar->getStartDate()),
+                $query->greaterThanOrEqual('enddate', $viewCalendar->getEndDate())
             ),
             $query->logicalAnd(
-                $query->greaterThanOrEqual(STR_STARTDATE, $viewCalendar->getStartDate()),
-                $query->greaterThanOrEqual(STR_ENDDATE, $viewCalendar->getEndDate())
+                $query->greaterThanOrEqual('startdate', $viewCalendar->getStartDate()),
+                $query->greaterThanOrEqual('enddate', $viewCalendar->getEndDate())
             )
         );
         
         $query->matching($query->logicalAnd($queryContraints));
 
-        $query->setOrderings(array(STR_STARTDATE => \Tx_Extbase_Persistence_QueryInterface::ORDER_DESCENDING));
+        $query->setOrderings(array('startdate' => \Tx_Extbase_Persistence_QueryInterface::ORDER_DESCENDING));
 
         return $query->execute();
     }

@@ -1,0 +1,315 @@
+table.calendar {
+    border-left:1px solid #999;
+    width: 100%;
+}
+
+table.calendar td {
+    border-bottom:1px solid #999;
+    border-top:1px solid #999;
+    border-right:1px solid #999;
+
+    vertical-align: top;
+    font-size: 11px;
+}
+
+table.calendar tr.calendar-row {}
+
+table.calendar td.calendar-kw {
+    min-height:80px;
+    font-size:14px;
+    text-align: center;
+    position:relative;
+}
+* html div.calendar-kw {
+    height:80px;
+}
+table.calendar td.calendar-kw:hover {
+    background:#eceff5;
+}
+table.calendar td.calendar-kw-short {
+    min-height:80px;
+    font-size:14px;
+    text-align: center;
+    position:relative;
+}
+* html div.calendar-kw-short {
+    height:80px;
+}
+table.calendar td.calendar-kw-short:hover {
+    background:#eceff5;
+}
+table.calendar td.calendar-day {
+    min-height:80px;
+    position:relative;
+}
+table.calendar td.calendar-day-short {
+    min-height:80px;
+    position:relative;
+}
+* html div.calendar-day {
+    height:80px;
+}
+* html div.calendar-day-short {
+    height:80px;
+}
+table.calendar td.calendar-day:hover {
+    background:#eceff5;
+}
+table.calendar td.calendar-day-np {
+    opacity: 0.6;
+    background:#eee;
+    min-height:80px;
+}
+table.calendar td.calendar-day-np:hover {
+    opacity: 1;
+}
+table.calendar td.calendar-day-short:hover {
+    background:#eceff5;
+}
+table.calendar td.calendar-day-np-short {
+    background:#eee;
+    min-height:80px;
+}
+* html div.calendar-day-np {
+    height:80px;
+}
+* html div.calendar-day-np-short {
+    height:80px;
+}
+
+table.calendar td.calendar-month-name {
+    font-size: 1.4em;
+    background: #C1CBF5;
+    color: black;
+    text-align:center;
+
+    padding:4px;
+}
+table.calendar td.calendar-month-name a {
+    color: black;
+}
+table.calendar td.calendar-kw-head, table.calendar td.calendar-day-head {
+    background: #C1DBF5;
+    font-weight:bold;
+    text-align:center;
+    width:140px;
+    padding:4px;
+    font-size: 14px;
+}
+table.calendar .calendar-day ul, .calendar-day-short ul {
+    padding-left: 15px;
+}
+table.calendar td.calendar-kw-head-short, table.calendar td.calendar-day-head-short {
+    background:#ccc;
+    font-weight:bold;
+    text-align:center;
+    width:70px;
+    padding:4px;
+}
+table.calendar div.day-number {
+    color:#fff;
+    font-weight:bold;
+    text-align: right;
+}
+table.calendar div.day-number-short {
+    background:#999;
+    padding:4px;
+    color:#fff;
+    font-weight:bold;
+    float:right;
+    margin:0 auto;
+    width:25px;
+    text-align:center;
+}
+table.calendar td.calendar-kw, table.calendar td.calendar-day, table.calendar td.calendar-day-np {
+    width:140px;
+    padding:4px;
+}
+table.calendar td.calendar-kw-short, table.calendar td.calendar-day-short, table.calendar td.calendar-day-np-short {
+    width:70px;
+    padding:4px;
+}
+table.calendar td.calendar-kw-head, table.calendar td.calendar-kw {
+    width: 50px !important;
+}
+table.calendar td.calendar-kw-head-short, table.calendar td.calendar-kw-short {
+    width: 50px !important;
+}
+table.calendar td.calendar-day:hover:not(.nohover), table.calendar td.calendar-day.hover:not(.nohover) {
+    background-color: #8cf;
+}
+p.calendar-item {
+    padding: 5px;
+    background-color: #D7D5E8;
+    margin-bottom: 0px;
+}
+span.navigationMonthPrev,
+span.navigationMonthNext {
+    padding: 0 10px;
+    font-weight: bold;
+}
+span.navigationMonthPrev {
+    float: left;
+
+}
+span.navigationMonthNext {
+    float: right;
+}
+
+
+/* root */
+.tx-dm-simplecalendar {
+}
+
+.tx-dm-simplecalendar img {
+    display: inline-block;
+}
+
+.tx-dm-simplecalendar table.calendar_table_class a {
+    color: #1d92ae;
+}
+
+.tx-dm-simplecalendar table.calendar_table_class {
+    color: #ffffff;
+    width: 100%;
+    border-top: 1px #c3c3c3 solid;
+    border-left: 1px #c3c3c3 solid;
+    border-spacing: 0px;
+    margin-bottom: 15px;
+}
+.tx-dm-simplecalendar div.categoryColorLine,
+.tx-dm-simplecalendar table.calendar div.categoryColorLine,
+.tx-dm-simplecalendar table.calendar_table_class div.categoryColorLine {
+    height: 5px;
+}
+
+.tx-dm-simplecalendar table.calendar_table_class tr {}
+.tx-dm-simplecalendar table.calendar_table_class tr:hover {}
+.tx-dm-simplecalendar table.calendar_table_class tr.table_monthName td {
+    text-align: center;
+    background: transparent;
+    color: #333333;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.tx-dm-simplecalendar table.calendar_table_class tr.table_monthName td {
+    vertical-align: middle;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.4em;
+    clear: both;
+}
+.tx-dm-simplecalendar table.calendar_table_class tr.table_monthName td a {
+    color: #ffffff;
+}
+.tx-dm-simplecalendar table.calendar_table_class tr.table_head {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.tx-dm-simplecalendar table.calendar_table_class tr.table_head td {
+    background: #C1CBF5;
+    text-align: center;
+}
+.tx-dm-simplecalendar table.calendar_table_class tr td {
+    padding: 6px;
+    border-bottom: 1px #c3c3c3 solid;
+    border-right: 1px #c3c3c3 solid;
+    background: #ffffff;
+    color: #5E5E5E;
+    width: 14%;
+
+    vertical-align: top;
+}
+.tx-dm-simplecalendar table.calendar_table_class tr td.weekDay {
+}
+.tx-dm-simplecalendar table.calendar_table_class tr td.offMonth,
+.tx-dm-simplecalendar table.calendar_table_class tr td.weekend {
+    //opacity: 0.8;
+    color: #aaaaaa;
+}
+
+
+.tx-dm-simplecalendar table.calendar_table_class tr td:hover {
+}
+
+.tx-dm-simplecalendar table.calendar_table_class tr td div.dayNum {
+    font-weight: bold;
+}
+.tx-dm-simplecalendar table.calendar_table_class tr td div.monthEvent {
+    background: #e9e9e9;
+}
+
+
+
+/* ######### dm_calendar_termin_detail ####################### */
+.dm_calendar_termin_detail{}
+.dm_calendar_termin_detail table{}
+.dm_calendar_termin_detail table tr.table_head {
+    font-size: 1.5em;
+}
+.dm_calendar_termin_detail table tr{}
+.dm_calendar_termin_detail table tr td{}
+.dm_calendar_termin_detail div.properties_body{}
+.dm_calendar_termin_detail div label
+{
+    width: 200px;
+    display: inline-block;
+}
+
+table.table_recurring_events tr td {
+    padding: 25px;
+}
+div.formRow {
+    margin-bottom: 7px;
+}
+
+/* OUTSOURCE to fileadmin? */
+.typo3-messages {
+}
+
+.typo3-message {
+
+}
+.message-ok {
+    padding: 10px;
+    font-style: italic;
+    font-weight: bold;
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    margin-bottom: 25px;
+}
+.message-error {
+    padding: 10px;
+    font-style: italic;
+    font-weight: bold;
+    color: #D8000C;
+    background-color: #FFBABA;
+    margin-bottom: 25px;
+}
+
+/* Teaser Box Style */
+.tx-dm-simplecalendar .teaserBox {
+}
+
+.tx-dm-simplecalendar .teaserBox .boxHead {
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    padding: 5px 0;
+}
+.tx-dm-simplecalendar .teaserBox .boxBody {
+}
+.tx-dm-simplecalendar .teaserBox .boxItem.inline  {
+    display: inline-block;
+    border-bottom: 0;
+}
+.tx-dm-simplecalendar .teaserBox .boxItem {
+    border-bottom: 1px #797979 dotted;
+    padding: 5px 10px;
+}
+.tx-dm-simplecalendar .teaserBox .boxItem.last {
+    border-bottom: 0;
+}
+.tx-dm-simplecalendar .teaserBox .boxItem .itemHead {
+}
+.tx-dm-simplecalendar .teaserBox .boxItem .itemBody {
+}

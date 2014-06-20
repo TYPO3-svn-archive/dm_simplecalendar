@@ -1,0 +1,17 @@
+{namespace dmc=DieMedialen\DmSimplecalendar\ViewHelpers}
+
+<!-- START - Farbleitsystem -->
+<f:if condition="{settings.categories}">
+
+    <div class="categoryLegend">
+        <p>{f:translate(key:'general.legend')}</p>
+
+        <!-- flexform settings only give comma seperated string, so use this viewhelper -->
+        <dmc:for each="{settings.categories}" as="category" glue="," repository="Category">
+        <div class="categoryLegendItem">
+            <span class="block" style="background: {category.color};" title="{category.title}"></span>{category.title}
+        </div>
+        </dmc:for>
+    </div>
+</f:if>
+<!-- END - Farbleitsystem -->

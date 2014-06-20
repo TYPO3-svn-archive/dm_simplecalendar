@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" datatype="plaintext" original="messages" date="2013-12-09T16:09:55Z" product-name="dm_simplecalendar">
+        <header/>
+        <body>
+            <trans-unit id="location.description">
+                <source>Ort</source>
+            </trans-unit>
+            <trans-unit id="description.description">
+                <source>Beschreibung</source>
+            </trans-unit>
+            <trans-unit id="shortdescription.description">
+                <source>Kurz-Beschreibung</source>
+            </trans-unit>
+            <trans-unit id="startdate.description">
+                <source>Start-Datum</source>
+            </trans-unit>
+            <trans-unit id="enddate.description">
+                <source>End-Datum</source>
+            </trans-unit>
+            <trans-unit id="title.description">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="calendar.description">
+                <source>Kalendar</source>
+            </trans-unit>
+            <trans-unit id="attachments.description">
+                <source>Attachments</source>
+            </trans-unit>
+            <trans-unit id="categories.description">
+                <source>Categories</source>
+            </trans-unit>
+            <trans-unit id="pre_appointment.description">
+                <source>(This option should not be shown in any input-form!)</source>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="de" datatype="plaintext" original="messages" date="2013-12-09T16:09:55Z" product-name="dm_simplecalendar">
+        <header/>
+        <body>
+            <trans-unit id="location.description">
+                <source>Ort</source>
+            </trans-unit>
+            <trans-unit id="description.description">
+                <source>Beschreibung des Termins</source>
+            </trans-unit>
+            <trans-unit id="shortdescription.description">
+                <source>Kurz-Beschreibung</source>
+            </trans-unit>
+            <trans-unit id="startdate.description">
+                <source>Start-Datum</source>
+            </trans-unit>
+            <trans-unit id="enddate.description">
+                <source>End-Datum</source>
+            </trans-unit>
+            <trans-unit id="title.description">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="calendar.description">
+                <source>Kalendar</source>
+            </trans-unit>
+            <trans-unit id="attachments.description">
+                <source>Anhänge</source>
+            </trans-unit>
+            <trans-unit id="categories.description">
+                <source>Kategorien</source>
+            </trans-unit>
+            <trans-unit id="pre_appointment.description">
+                <source>(Dieser Wert soll in keiner Eingabemaske erscheinen!)</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

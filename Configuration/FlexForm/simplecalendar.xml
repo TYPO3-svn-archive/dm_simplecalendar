@@ -1,0 +1,390 @@
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+      <sheets>
+        <mainsheet>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:mainsheet.title</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.calendarName>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:mainsheet.calendarName</label>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                                <max>30</max>
+                                <eval>trim</eval>
+                          </config>
+                        </TCEforms>
+                    </settings.calendarName>
+                    <settings.periodType>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:mainsheet.periodType</label>
+                            <onChange>reload</onChange>
+                                <config>
+                                    <type>select</type>
+                                    <items type="array">
+                                      <numIndex index="0" type="array">
+                                        <numIndex index="0">Month</numIndex>
+                                        <numIndex index="1">month</numIndex>
+                                      </numIndex>
+                                      <numIndex index="1" type="array">
+                                        <numIndex index="0">Year</numIndex>
+                                        <numIndex index="1">year</numIndex>
+                                      </numIndex>
+                                      <numIndex index="2" type="array">
+                                        <numIndex index="0">Week</numIndex>
+                                        <numIndex index="1">week</numIndex>
+                                      </numIndex>
+                                      <numIndex index="3" type="array">
+                                        <numIndex index="0">Day</numIndex>
+                                        <numIndex index="1">day</numIndex>
+                                      </numIndex>
+                                    </items>
+                                    <maxitems>1</maxitems>
+                                    <size>1</size>
+                              </config>
+                        </TCEforms>
+                    </settings.periodType>
+                    <settings.categories>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:mainsheet.categories</label>
+                            <config>
+                                <type>select</type>
+                                <size>5</size> 
+                                <maxitems>10</maxitems> 
+                                <foreign_table>tx_dmsimplecalendar_domain_model_category</foreign_table>
+                                <minitems>1</minitems>
+                            </config>
+                        </TCEforms>
+                    </settings.categories>
+                    <settings.jqFullcalendarViews>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:mainsheet.jqFullcalendarViews</label>
+                            <displayCond>FIELD:settings.periodType:IN:jqFullcalendar</displayCond>
+                                <config>
+                                    <type>select</type>
+                                    <items type="array">
+                                      <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:general.month</numIndex>
+                                        <numIndex index="1">month</numIndex>
+                                      </numIndex>
+                                      <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:general.week</numIndex>
+                                        <numIndex index="1">week</numIndex>
+                                      </numIndex>
+                                      <numIndex index="2" type="array">
+                                        <numIndex index="0">LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:general.day</numIndex>
+                                        <numIndex index="1">day</numIndex>
+                                      </numIndex>
+                                    </items>
+                                    <maxitems>3</maxitems>
+                                    <size>3</size>
+                              </config>
+                        </TCEforms>
+                    </settings.jqFullcalendarViews>
+                </el>
+            </ROOT>
+        </mainsheet>
+        <customizesheet>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:customizesheet.title</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.weekdayLength>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:customizesheet.weekdayLength</label>
+                                <config>
+                                    <type>select</type>
+                                    <items type="array">
+                                      <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:customizesheet.weekdayLength.labelShort</numIndex>
+                                        <numIndex index="1">0</numIndex>
+                                      </numIndex>
+                                      <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:customizesheet.weekdayLength.labelFull</numIndex>
+                                        <numIndex index="1">1</numIndex>
+                                      </numIndex>
+                                    </items>
+                                    <maxitems>1</maxitems>
+                                    <size>1</size>
+                              </config>
+                        </TCEforms>
+                    </settings.weekdayLength>
+                    <settings.displayCategoryColors>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:customizesheet.displayCategoryColors</label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                  <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:customizesheet.displayCategoryColors.deactivate</numIndex>
+                                    <numIndex index="1">0</numIndex>
+                                  </numIndex>
+                                  <numIndex index="1" type="array">
+                                    <numIndex index="0">LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:customizesheet.displayCategoryColors.calendar</numIndex>
+                                    <numIndex index="1">1</numIndex>
+                                  </numIndex>
+                                  <numIndex index="2" type="array">
+                                    <numIndex index="0">LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:customizesheet.displayCategoryColors.calendarAppointments</numIndex>
+                                    <numIndex index="1">2</numIndex>
+                                  </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                          </config>
+                        </TCEforms>
+                    </settings.displayCategoryColors>
+                </el>
+            </ROOT>
+        </customizesheet>
+        <eventconfigurationsheet>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:eventconfigurationsheet</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.showIcsLink>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:eventconfigurationsheet.showIcsLink</label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.showIcsLink>
+                    <settings.showQrCode>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:eventconfigurationsheet.showQrCode</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.showQrCode>
+                    <settings.qrCodeSize>
+                        <TCEforms>
+                            <label>QR Code - Bild Dimensionen (200x200)</label>
+                            <displayCond>FIELD:settings.showQrCode:REQ:TRUE</displayCond>
+                            <config>
+                                <type>input</type>
+                                <size>10</size>
+                                <max>10</max>
+                                <eval>required,trim</eval>
+                          </config>
+                        </TCEforms>
+                    </settings.qrCodeSize>
+                    <settings.qrShortUrlProvider>
+                        <TCEforms>
+                            <label>ShortUrl Anbieter für schönere QR Codes</label>
+                            <onChange>reload</onChange>
+                            <displayCond>FIELD:settings.showQrCode:REQ:TRUE</displayCond>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                  <numIndex index="0" type="array">
+                                    <numIndex index="0">Keine ShortUrl verwenden</numIndex>
+                                    <numIndex index="1">none</numIndex>
+                                  </numIndex>
+                                  <numIndex index="1" type="array">
+                                    <numIndex index="0">Google</numIndex>
+                                    <numIndex index="1">google</numIndex>
+                                  </numIndex>
+                                  <numIndex index="2" type="array">
+                                    <numIndex index="0">BITLY (Username und API-Key benötigt - https://bitly.com/a/your_api_key)</numIndex>
+                                    <numIndex index="1">bitly</numIndex>
+                                  </numIndex>
+                                  <numIndex index="3" type="array">
+                                    <numIndex index="0">VGD (experimentell)</numIndex>
+                                    <numIndex index="1">vgd</numIndex>
+                                  </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                          </config>
+                        </TCEforms>
+                    </settings.qrShortUrlProvider>
+                    <settings.qrBitlyUsername>
+                        <TCEforms>
+                            <label>Username</label>
+                            <displayCond>FIELD:settings.qrShortUrlProvider:=:bitly</displayCond>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                                <max>60</max>
+                                <eval>required,trim</eval>
+                          </config>
+                        </TCEforms>
+                    </settings.qrBitlyUsername>
+                    <settings.qrBitlyApiKey>
+                        <TCEforms>
+                            <label>API-Key</label>
+                            <displayCond>FIELD:settings.qrShortUrlProvider:=:bitly</displayCond>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                                <max>240</max>
+                                <eval>required</eval>
+                          </config>
+                        </TCEforms>
+                    </settings.qrBitlyApiKey>
+                    <settings.excludeSelectedEvents>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:eventconfigurationsheet.excludeSelectedEvents</label>
+                            <config>
+                                <type>select</type>
+                                <size>5</size> 
+                                <maxitems>10</maxitems> 
+                                <foreign_table>tx_dmsimplecalendar_domain_model_appointment</foreign_table>
+                            </config>
+                        </TCEforms>
+                    </settings.excludeSelectedEvents>
+                    <settings.includeSelectedEvents>
+                        <TCEforms>
+                                <foreign_table_where>uid=1</foreign_table_where>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:eventconfigurationsheet.includeSelectedEvents</label>
+                            <config>
+                                <type>select</type>
+                                <size>5</size> 
+                                <maxitems>10</maxitems> 
+                                <foreign_table>tx_dmsimplecalendar_domain_model_appointment</foreign_table>
+                            </config>
+                        </TCEforms>
+                    </settings.includeSelectedEvents>
+                </el>
+            </ROOT>
+        </eventconfigurationsheet>
+        <templatesheet>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:templatesheet.template</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.appointmentAmountLimit>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:templatesheet.appointmentAmountLimit</label>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                                <max>30</max>
+                                <eval>trim</eval>
+                          </config>
+                        </TCEforms>
+                    </settings.appointmentAmountLimit>
+                    <settings.useCustomTemplates>
+                        <TCEforms>
+                            <label>Eigene Templates verwenden</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.useCustomTemplates>
+                    <settings.customTemplatePath>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:templatesheet.useThemeBundle</label>
+                            <displayCond>FIELD:settings.useCustomTemplates:REQ:FALSE</displayCond>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                  <numIndex index="0" type="array">
+                                    <numIndex index="0">Standard Template</numIndex>
+                                    <numIndex index="1">EXT:dm_simplecalendar/Resources/Private/Default/</numIndex>
+                                  </numIndex>
+                                  <numIndex index="1" type="array">
+                                    <numIndex index="0">Bootstrap Template</numIndex>
+                                    <numIndex index="1">EXT:dm_simplecalendar/Resources/Private/Bootstrap1/</numIndex>
+                                  </numIndex>
+                                </items>
+                                <maxitems>1</maxitems>
+                                <size>1</size>
+                          </config>
+                        </TCEforms>
+                    </settings.customTemplatePath>
+                    <view.templateRootPath>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:templatesheet.templateRootPath</label>
+                            <displayCond>FIELD:settings.useCustomTemplates:REQ:TRUE</displayCond>
+                            <config>
+                                <type>input</type>
+                                <eval>trim</eval>
+                                <default></default>
+                                <wizards type="array">
+                                    <_PADDING>2</_PADDING>
+                                    <link type="array">
+                                        <type>popup</type>
+                                        <title>Link</title>
+                                        <icon>fileicons/folder.gif</icon>
+                                        <script>browse_links.php?mode=wizard&amp;act=folder</script>
+                                        <params type="array">
+                                            <blindLinkOptions>page,url,mail,spec,file</blindLinkOptions>
+                                            <allowedExtensions></allowedExtensions>
+                                        </params>
+                                        <JSopenParams>height=400,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                    </link>
+                                </wizards>
+                            </config>
+                        </TCEforms>
+                    </view.templateRootPath>
+                    <view.partialRootPath>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:templatesheet.partialRootPath</label>
+                            <displayCond>FIELD:settings.useCustomTemplates:REQ:TRUE</displayCond>
+                            <config>
+                                <type>input</type>
+                                <eval>trim</eval>
+                                <default></default>
+                                <wizards type="array">
+                                    <_PADDING>2</_PADDING>
+                                    <link type="array">
+                                        <type>popup</type>
+                                        <title>Link</title>
+                                        <icon>fileicons/folder.gif</icon>
+                                        <script>browse_links.php?mode=wizard&amp;act=folder</script>
+                                        <params type="array">
+                                            <blindLinkOptions>page,url,mail,spec,file</blindLinkOptions>
+                                            <allowedExtensions></allowedExtensions>
+                                        </params>
+                                        <JSopenParams>height=400,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                    </link>
+                                </wizards>
+                            </config>
+                        </TCEforms>
+                    </view.partialRootPath>
+                    <view.layoutRootPath>
+                        <TCEforms>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:templatesheet.layoutRootPath</label>
+                            <displayCond>FIELD:settings.useCustomTemplates:REQ:TRUE</displayCond>
+                            <config>
+                                <type>input</type>
+                                <eval>trim</eval>
+                                <default></default>
+                                <wizards type="array">
+                                    <_PADDING>2</_PADDING>
+                                    <link type="array">
+                                        <type>popup</type>
+                                        <title>Link</title>
+                                        <icon>fileicons/folder.gif</icon>
+                                        <script>browse_links.php?mode=wizard&amp;act=folder</script>
+                                        <params type="array">
+                                            <blindLinkOptions>page,url,mail,spec,file</blindLinkOptions>
+                                            <allowedExtensions></allowedExtensions>
+                                        </params>
+                                        <JSopenParams>height=400,width=500,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                    </link>
+                                </wizards>
+                            </config>
+                        </TCEforms>
+                    </view.layoutRootPath>
+                </el>
+            </ROOT>
+        </templatesheet>
+    </sheets>
+</T3DataStructure>

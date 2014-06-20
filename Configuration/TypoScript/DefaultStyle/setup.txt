@@ -1,0 +1,6 @@
+page.includeJSFooter {
+    dmcalendar = EXT:dm_simplecalendar/Resources/Public/Js/defaultJs.js
+}
+page.includeCSS {
+    defaultStyle_dmsimplecalendar = EXT:dm_simplecalendar/Resources/Public/Css/defaultStyle.css
+}

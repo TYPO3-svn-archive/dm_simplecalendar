@@ -1,0 +1,107 @@
+{namespace dmd=DieMedialen\DmDebugger\ViewHelpers} {namespace dmc=DieMedialen\DmSimplecalendar\ViewHelpers}
+<h3>
+    <f:translate key="tx_dmsimplecalendar_view_yearview" />&nbsp;
+    <f:format.date format="Y">{viewCalendar.timestamp}</f:format.date>
+</h3>
+<br />
+<dmc:renderAsMonthCalendars viewCalendar="{viewCalendar}" as="monthCalendar">
+    <h4>
+        <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: monthCalendar.timestamp, viewMode: monthCalendar.mode}">
+            <dmc:translateDate dateTime="{monthCalendar.startDate}" fullName="1" type="month" />
+        </f:link.action>
+    </h4>
+    <table cellpadding="0" cellspacing="0" class="calendar">
+        <thead>
+            <tr class="calendar-row">
+                <td class="calendar-kw-head">{f:translate(key:'date.cw',default:'KW')}</td>
+                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.1',default:'Mo')}</td>
+                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.2',default:'Di')}</td>
+                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.3',default:'Mi')}</td>
+                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.4',default:'Do')}</td>
+                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.5',default:'Fr')}</td>
+                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.6',default:'Sa')}</td>
+                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.0',default:'So')}</td>
+            </tr>
+        </thead>
+        <tbody>
+            <dmc:renderAsWeekCalendars viewCalendar="{monthCalendar}" as="weekCalendar">
+                <tr class="calendar-row">
+                    <td class="calendar-kw">
+                        <strong>
+                            <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: weekCalendar.timestamp, viewMode: weekCalendar.mode}">
+                                <f:format.date format="W">{weekCalendar.timestamp}</f:format.date>
+                            </f:link.action>
+                        </strong>
+                    </td>
+                    <dmc:renderAsDayCalendars viewCalendar="{weekCalendar}" as="dayCalendar">
+                        <f:if condition="{dayCalendar.timestamp} >= {monthCalendar.startDate.timestamp}">
+                            <f:then>
+                                <f:if condition="{dayCalendar.timestamp} <= {monthCalendar.endDate.timestamp}">
+                                    <f:then>
+                                        <td class="calendar-day">
+                                            <div class="day-number">
+                                                <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">
+                                                    <f:format.date format="d">{dayCalendar.timestamp}</f:format.date>
+                                                </f:link.action>
+                                            </div>
+                                            <f:if condition="{dayCalendar.appointments -> f:count()} > 0">
+                                                <f:then>
+                                                    <f:for each="{dayCalendar.appointments}" as="appointment" iteration="appointmentIterator">
+                                                        <f:if condition="{appointmentIterator.index} < 3">
+                                                        <div class="calendar-item">
+                                                            <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}">{appointment.title}</f:link.action>
+                                                        </div>
+                                                        <f:render partial="Calendar/Blocks/ItemCategoryColorBlock" arguments="{appointment:appointment}" />
+                                                        </f:if>
+                                                    </f:for>
+                                                    <!-- START: More Link to day mode -->
+                                                    <f:if condition="{dayCalendar.appointments -> f:count()} > 3">
+                                                        <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">...</f:link.action>
+                                                    </f:if>
+                                                    <!-- END: More Link to day mode -->
+                                                </f:then>
+                                                <f:else>
+                                                    <p>
+                                                        {f:translate(key:'tx_dmsimplecalendar_view_appointment_none',default:'')}
+                                                    </p>
+                                                </f:else>
+                                                <br />
+                                            </f:if>
+                                        </td>
+                                    </f:then>
+                                    <f:else>
+                                        <td class="calendar-day-np">
+                                            <f:format.date format="d.m.Y">{dayCalendar.timestamp}</f:format.date>
+                                        </td>
+                                    </f:else>
+                                </f:if>
+                            </f:then>
+                            <f:else>
+                                <td class="calendar-day-np">
+                                    <f:format.date format="d.m.Y">{dayCalendar.timestamp}</f:format.date>
+                                </td>
+                            </f:else>
+                        </f:if>
+                    </dmc:renderAsDayCalendars>
+                </tr>
+            </dmc:renderAsWeekCalendars>
+        </tbody>
+    </table>
+    <br />
+</dmc:renderAsMonthCalendars>
+
+<f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.previous, viewMode: viewCalendar.mode}">
+    <f:translate key="tx_dmsimplecalendar_view_date_prevyear" />
+</f:link.action>
+&nbsp;&dash;&nbsp;
+<f:if condition="{viewCalendar.timestamp -> f:format.date(format: 'Y')} != {viewCalendar.current -> f:format.date(format: 'Y')}">
+    <f:then>
+        <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.current, viewMode: viewCalendar.mode}">
+            <f:translate key="tx_dmsimplecalendar_view_date_currentyear" />
+        </f:link.action>
+        &nbsp;&dash;&nbsp;
+    </f:then>
+</f:if>
+<f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.next, viewMode: viewCalendar.mode}">
+    <f:translate key="tx_dmsimplecalendar_view_date_nextyear" />
+</f:link.action>

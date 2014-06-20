@@ -1,0 +1,29 @@
+plugin.tx_dmsimplecalendar {
+    view {
+        templateRootPath = {$plugin.tx_dmsimplecalendar.view.templateRootPath}
+        partialRootPath = {$plugin.tx_dmsimplecalendar.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_dmsimplecalendar.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_dmsimplecalendar.persistence.storagePid}
+    }
+    features {
+        # uncomment the following line to enable the new Property Mapper.
+        # rewrittenPropertyMapper = 1
+    }
+}
+
+plugin.tx_dmsimplecalendar._CSS_DEFAULT_STYLE (
+    textarea.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+    input.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+    select.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+)

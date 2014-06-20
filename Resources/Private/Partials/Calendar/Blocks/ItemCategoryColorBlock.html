@@ -1,0 +1,15 @@
+{namespace dmc=DieMedialen\DmSimplecalendar\ViewHelpers}
+
+<!-- START - Farbleitsystem -->
+<f:if condition="{settings.displayCategoryColors}">
+<f:if condition="{settings.displayCategoryColors} == 2">
+<f:if condition="{appointment.categories}">
+    <f:for each="{appointment.categories}" as="category" iteration="categoryIterator">
+        <f:if condition="{category.color}">
+            <div class="categoryColorLine" title="{category.title}" style="background: {category.color}"></div>
+        </f:if>
+    </f:for>
+</f:if>
+</f:if>
+</f:if>
+<!-- END - Farbleitsystem -->

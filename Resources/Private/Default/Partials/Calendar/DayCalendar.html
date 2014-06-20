@@ -1,0 +1,111 @@
+{namespace dmd=DieMedialen\DmDebugger\ViewHelpers} {namespace dmc=DieMedialen\DmSimplecalendar\ViewHelpers}
+<h3>
+    {f:translate(key:'tx_dmsimplecalendar_view_dayview',default:'Tagesansicht')}&nbsp;
+    <f:format.date format="d.m.Y">{viewCalendar.timestamp}</f:format.date>
+</h3>
+
+<br />
+
+<div class="dayView">
+
+<dmc:renderAsDayCalendars viewCalendar="{viewCalendar}" as="dayCalendar">
+    <f:if condition="{dayCalendar.timestamp} >= {viewCalendar.startDate.timestamp}">
+        <f:then>
+            <f:if condition="{dayCalendar.timestamp} <= {viewCalendar.endDate.timestamp}">
+                <f:then>
+                        <f:if condition="{dayCalendar.appointments -> f:count()} > 0">
+                        <f:then>
+                            <table class="calendar-items calendar">
+                            <f:for each="{dayCalendar.appointments}" as="appointment">
+
+                                <tr class="calendar-item-row">
+                                    <td class="calendar-item-time">
+                                    <f:if condition="{appointment.enddateExists}">
+                                    <f:then>
+                                        Ab:
+                                        <strong>
+                                            <f:format.date format="H:i">{appointment.startdate}</f:format.date>
+                                        </strong>
+                                        Bis:
+                                        <strong>
+                                            <f:format.date format="H:i">{appointment.enddate}</f:format.date>
+                                        </strong>
+                                    </f:then>
+                                    <f:else>
+                                        Um:
+                                        <strong>
+                                            <f:format.date format="H:i">{appointment.startdate}</f:format.date>
+                                        </strong>
+                                    </f:else>
+                                    </f:if>
+                                    </td>
+                                    <td class="calendar-item-info">
+                                    <strong>
+                                        <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}">{appointment.title}</f:link.action>
+                                    </strong>
+
+                                    <br />
+
+                                    <br />
+                                    Ort:
+                                    <strong>{appointment.location}</strong>
+
+                                    <br />
+                                    Teaser:
+                                    <f:format.stripTags>{appointment.shortDescription -> f:format.html()}</f:format.stripTags>
+                                    <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}"> mehr...</f:link.action>
+
+
+                    <!-- START - Farbleitsystem -->
+                    <f:if condition="{settings.displayCategoryColors}">
+                    <f:if condition="{settings.displayCategoryColors} == 2">
+                    <f:if condition="{appointment.categories}">
+                        <f:for each="{appointment.categories}" as="category" iteration="categoryIterator">
+                            <f:if condition="{category.color}">
+                                <div class="categoryColorLine" title="{category.title}" style="background: {category.color}"></div>
+                            </f:if>
+                        </f:for>
+                    </f:if>
+                    </f:if>
+                    </f:if>
+                    <!-- END - Farbleitsystem -->
+                                    </td>
+                                </tr>
+                            </f:for>
+                            </table>
+
+                        </f:then>
+                        <f:else>
+<!-- KEINE TERMINE VORHANDEN -->
+                        </f:else>
+                        </f:if>
+                </f:then>
+                <f:else>
+                </f:else>
+            </f:if>
+        </f:then>
+        <f:else>
+        </f:else>
+    </f:if>
+</dmc:renderAsDayCalendars>
+
+
+
+<br />
+<f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.previous, viewMode: viewCalendar.mode}">
+    {f:translate(key:'tx_dmsimplecalendar_view_date_prevday',default:'Vorheriger Tag')}
+</f:link.action>
+&nbsp;&dash;&nbsp;
+<f:if condition="{viewCalendar.timestamp -> f:format.date(format: 'd.m.Y')} != {viewCalendar.current -> f:format.date(format: 'd.m.Y')}">
+    <f:then>
+        <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.current, viewMode: viewCalendar.mode}">
+            {f:translate(key:'tx_dmsimplecalendar_view_date_currentday',default:'Aktueller Tag')}
+        </f:link.action>
+        &nbsp;&dash;&nbsp;
+    </f:then>
+</f:if>
+<f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.next, viewMode: viewCalendar.mode}">
+    {f:translate(key:'tx_dmsimplecalendar_view_date_nextday',default:'Nächster Tag')}
+</f:link.action>
+
+</div>

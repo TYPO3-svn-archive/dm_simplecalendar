@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuration Reference &mdash; dm_simplecalender 0.1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="dm_simplecalender 0.1.1 documentation" href="../index.html" />
+    <link rel="next" title="Developer Corner" href="../Developer/Index.html" />
+    <link rel="prev" title="Users Manual" href="../User/Index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../Developer/Index.html" title="Developer Corner"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../User/Index.html" title="Users Manual"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../Index.html">dm_simplecalender 0.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="configuration-reference">
+<span id="configuration"></span><h1>Configuration Reference<a class="headerlink" href="#configuration-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="howto-outsource-the-templates-use-your-own-templates">
+<span id="configuration-typoscript"></span><h2>HowTo: Outsource the templates – use your own templates<a class="headerlink" href="#howto-outsource-the-templates-use-your-own-templates" title="Permalink to this headline">¶</a></h2>
+<p>If you want to modify the templates and keep these changes after an extension update, die can outsource the template folders.</p>
+<p><strong>Duplicate the folders</strong></p>
+<ul class="simple">
+<li><cite>EXT:dm_simplecalendar/Resources/Private/Layouts</cite></li>
+<li><cite>EXT:dm_simplecalendar/Resources/Private/Partials</cite></li>
+<li><cite>EXT:dm_simplecalendar/Resources/Private/Templates</cite></li>
+</ul>
+<p><strong>into the fileadmin</strong></p>
+<ul class="simple">
+<li><cite>fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Layouts</cite></li>
+<li><cite>fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Partials</cite></li>
+<li><cite>fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Templates</cite></li>
+</ul>
+<p>The following TypoScript configuration tells the extension to use your new destination:</p>
+<div class="highlight-typoscript"><div class="highlight"><pre>plugin.tx_dmcalendar.view {
+        templateRootPath = fileadmin/templates/html/extensions/dm_simplecalendar/Resources/Private/Templates/
+        partialRootPath = fileadmin/templates/html/extensions/dm_simplecalendar/Resources/Private/Partials/
+        layoutRootPath = fileadmin/templates/html/extensions/dm_simplecalendar/Resources/Private/Layouts/
+}
+</pre></div>
+</div>
+<p><strong>You can set this configuration globaly or for each page, as TS constant or setup or in every each dm_simplecalendar plugin:</strong></p>
+<div class="figure">
+<img alt="Plugin Template Customize" src="../_images/PluginTemplateCustomize.png" />
+</div>
+</div>
+<div class="section" id="howto-overwrite-localisation-via-typoscript">
+<h2>HowTo: Overwrite localisation via TypoScript<a class="headerlink" href="#howto-overwrite-localisation-via-typoscript" title="Permalink to this headline">¶</a></h2>
+<p>Write the following in your TypoScript Setup</p>
+<div class="highlight-typoscript"><div class="highlight"><pre>plugin.tx_dmsimplecalendar._LOCAL_LANG.de {
+    date.cw = Kalenderwoche
+    calendar.month.noAppointments =
+    calendar.day.noAppointments = Keine Termine
+    tx_dmsimplecalendar_view_date_currentmonth = Aktueller Monat
+}
+</pre></div>
+</div>
+<div class="section" id="default-included-label-keys">
+<h3>Default included label-keys<a class="headerlink" href="#default-included-label-keys" title="Permalink to this headline">¶</a></h3>
+<div class="locallang-labelkeys container">
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="44%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Cat / Type</th>
+<th class="head">label-key</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>General</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">general.back</span></tt></td>
+<td>zurück</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">general.Back</span></tt></td>
+<td>Zurück</td>
+</tr>
+<tr class="row-odd"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">general.backToCalendar</span></tt></td>
+<td>zurück zum Kalender</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">general.edit</span></tt></td>
+<td>bearbeiten</td>
+</tr>
+<tr class="row-odd"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">general.delete</span></tt></td>
+<td>löschen</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">general.legend</span></tt></td>
+<td>Legende</td>
+</tr>
+<tr class="row-odd"><td>Dates</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">date.month.January</span></tt></td>
+<td>Januar</td>
+</tr>
+<tr class="row-odd"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">date.month.February</span></tt></td>
+<td>Februar</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">date.month.March</span></tt></td>
+<td>März</td>
+</tr>
+<tr class="row-odd"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">date.calendarWeek</span></tt></td>
+<td>Kalenderwoche</td>
+</tr>
+<tr class="row-even"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">date.cw</span></tt></td>
+<td>KW</td>
+</tr>
+<tr class="row-odd"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">date.today</span></tt></td>
+<td>Heute</td>
+</tr>
+<tr class="row-even"><td>More</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>.</td>
+<td><tt class="code docutils literal"><span class="pre">bla.foo</span></tt></td>
+<td>bar</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="faq">
+<span id="configuration-faq"></span><h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<p>Please use the <a class="reference external" href="http://forge.typo3.org/projects/extension-dm_simplecalendar/issues">typo3 forge bug tracker</a> or send an email to &lt;<a class="reference external" href="mailto:salvatore&#46;eckel&#37;&#52;&#48;diemedialen&#46;de">salvatore<span>&#46;</span>eckel<span>&#64;</span>diemedialen<span>&#46;</span>de</a>&gt; if you have a question what should be listet here.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../Index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Configuration Reference</a><ul>
+<li><a class="reference internal" href="#howto-outsource-the-templates-use-your-own-templates">HowTo: Outsource the templates – use your own templates</a></li>
+<li><a class="reference internal" href="#howto-overwrite-localisation-via-typoscript">HowTo: Overwrite localisation via TypoScript</a><ul>
+<li><a class="reference internal" href="#default-included-label-keys">Default included label-keys</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#faq">FAQ</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../User/Index.html"
+                        title="previous chapter">Users Manual</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../Developer/Index.html"
+                        title="next chapter">Developer Corner</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/Configuration/Index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../Developer/Index.html" title="Developer Corner"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../User/Index.html" title="Users Manual"
+             >previous</a> |</li>
+        <li><a href="../Index.html">dm_simplecalender 0.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Salvatore Eckel.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

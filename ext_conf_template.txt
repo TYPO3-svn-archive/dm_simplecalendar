@@ -1,0 +1,2 @@
+# cat=basic/enable; type=boolean; label=Enable pageTSconfig from this extension (disable on your own risk)
+enableDmCalendarPageTSconfig = 1

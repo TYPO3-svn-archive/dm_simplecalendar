@@ -1,0 +1,112 @@
+{namespace dmc=DieMedialen\DmSimplecalendar\ViewHelpers}
+
+<f:layout name="Simplecalendar" />
+
+<f:section name="main">
+
+    <f:flashMessages renderMode="div" />
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">{appointment.title}
+        <f:if condition="{settings.showIcsLink}">
+        <f:link.action action="icsDownload" controller="Appointment" arguments="{appointment:appointment}" class="pull-right">
+            <span class="glyphicon glyphicon-floppy-save" title="{f:translate(key:'tx_dmsimplecalendar_domain_model_appointment.icsDownload',default:'')}"></span>
+        </f:link.action>
+        </f:if>
+
+        </h3>
+    </div>
+    <div class="panel-footer">
+        <div class="row">
+            
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
+                <f:translate key="tx_dmsimplecalendar_domain_model_appointment.starttime" />
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
+                <f:format.date format="d.m.Y h:i">{appointment.startdate}</f:format.date>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
+                <f:translate key="tx_dmsimplecalendar_domain_model_appointment.endtime" />
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
+                <f:format.date format="d.m.Y h:i">{appointment.enddate}</f:format.date>
+            </div>
+
+        </div>
+    </div>
+    <div class="panel-body">
+
+        <div class="row">
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                <f:format.raw>{appointment.description}</f:format.raw>
+            </div>
+
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="row">
+            
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                <f:translate key="tx_dmsimplecalendar_domain_model_appointment.shortDescription" />
+                <f:format.raw>{appointment.shortDescription}</f:format.raw>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
+            <f:if condition="{appointment.attachments}">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <f:translate key="tx_dmsimplecalendar_domain_model_appointment.attachments" />
+                    </div>
+                    <table class="table table-responsive">
+                        <tr>
+                            <th>#</th>
+                            <th>{f:translate(key:'appointment.attackment.file',default:'Datei')}
+                            </th>
+                            <th>{f:translate(key:'appointment.attackment.size',default:'Größe')}
+                            </th>
+                        </tr>
+                        <f:for each="{appointment.attachments}" as="attachment" iteration="attachmentIterator">
+                        <tr>
+                            <td>{attachmentIterator.index}</td>
+                            <td>
+                                <dmc:link.external uri="uploads/tx_dmsimplecalendar/{attachment.file}" insertHost="1" target="_blank">{attachment.file}</dmc:link.external>
+                            </td>
+                            <td>
+                                <dmc:link.external uri="uploads/tx_dmsimplecalendar/{attachment.file}" insertHost="1" target="_blank">56{f:translate(key:'appointment.attackment.sizeFormat',default:'kb')}</dmc:link.external>
+                            </td>
+                        </tr>
+                        </f:for>
+                    </table>
+                </div>
+            </f:if>
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 ">
+            <f:if condition="{settings.showQrCode}">
+            <f:if condition="{settings.qrCodeSize}">
+            <f:then>
+
+                <f:if condition="{0:settings.qrShortUrlProvider} == {0:'none'}">
+                <f:then>
+                    <img src="https://chart.googleapis.com/chart?chs={settings.qrCodeSize}&cht=qr&chl=<dmc:url.currentUrl />&choe=UTF-8" title="QR Code - {appointment.title}" class="img-responsive" />
+                </f:then>
+                <f:else>
+                    <img src="https://chart.googleapis.com/chart?chs={settings.qrCodeSize}&cht=qr&chl=<dmc:url.shorten />&choe=UTF-8" title="QR Code - {appointment.title}" class="img-responsive" />
+                </f:else>
+                </f:if>
+
+            </f:then>
+            <f:else>
+                <p>Im Plugin muss eine Größe für QR-Code eingegeben werden.</p>
+            </f:else>
+            </f:if>
+            </f:if>
+            </div>
+        </div>
+    </div>
+</div>
+
+</f:section>

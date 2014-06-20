@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="default" datatype="plaintext" original="messages" date="2013-12-09T16:09:54Z" product-name="dm_simplecalendar">
+        <header/>
+        <body>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment">
+                <source>Appointment</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.location">
+                <source>Location</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.shortdescription">
+                <source>Shortdescription</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.startdate">
+                <source>Startdate</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.enddate">
+                <source>Enddate</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.calendar">
+                <source>Calendar</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.attachments">
+                <source>Attachments</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.categories">
+                <source>Categories</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.pre_appointment">
+                <source>The pre-event in a chain of auto-generated events</source>
+            </trans-unit>
+
+            <trans-unit id="tx_dmsimplecalendar_domain_model_calendar">
+                <source>Kalendar</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_calendar.appointments">
+                <source>Appointments</source>
+            </trans-unit>
+
+            <trans-unit id="tx_dmsimplecalendar_domain_model_category">
+                <source>Kategorie</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_category.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_category.color">
+                <source>Color</source>
+            </trans-unit>
+
+            <trans-unit id="tx_dmsimplecalendar_domain_model_attachment">
+                <source>Attachment</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_attachment.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_attachment.file">
+                <source>File</source>
+            </trans-unit>
+        </body>
+    </file>
+    <file source-language="de" datatype="plaintext" original="messages" date="2013-12-09T16:09:54Z" product-name="dm_simplecalendar">
+        <header/>
+        <body>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment">
+                <source>Termin</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.location">
+                <source>Ort</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.description">
+                <source>Beschreibung</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.shortdescription">
+                <source>Kurz-Beschreibung</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.startdate">
+                <source>Start-Datum</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.enddate">
+                <source>End-Datum</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.calendar">
+                <source>Kalendar</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.attachments">
+                <source>Anhänge</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.categories">
+                <source>Kategorien</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.pre_appointment">
+                <source>Der vorherige Termin in einer Kette von automatisch generierten Terminen</source>
+            </trans-unit>
+
+            <trans-unit id="tx_dmsimplecalendar_domain_model_calendar">
+                <source>Kalendar</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_calendar.appointments">
+                <source>Termine</source>
+            </trans-unit>
+
+            <trans-unit id="tx_dmsimplecalendar_domain_model_category">
+                <source>Kategorie</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_category.title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_category.color">
+                <source>Farbe für Farbleitsystem</source>
+            </trans-unit>
+
+            <trans-unit id="tx_dmsimplecalendar_domain_model_attachment">
+                <source>Anhang</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_attachment.title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_attachment.file">
+                <source>Datei</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

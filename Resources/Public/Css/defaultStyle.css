@@ -1,0 +1,56 @@
+/*
+ * This is the initial fallback theme
+ * in later versions a style will be added here
+ */
+.tx-dm-simplecalendar {}
+
+
+/* Partial: Calendar/ColorLegendBlock.html */
+div.categoryLegend {
+    margin-bottom: 15px;
+}
+div.categoryLegend p {}
+div.categoryLegend div.categoryLegendItem {display: inline-block;margin-right: 5px;}
+div.categoryLegend div.categoryLegendItem span.block {
+    border: 1px #888 solid;
+    margin-right: 5px;
+    display: inline-block;
+    width: 25px;
+    height: 12px;
+}
+
+/* Partial: Calendar/ItemCategoryColorBlock.html */
+.tx-dm-simplecalendar .categoryColorLine{
+    height: 5px;
+}
+
+/* Partial: Calendar/Month/Navigation.html */
+.tx-dm-simplecalendar div.prevMonth {
+    margin-top: 5px;
+    float: left;
+}
+.tx-dm-simplecalendar div.nextMonth {
+    margin-top: 5px;
+    float: right;
+}
+.tx-dm-simplecalendar div.prevMonth a {
+    display: block;
+    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+    background: url('../Icons/calender_sprite.gif') -3px -5px;
+}
+.tx-dm-simplecalendar div.prevMonth a:hover {
+    background: url('../Icons/calender_sprite.gif') -3px -41px;
+}
+.tx-dm-simplecalendar div.nextMonth a {
+    display: block;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    background: url('../Icons/calender_sprite.gif') -41px -5px;
+}
+.tx-dm-simplecalendar div.nextMonth a:hover {
+    background: url('../Icons/calender_sprite.gif') -41px -41px;
+}
+

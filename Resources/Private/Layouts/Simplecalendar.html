@@ -1,0 +1,22 @@
+<div class="tx-dm-simplecalendar dmsimplecalendar_simplecalendar container">
+
+    <f:if condition="{settings.calendarName}">
+    <h2 class="calendarName">{settings.calendarName}</h2>
+    </f:if>
+
+    <f:render section="main" />
+
+
+    <f:if condition="{settings.displayCategoryColors}">
+        <f:render partial="Calendar/Blocks/ColorLegendBlock" />
+    </f:if>
+
+    <f:if condition="{hideBackToCalendarLink} != 1">
+    <div class="backToCalendarLink">
+        <p>
+            <f:link.action class="backToCalendar" action="show" controller="Calendar">{f:translate(key:'general.backToCalendar')}</f:link.action>
+        </p>
+    </div>
+    </f:if>
+
+</div>

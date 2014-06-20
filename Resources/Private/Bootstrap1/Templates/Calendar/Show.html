@@ -1,0 +1,28 @@
+<f:layout name="Simplecalendar" />
+
+<f:section name="main">
+
+    <f:flashMessages renderMode="div" />
+
+    <f:if condition="{viewCalendar.mode} == 'year'">
+        <f:then>
+            <f:render partial="Calendar/YearCalendar" arguments="{viewCalendar:viewCalendar}" />
+        </f:then>
+    </f:if>
+    <f:if condition="{viewCalendar.mode} == 'month'">
+        <f:then>
+            <f:render partial="Calendar/MonthCalendar" arguments="{viewCalendar:viewCalendar}" />
+        </f:then>
+    </f:if>
+    <f:if condition="{viewCalendar.mode} == 'week'">
+        <f:then>
+            <f:render partial="Calendar/WeekCalendar" arguments="{viewCalendar:viewCalendar}" />
+        </f:then>
+    </f:if>
+    <f:if condition="{viewCalendar.mode} == 'day'">
+        <f:then>
+            <f:render partial="Calendar/DayCalendar" arguments="{viewCalendar:viewCalendar}" />
+        </f:then>
+    </f:if>
+
+</f:section>

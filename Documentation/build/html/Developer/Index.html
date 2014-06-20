@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Developer Corner &mdash; dm_simplecalender 0.1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="dm_simplecalender 0.1.1 documentation" href="../index.html" />
+    <link rel="next" title="Known Problems" href="../KnownProblems/Index.html" />
+    <link rel="prev" title="Configuration Reference" href="../Configuration/Index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../KnownProblems/Index.html" title="Known Problems"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../Configuration/Index.html" title="Configuration Reference"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../Index.html">dm_simplecalender 0.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="developer-corner">
+<span id="developer"></span><h1>Developer Corner<a class="headerlink" href="#developer-corner" title="Permalink to this headline">¶</a></h1>
+<p>In the developer corner, you can learn the basics for templating with <tt class="docutils literal"><span class="pre">dm_simplecalendar</span></tt></p>
+<p>The Template System requires two main templates</p>
+<ul>
+<li><p class="first"><cite>Templates/Calendar/Show.html</cite></p>
+<p>For displaying calendar, mainly uses the variable <tt class="docutils literal"><span class="pre">{viewCalendar}</span></tt></p>
+</li>
+<li><p class="first">Templates/Appointment/Show.html</p>
+<p>For displaying appointment detail view, mainly uses the variable <tt class="docutils literal"><span class="pre">{appointment}</span></tt></p>
+</li>
+</ul>
+<div class="section" id="how-to-build-a-calendar">
+<h2>How to build a calendar<a class="headerlink" href="#how-to-build-a-calendar" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<p>The Template <tt class="docutils literal"><span class="pre">Templates/Calendar/Show.html</span></tt> just should redirect to the needed <strong>Partials</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;f:layout</span> <span class="na">name=</span><span class="s">&quot;Simplecalendar&quot;</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;f:section</span> <span class="na">name=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;f:flashMessages</span> <span class="na">renderMode=</span><span class="s">&quot;div&quot;</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;f:if</span> <span class="na">condition=</span><span class="s">&quot;{viewCalendar.mode} == &#39;year&#39;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;f:then&gt;</span>
+            <span class="nt">&lt;f:render</span> <span class="na">partial=</span><span class="s">&quot;Calendar/YearCalendar&quot;</span> <span class="na">arguments=</span><span class="s">&quot;{viewCalendar:viewCalendar}&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/f:then&gt;</span>
+    <span class="nt">&lt;/f:if&gt;</span>
+    <span class="nt">&lt;f:if</span> <span class="na">condition=</span><span class="s">&quot;{viewCalendar.mode} == &#39;month&#39;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;f:then&gt;</span>
+            <span class="nt">&lt;f:render</span> <span class="na">partial=</span><span class="s">&quot;Calendar/MonthCalendar&quot;</span> <span class="na">arguments=</span><span class="s">&quot;{viewCalendar:viewCalendar}&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/f:then&gt;</span>
+    <span class="nt">&lt;/f:if&gt;</span>
+    <span class="nt">&lt;f:if</span> <span class="na">condition=</span><span class="s">&quot;{viewCalendar.mode} == &#39;week&#39;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;f:then&gt;</span>
+            <span class="nt">&lt;f:render</span> <span class="na">partial=</span><span class="s">&quot;Calendar/WeekCalendar&quot;</span> <span class="na">arguments=</span><span class="s">&quot;{viewCalendar:viewCalendar}&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/f:then&gt;</span>
+    <span class="nt">&lt;/f:if&gt;</span>
+    <span class="nt">&lt;f:if</span> <span class="na">condition=</span><span class="s">&quot;{viewCalendar.mode} == &#39;day&#39;&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;f:then&gt;</span>
+            <span class="nt">&lt;f:render</span> <span class="na">partial=</span><span class="s">&quot;Calendar/DayCalendar&quot;</span> <span class="na">arguments=</span><span class="s">&quot;{viewCalendar:viewCalendar}&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/f:then&gt;</span>
+    <span class="nt">&lt;/f:if&gt;</span>
+
+<span class="nt">&lt;/f:section&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="required-viewhelpers-to-build-a-calendar">
+<h3>Required ViewHelpers to build a calendar<a class="headerlink" href="#required-viewhelpers-to-build-a-calendar" title="Permalink to this headline">¶</a></h3>
+<p><strong>Include</strong> <tt class="docutils literal"><span class="pre">{namespace</span> <span class="pre">dmc=DieMedialen\DmSimplecalendar\ViewHelpers}</span></tt> <strong>on top of every template and partial to use the following ViewHelpers</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;dmc:renderAsMonthCalendars</span> <span class="na">viewCalendar=</span><span class="s">&quot;{viewCalendar}&quot;</span> <span class="na">as=</span><span class="s">&quot;monthCalendar&quot;</span><span class="nt">&gt;</span><span class="c">&lt;!-- LOOP --&gt;</span><span class="nt">&lt;/dmc:renderAsMonthCalendars&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;dmc:renderAsWeekCalendars</span> <span class="na">viewCalendar=</span><span class="s">&quot;{viewCalendar}&quot;</span> <span class="na">as=</span><span class="s">&quot;weekCalendar&quot;</span><span class="nt">&gt;</span><span class="c">&lt;!-- LOOP --&gt;</span><span class="nt">&lt;/dmc:renderAsWeekCalendars&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;dmc:renderAsDayCalendars</span> <span class="na">viewCalendar=</span><span class="s">&quot;{viewCalendar}&quot;</span> <span class="na">as=</span><span class="s">&quot;dayCalendar&quot;</span><span class="nt">&gt;</span><span class="c">&lt;!-- LOOP --&gt;</span><span class="nt">&lt;/dmc:renderAsDayCalendars&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="simple-html-example-to-display-a-full-year">
+<h3>Simple HTML Example to display a full year!<a class="headerlink" href="#simple-html-example-to-display-a-full-year" title="Permalink to this headline">¶</a></h3>
+<p>Lets say, you choose <strong>year</strong> as dispaly mode in plugin, the property <tt class="docutils literal"><span class="pre">{viewCalendar.mode}</span></tt> will be &#8220;year&#8221;.</p>
+<div class="highlight-html"><div class="highlight"><pre>&lt;div class=&quot;yearItem&quot;&gt;
+
+        &lt;f:format.date format=&quot;Y&quot;&gt;{viewCalendar.timestamp}&lt;/f:format.date&gt; &lt;!-- 2014 --&gt;
+
+        &lt;!-- Iterates 12 times, return every loop a monthCalendar --&gt;
+        &lt;dmc:renderAsMonthCalendars viewCalendar=&quot;{viewCalendar}&quot; as=&quot;monthCalendar&quot;&gt;
+
+        &lt;div class=&quot;monthItem&quot;&gt;
+
+                &lt;f:format.date format=&quot;F&quot;&gt;{viewCalendar.timestamp}&lt;/f:format.date&gt; &lt;!-- January, February, March.. --&gt;
+
+                &lt;!-- Iterates 4-5 times, return every loop a weekCalenar --&gt;
+                &lt;dmc:renderAsWeekCalendars viewCalendar=&quot;{monthCalendar}&quot; as=&quot;weekCalendar&quot;&gt;
+
+                &lt;div class=&quot;weekItem&quot;&gt;
+
+                        &lt;!-- Iterates 7 times, return every loop a dayCalenar --&gt;
+                        &lt;dmc:renderAsDayCalendars viewCalendar=&quot;{weekCalendar}&quot; as=&quot;dayCalendar&quot;&gt;
+
+                        &lt;div class=&quot;dayItem&quot;&gt;
+
+                                &lt;f:format.date format=&quot;d.m.Y H:m:s&quot;&gt;{dayCalendar.timestamp}&lt;/f:format.date&gt; &lt;!-- 01.01.2014, 02.01.2014, 03.01.2014.. --&gt;
+
+                        &lt;/div&gt;
+
+                        &lt;/dmc:renderAsDayCalendars&gt;
+
+                &lt;/div&gt;
+
+                &lt;/dmc:renderAsWeekCalendars&gt;
+
+        &lt;/div&gt;
+
+        &lt;/dmc:renderAsMonthCalendars&gt;
+
+&lt;/div&gt;
+</pre></div>
+</div>
+<p>The generated HTML Code will be:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;yearItem&quot;</span><span class="nt">&gt;</span>
+
+        2014
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;monthItem&quot;</span><span class="nt">&gt;</span>
+
+                January
+
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;weekItem&quot;</span><span class="nt">&gt;</span>
+
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dayItem&quot;</span><span class="nt">&gt;</span>30.12.2013<span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dayItem&quot;</span><span class="nt">&gt;</span>31.12.2013<span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dayItem&quot;</span><span class="nt">&gt;</span>01.01.2014<span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dayItem&quot;</span><span class="nt">&gt;</span>02.01.2014<span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dayItem&quot;</span><span class="nt">&gt;</span>......<span class="nt">&lt;/div&gt;</span>
+                        ...
+
+                <span class="nt">&lt;/div&gt;</span>
+
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;weekItem&quot;</span><span class="nt">&gt;</span>
+
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dayItem&quot;</span><span class="nt">&gt;</span>06.01.2014<span class="nt">&lt;/div&gt;</span>
+                        ...
+
+                <span class="nt">&lt;/div&gt;</span>
+
+                ...
+
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;monthItem&quot;</span><span class="nt">&gt;</span>
+
+                February
+
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;weekItem&quot;</span><span class="nt">&gt;</span>
+
+                        ...
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dayItem&quot;</span><span class="nt">&gt;</span>02.02.2014<span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dayItem&quot;</span><span class="nt">&gt;</span>03.02.2014<span class="nt">&lt;/div&gt;</span>
+                        ...
+
+                <span class="nt">&lt;/div&gt;</span>
+
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;weekItem&quot;</span><span class="nt">&gt;</span>
+
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;dayItem&quot;</span><span class="nt">&gt;</span>06.01.2014<span class="nt">&lt;/div&gt;</span>
+                        ...
+
+                <span class="nt">&lt;/div&gt;</span>
+
+                ...
+                ...
+
+        <span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+<p>You may ask, why the first days in January are &#8220;30.12.2013&#8221; and &#8220;31.12.2013&#8221;. This comes, because we rendered the <tt class="docutils literal"><span class="pre">{monthCalendar}</span></tt> to <tt class="docutils literal"><span class="pre">{weekCalendar}</span></tt> and then to <tt class="docutils literal"><span class="pre">{dayCalendar}</span></tt>. A week has always 7 days, so the pre-month days are shown. If you render the <tt class="docutils literal"><span class="pre">{monthCalendar}</span></tt> directly to an <tt class="docutils literal"><span class="pre">{dayCalendar}</span></tt>, there will be only <tt class="docutils literal"><span class="pre">{dayCalendar}</span></tt> in loop, what are realy in the month!</p>
+</div>
+</div>
+<div class="section" id="main-variables">
+<h2>Main Variables<a class="headerlink" href="#main-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="viewcalendar">
+<h3><tt class="docutils literal"><span class="pre">{viewCalendar}</span></tt><a class="headerlink" href="#viewcalendar" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">DieMedialen\DmSimplecalendar\Domain\Model\ViewCalendar</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="63%" />
+<col width="22%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Properties</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>timestamp</td>
+<td>integer</td>
+<td>timestamp of current
+calendar</td>
+</tr>
+<tr class="row-odd"><td>mode</td>
+<td>string</td>
+<td>year/month/week/day</td>
+</tr>
+<tr class="row-even"><td>appointments</td>
+<td><p class="first"><tt class="docutils literal"><span class="pre">TYPO3\CMS\Extbase\Persistence\ObjectStorage&lt;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">DieMedialen\DmSimplecalendar\Domain\Model\Appointment</span></tt></p>
+<p class="last"><tt class="docutils literal"><span class="pre">&gt;</span></tt></p>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>previous</td>
+<td>integer</td>
+<td>timestamp of previous
+calendar of same mode</td>
+</tr>
+<tr class="row-even"><td>next</td>
+<td>integer</td>
+<td>timestamp of next
+calendar of same mode</td>
+</tr>
+<tr class="row-odd"><td>uid</td>
+<td>integer</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>pid</td>
+<td>integer</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="appointment">
+<h3><tt class="docutils literal"><span class="pre">{appointment}</span></tt><a class="headerlink" href="#appointment" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">DieMedialen\DmSimplecalendar\Domain\Model\Appointment</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="63%" />
+<col width="22%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Properties</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>attachments</td>
+<td><p class="first"><tt class="docutils literal"><span class="pre">TYPO3\CMS\Extbase\Persistence\ObjectStorage&lt;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">DieMedialen\DmSimplecalendar\Domain\Model\Attachment</span></tt></p>
+<p class="last"><tt class="docutils literal"><span class="pre">&gt;</span></tt></p>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>categories</td>
+<td><p class="first"><tt class="docutils literal"><span class="pre">TYPO3\CMS\Extbase\Persistence\ObjectStorage&lt;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">DieMedialen\DmSimplecalendar\Domain\Model\Category</span></tt></p>
+<p class="last"><tt class="docutils literal"><span class="pre">&gt;</span></tt></p>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>location</td>
+<td>string</td>
+<td>Use for city, name of
+organisation or something</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>The main description text</td>
+</tr>
+<tr class="row-even"><td>shortdescription</td>
+<td>string</td>
+<td>A short teaser text</td>
+</tr>
+<tr class="row-odd"><td>startdate</td>
+<td>DateTime</td>
+<td>StartDate of appointment</td>
+</tr>
+<tr class="row-even"><td>enddate</td>
+<td>DateTime</td>
+<td>EndDate of appointment</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>string</td>
+<td>The appointments title</td>
+</tr>
+<tr class="row-even"><td>uid</td>
+<td>integer</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>pid</td>
+<td>integer</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="appointment-attachments">
+<h3><tt class="docutils literal"><span class="pre">{appointment.attachments}</span></tt><a class="headerlink" href="#appointment-attachments" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">TYPO3\CMS\Extbase\Persistence\ObjectStorage&lt;DieMedialen\DmSimplecalendar\Domain\Model\Attachment&gt;</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="63%" />
+<col width="22%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Properties</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>title</td>
+<td>string</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>file</td>
+<td>string</td>
+<td>just the saved files name,
+not the full path</td>
+</tr>
+<tr class="row-even"><td>uid</td>
+<td>integer</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>pid</td>
+<td>integer</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="appointment-categories">
+<h3><tt class="docutils literal"><span class="pre">{appointment.categories}</span></tt><a class="headerlink" href="#appointment-categories" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">TYPO3\CMS\Extbase\Persistence\ObjectStorage&lt;DieMedialen\DmSimplecalendar\Domain\Model\Category&gt;</span></tt></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="63%" />
+<col width="22%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Properties</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>title</td>
+<td>string</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>color</td>
+<td>string</td>
+<td>you can use strings or
+HEX code for coloring</td>
+</tr>
+<tr class="row-even"><td>uid</td>
+<td>integer</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>pid</td>
+<td>integer</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="navigation-and-links-in-calendar-templates">
+<h2>Navigation and Links in calendar templates<a class="headerlink" href="#navigation-and-links-in-calendar-templates" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Generate a link to an appointment detail view:</p>
+<div class="highlight-typoscript"><div class="highlight"><pre>&lt;f:link.action action=&quot;show&quot; controller=&quot;Appointment&quot; arguments=&quot;{appointment:appointment}&quot;&gt;{appointment.title}&lt;/f:link.action&gt;
+</pre></div>
+</div>
+<p>The ACTION must be <tt class="docutils literal"><span class="pre">show</span></tt>, the CONTROLLER must be <tt class="docutils literal"><span class="pre">Appointment</span></tt> and an <tt class="docutils literal"><span class="pre">appointment</span></tt> must be given in ARGUMENTS</p>
+</li>
+<li><p class="first">Generate a prev/next link to navigate through your calendar</p>
+<div class="highlight-typoscript"><div class="highlight"><pre>&lt;f:link.action action=&quot;show&quot; controller=&quot;Calendar&quot; arguments=&quot;{viewTimestamp: viewCalendar.previous, viewMode: viewCalendar.mode}&quot;&gt;PREV&lt;/f:link.action&gt;
+</pre></div>
+</div>
+<p>The ACTION must be <tt class="docutils literal"><span class="pre">show</span></tt>, the CONTROLLER must be <tt class="docutils literal"><span class="pre">Calendar</span></tt> and a <tt class="docutils literal"><span class="pre">viewTimestamp</span></tt> and a <tt class="docutils literal"><span class="pre">viewMode</span></tt> must be given in ARGUMENTS</p>
+</li>
+</ol>
+</div>
+<div class="section" id="tutorials-examples">
+<h2>Tutorials / Examples<a class="headerlink" href="#tutorials-examples" title="Permalink to this headline">¶</a></h2>
+<p>To limit the displayed appointments, you can use the setting <tt class="docutils literal"><span class="pre">{settings.appointmentAmountLimit}</span></tt>.</p>
+<p>You can define this setting in each calendar-plugin in tab &#8220;Template&#8221; or you can define the setting in TypoScript-Setup:</p>
+<div class="highlight-typoscript"><div class="highlight"><pre>plugin.tx_dmsimplecalendar {
+    settings {
+        appointmentAmountLimit = 3
+    }
+}
+</pre></div>
+</div>
+<div class="highlight-html"><div class="highlight"><pre>...
+
+&lt;dmc:renderAsDayCalendars viewCalendar=&quot;{weekCalendar}&quot; as=&quot;dayCalendar&quot;&gt;
+
+    &lt;f:if condition=&quot;{dayCalendar.appointments -&gt; f:count()} &gt; 0&quot;&gt;
+
+    &lt;f:then&gt;
+
+        &lt;f:for each=&quot;{dayCalendar.appointments}&quot; as=&quot;appointment&quot; iteration=&quot;appointmentIterator&quot;&gt;
+
+            &lt;f:if condition=&quot;{appointmentIterator.index} &lt; {settings.appointmentAmountLimit}&quot;&gt;
+
+                &lt;f:link.action action=&quot;show&quot; controller=&quot;Appointment&quot; arguments=&quot;{appointment:appointment}&quot;&gt;{appointment.title}&lt;/f:link.action&gt;
+
+            &lt;/f:if&gt;
+
+        &lt;/f:for&gt;
+
+        &lt;f:if condition=&quot;{dayCalendar.appointments -&gt; f:count()} &gt; {settings.appointmentAmountLimit}&quot;&gt;
+
+            &lt;f:link.action action=&quot;show&quot; controller=&quot;Calendar&quot; arguments=&quot;{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}&quot;&gt;...&lt;/f:link.action&gt;
+
+        &lt;/f:if&gt;
+
+    &lt;/f:then&gt;
+
+    &lt;f:else&gt;
+
+        &lt;p&gt;{f:translate(key:&#39;tx_dmsimplecalendar_view_appointment_none&#39;,default:&#39;&#39;)}&lt;/p&gt;
+
+    &lt;/f:else&gt;
+
+    &lt;/f:if&gt;
+
+&lt;/dmc:renderAsDayCalendars&gt;
+
+...
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../Index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Developer Corner</a><ul>
+<li><a class="reference internal" href="#how-to-build-a-calendar">How to build a calendar</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#required-viewhelpers-to-build-a-calendar">Required ViewHelpers to build a calendar</a></li>
+<li><a class="reference internal" href="#simple-html-example-to-display-a-full-year">Simple HTML Example to display a full year!</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#main-variables">Main Variables</a><ul>
+<li><a class="reference internal" href="#viewcalendar"><tt class="docutils literal"><span class="pre">{viewCalendar}</span></tt></a></li>
+<li><a class="reference internal" href="#appointment"><tt class="docutils literal"><span class="pre">{appointment}</span></tt></a></li>
+<li><a class="reference internal" href="#appointment-attachments"><tt class="docutils literal"><span class="pre">{appointment.attachments}</span></tt></a></li>
+<li><a class="reference internal" href="#appointment-categories"><tt class="docutils literal"><span class="pre">{appointment.categories}</span></tt></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#navigation-and-links-in-calendar-templates">Navigation and Links in calendar templates</a></li>
+<li><a class="reference internal" href="#tutorials-examples">Tutorials / Examples</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../Configuration/Index.html"
+                        title="previous chapter">Configuration Reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../KnownProblems/Index.html"
+                        title="next chapter">Known Problems</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/Developer/Index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../KnownProblems/Index.html" title="Known Problems"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../Configuration/Index.html" title="Configuration Reference"
+             >previous</a> |</li>
+        <li><a href="../Index.html">dm_simplecalender 0.1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Salvatore Eckel.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

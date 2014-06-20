@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <type>module</type>
+        <description>Language labels for the dm_calendar extension in the Flexform formular</description>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="general.year">Year</label>
+            <label index="general.month">Month</label>
+            <label index="general.week">Week</label>
+            <label index="general.day">Day</label>
+            <label index="general.hour">Hour</label>
+            <label index="general.minute">Minute</label>
+            <label index="general.second">Second</label>
+        
+            <label index="mainsheet.title">General preferences</label>
+            <label index="mainsheet.calendarName">Calendarname (define a individual name for this calendarplugin - will be shown in frontend)</label>
+            <label index="mainsheet.periodType">Select View Type of the calendar (Year/Month/Day or a dynamic jQuery Calendar)</label>
+            <label index="mainsheet.jqFullcalendarViews">Available Views</label>
+            <label index="mainsheet.categories">Choose at least one category to display the categories events</label>
+
+            <label index="eventconfigurationsheet">Appointment View Settings</label>
+            <label index="eventconfigurationsheet.showIcsLink">Show ICS Link (iCalendar Download - .ics file)</label>
+            <label index="eventconfigurationsheet.showQrCode">Show QR Code to scan and share the URL of the event</label>
+            <label index="eventconfigurationsheet.excludeSelectedEvents">Exclude selected events from calendar</label>
+            <label index="eventconfigurationsheet.includeSelectedEvents">Include selected events into calendar</label>
+            
+            <label index="customizesheet.title">Month View Settigns</label>
+            <label index="customizesheet.displayCategoryColors">Display Category Colors</label>
+            <label index="customizesheet.displayCategoryColors.deactivate">Deactivate Category Colors</label>
+            <label index="customizesheet.displayCategoryColors.calendar">Show below calendar</label>
+            <label index="customizesheet.displayCategoryColors.calendarAppointments">Also highlight appointments</label>
+            <label index="customizesheet.weekdayLength">Please chosse how to display the weekday name in monthview</label>
+            <label index="customizesheet.weekdayLength.labelShort">Short weekday names (Mon Tue Wed..)</label>
+            <label index="customizesheet.weekdayLength.labelFull">Full weekday names (Monday Tuesday Wednesday...)</label>
+
+            <label index="templatesheet.template">Template</label>
+            <label index="templatesheet.appointmentAmountLimit">Limit appointments (use in template: {settings.appointmentAmountLimit})</label>
+            <label index="templatesheet.useThemeBundle">Choose a 'SimpleCalendar Themes Bundle'</label>
+            <label index="templatesheet.templateRootPath">Template directory (e.g. fileadmin/tempaltes/extensions/dm_simplecalendar/Resources/Private/Templates)</label>
+            <label index="templatesheet.partialRootPath">Partial directory (e.g. fileadmin/tempaltes/extensions/dm_simplecalendar/Resources/Private/Partials)</label>
+            <label index="templatesheet.layoutRootPath">Layout directory (e.g. fileadmin/tempaltes/extensions/dm_simplecalendar/Resources/Private/Layouts)</label>
+            
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="general.year">Jahr</label>
+            <label index="general.month">Monat</label>
+            <label index="general.week">Woche</label>
+            <label index="general.day">Tag</label>
+            <label index="general.hour">Stunde</label>
+            <label index="general.minute">Minute</label>
+            <label index="general.second">Sekunde</label>
+            
+            <label index="mainsheet.title">Allgemein Einstellungen</label>
+            <label index="mainsheet.calendarName">Kalendername (geben Sie diesem Kalenderplugin einen Namen - wird im Frontend angezeigt)</label>
+            <label index="mainsheet.periodType">Wählen Sie die Anzeigeart des Kalenders</label>
+            <label index="mainsheet.jqFullcalendarViews">Ansichten aktivieren</label>
+            <label index="mainsheet.categories">Es muss min. eine Kategorie gewählt werden, um die Termine der Kategorie anzuzeigen</label>
+
+            <label index="eventconfigurationsheet">Termin Anzeige Einstellungen</label>
+            <label index="eventconfigurationsheet.showIcsLink">ICS Link anzeigen (iCalendar Download - .ics Datei)</label>
+            <label index="eventconfigurationsheet.showQrCode">Zeige QR Code zum scannen und teilen der URL des Termin</label>
+            <label index="eventconfigurationsheet.excludeSelectedEvents">Gewählte Termine im Kalender verbergen</label>
+            <label index="eventconfigurationsheet.includeSelectedEvents">Gewählte Termine dem Kalender hinzufügen</label>
+
+            <label index="customizesheet.title">Monat Anzeige Einstellungen</label>
+            <label index="customizesheet.displayCategoryColors">Farbleitsystem anzeigen</label>
+            <label index="customizesheet.displayCategoryColors.deactivate">Nicht anzeigen</label>
+            <label index="customizesheet.displayCategoryColors.calendar">Unter dem Kalender anzeigen</label>
+            <label index="customizesheet.displayCategoryColors.calendarAppointments">Auch Termine markieren</label>
+            <label index="customizesheet.weekdayLength">Wie sollen die Namen der Wochentage angezeigt werden?</label>
+            <label index="customizesheet.weekdayLength.labelShort">Kurze Wochentag Namen (Mo Di Mi..)</label>
+            <label index="customizesheet.weekdayLength.labelFull">Volle Wochentag Namen (Montag Dienstag Mittwoch..)</label>
+            
+            <label index="templatesheet.template">Template</label>
+            <label index="templatesheet.useThemeBundle">Wähle ein 'SimpleCalendar Themes Bundle'</label>
+            <label index="templatesheet.appointmentAmountLimit">Anzahl Termine begrenzen (Verwende im Template: {settings.appointmentAmountLimit})</label>
+            <label index="templatesheet.templateRootPath">Template Verzeichnis (z.B. fileadmin/tempaltes/extensions/dm_simplecalendar/Resources/Private/Templates)</label>
+            <label index="templatesheet.partialRootPath">Partial Verzeichnis (z.B. fileadmin/tempaltes/extensions/dm_simplecalendar/Resources/Private/Partials)</label>
+            <label index="templatesheet.layoutRootPath">Layout Verzeichnis (z.B. fileadmin/tempaltes/extensions/dm_simplecalendar/Resources/Private/Layouts)</label>
+            
+        </languageKey>
+    </data>
+</T3locallang>

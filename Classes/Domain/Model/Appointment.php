@@ -48,7 +48,7 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     protected $categories;
 
     /**
-     * preEvent
+     * preAppointment
      *
      * @lazy
      * @var \DieMedialen\DmSimplecalendar\Domain\Model\Appointment

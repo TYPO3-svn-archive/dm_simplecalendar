@@ -25,7 +25,7 @@ You can create different calendar plugins which show different categories for ap
 
 You can highlight different categories with a color system.
 
-You can download an ICS file for each event to share your appointments.
+You can download an ICS file for each appointment to share your appointments.
 
 You can display QR Codes for your appointments.
 

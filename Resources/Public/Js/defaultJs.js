@@ -1,6 +1,26 @@
 
 (function($){
 
+        // BOOTSTRAP JS WITH LOCAL FALLBACK
+        if(typeof($.fn.modal) === 'undefined') {
+            console.log('JS  -> BS included..');
+            document.write('<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"><\/script>')
+        }
+
+        // BOOTSTRAP CDN FALLBACK CSS
+        $(document).ready(function() {
+
+            if( verifyStyle('form-inline') )
+            {
+            	console.log('CSS -> BS included..');
+                $("head").prepend("<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' type='text/css' media='screen'>");
+            }
+            else
+            {
+            	console.log('CSS -> BS already loaded');
+            }
+        });
+
         function verifyStyle(selector) {//http://stackoverflow.com/a/983817/579646
             var rules;
             var haveRule = false;
@@ -27,20 +47,4 @@
             return haveRule;
         }//eof
 
-        <!-- BOOTSTRAP JS WITH LOCAL FALLBACK-->
-        if(typeof($.fn.modal) === 'undefined') {document.write('<script src="<?=$path_js?>/bootstrap.min.js"><\/script>')}
-
-        <!-- BOOTSTRAP CDN FALLBACK CSS-->
-        $(document).ready(function() {
-
-            if( verifyStyle('form-inline') )
-            {
-            	console.log('i try to include bootstrap css..');
-                $("head").prepend("<link rel='stylesheet' href='<?=$path_css?>bootstrap.min.css' type='text/css' media='screen'>");
-            }
-            else
-            {
-            	console.log('bootstrap already loaded');
-            }
-        });
     })(jQuery);

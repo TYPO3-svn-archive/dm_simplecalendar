@@ -38,7 +38,7 @@ Users Manual
 
      (if you don't define a storage folder, the data will be saved on this page, where the calendar plugin is placed. You can also define different storage folder for each plugin in Tab “Behaviour”.)
 
-#. **Go to a page where you want to insert a calendar plugin. Create a category item and then create an event item using list view.**
+#. **Go to a page where you want to insert a calendar plugin. Create a category item and then create an appoitment item using list view.**
 
    - .. figure:: ../Images/UserManual/Pagetree.png
       :alt: Pagetree
@@ -64,7 +64,7 @@ Users Manual
 
 **That's it!**
 
-**Visit the page with the calendar plugin in the frontend, you see your first event shown in a calendar!**
+**Visit the page with the calendar plugin in the frontend, you see your first appointment shown in a calendar!**
 
 .. _user-faq:
 

@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_dmsimplecalendar_domain_model_appointment'] = array(
     'ctrl' => $TCA['tx_dmsimplecalendar_domain_model_appointment']['ctrl'],
     'interface' => array(
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, startdate, enddate, location, description, shortdescription, calendar, attachments, categories, pre_event',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, startdate, enddate, location, description, shortdescription, calendar, attachments, categories, pre_appointment',
     ),
     'types' => array(
-        '1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, startdate, enddate, location, description, shortdescription, calendar, attachments, categories, pre_event,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+        '1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, startdate, enddate, location, description, shortdescription, calendar, attachments, categories, pre_appointment,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
     ),
     'palettes' => array(
         '1' => array('showitem' => ''),
@@ -181,7 +181,7 @@ $TCA['tx_dmsimplecalendar_domain_model_appointment'] = array(
         ),
         'categories' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_db.xlf:tx_dmsimplecalendar_domain_model_event.categories',
+            'label' => 'LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_db.xlf:tx_dmsimplecalendar_domain_model_appointment.categories',
             'config' => array(
                 'type' => 'select',
                 'foreign_table' => 'tx_dmsimplecalendar_domain_model_category',
@@ -217,7 +217,7 @@ $TCA['tx_dmsimplecalendar_domain_model_appointment'] = array(
         ),
         'attachments' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_db.xlf:tx_dmsimplecalendar_domain_model_event.attachments',
+            'label' => 'LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_db.xlf:tx_dmsimplecalendar_domain_model_appointment.attachments',
             'config' => array(
                 'type' => 'select',
                 'foreign_table' => 'tx_dmsimplecalendar_domain_model_attachment',

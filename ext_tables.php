@@ -56,6 +56,7 @@ $TCA['tx_dmsimplecalendar_domain_model_appointment'] = array(
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_dmsimplecalendar_domain_model_calendar');
 $TCA['tx_dmsimplecalendar_domain_model_calendar'] = array(
     'ctrl' => array(
+        'hideTable' => TRUE,
         'title'    => 'LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_db.xlf:tx_dmsimplecalendar_domain_model_calendar',
         'label' => 'appointments',
         'tstamp' => 'tstamp',

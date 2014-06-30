@@ -24,7 +24,7 @@ SimpleCalendar
 		en
 
 	:Description:
-		Manual covering TYPO3 extension <extension name>
+		A simple calendar extension to display appointments <dm_simplecalendar>
 
 	:Keywords:
 		frontend, calendar, plugin, appointments, event, year, month, week, day, extbase, fluid, Die Medialen GmbH
@@ -33,10 +33,10 @@ SimpleCalendar
 		2014
 
 	:Author:
-		Salvatore Eckel
+		Salvatore Eckel, Kai Ratzeburg
 
 	:Email:
-		salvatore.eckel@diemedialen.de
+		salvatore.eckel@diemedialen.de, kai-ratzeburg@diemedialen.de
 
 	:License:
 		This document is published under the Open Content License

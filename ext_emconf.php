@@ -10,10 +10,10 @@
 
 $EM_CONF[$_EXTKEY] = array(
     'title' => 'SimpleCalendar',
-    'description' => '',
+    'description' => 'With this extension you can create appointments and display them in a calendar view.',
     'category' => 'plugin',
-    'author' => 'Kai Ratzeburg, Salvatore Eckel',
-    'author_email' => 'hello@kai-ratzeburg.de, salvatore.eckel@diemedialen.de',
+    'author' => 'Salvatore Eckel, Kai Ratzeburg',
+    'author_email' => 'salvaracer@gmx.de, hello@kai-ratzeburg.de',
     'author_company' => 'Die Medialen GmbH',
     'shy' => '',
     'priority' => '',
@@ -25,12 +25,10 @@ $EM_CONF[$_EXTKEY] = array(
     'modify_tables' => '',
     'clearCacheOnLoad' => 0,
     'lockType' => '',
-    'version' => '0.1.1',
+    'version' => '0.1.2',
     'constraints' => array(
         'depends' => array(
-            'extbase' => '6.0',
-            'fluid' => '6.0',
-            'typo3' => '6.0',
+            'typo3' => '6.0.0-6.2.99',
         ),
         'conflicts' => array(
         ),

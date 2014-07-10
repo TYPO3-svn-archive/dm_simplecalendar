@@ -21,5 +21,14 @@ commit listing.
 	Version                           Changes                           
 	================================= ===================================================================
 	0.0.1                             Initial Release
-	.                                 Manual Created
+	.                                 manual created
+	================================= ===================================================================
+	0.1.1                             First upload to TER
+	.                                 ReST documentation created
+	================================= ===================================================================
+	0.1.2                             Extension configuration updated for better listing in TER
+	.                                 ReST documentation updated
+	================================= ===================================================================
+	0.1.3                             Restructured extension and documentation for TER
+	.                                 ReST documentation updated
 	================================= ===================================================================

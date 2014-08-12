@@ -25,11 +25,6 @@ namespace DieMedialen\DmSimplecalendar\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-define('STR_YEAR', 'year');
-define('STR_MONTH', 'month');
-define('STR_WEEK', 'week');
-define('STR_DAY', 'day');
-
 /**
  * ViewCalendar
  *
@@ -37,6 +32,10 @@ define('STR_DAY', 'day');
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class ViewCalendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
+    public static $modeYear = 'year';
+    public static $modeMonth = 'month';
+    public static $modeWeek = 'week';
+    public static $modeDay = 'day';
 
     /**
      * objectManager
@@ -58,7 +57,7 @@ class ViewCalendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
      *
      * @var \string
      */
-    protected $mode = 'month';
+    protected $mode;
 
     /**
      * appointments
@@ -66,6 +65,13 @@ class ViewCalendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
      * @var \array
      */
     protected $appointments;
+
+    /**
+     * Construct with default mode.
+     */
+    public function __construct() {
+        $this->setMode(self::$modeMonth);
+    }
 
     /**
      * Gets the timestamp.
@@ -153,19 +159,19 @@ class ViewCalendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
         $startDate = new \DateTime('@' . $this->getTimestamp());
 
         switch($this->getMode()) {
-            case STR_YEAR:
+            case self::$modeYear:
                 $startDate->modify('first day of January');
                 break;
-            case STR_MONTH:
+            case self::$modeMonth:
                 $startDate->modify('first day of this month');
                 break;
-            case STR_WEEK:
+            case self::$modeWeek:
                 $date = date('w', $startDate->getTimestamp());
                 if($date != 1) {
                     $startDate->modify('last Monday');
                 }
                 break;
-            case STR_DAY:
+            case self::$modeDay:
                 break;
             default:
                 throw new \Exception("ViewMode is not known in ViewCalendar.");
@@ -185,19 +191,19 @@ class ViewCalendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
         $endDate = new \DateTime('@' . $this->getTimestamp());
 
         switch($this->getMode()) {
-            case STR_YEAR:
+            case self::$modeYear:
                 $endDate->modify('last day of December');
                 break;
-            case STR_MONTH:
+            case self::$modeMonth:
                 $endDate->modify('last day of this month');
                 break;
-            case STR_WEEK:
+            case self::$modeWeek:
                 $date = date('w', $endDate->getTimestamp());
                 if($date != 0) {
                     $endDate->modify('next Sunday');
                 }
                 break;
-            case STR_DAY:
+            case self::$modeDay:
                 break;
             default:
                 throw new \Exception("ViewMode is not known in ViewCalendar.");
@@ -281,6 +287,20 @@ class ViewCalendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
         return ($check === $timestampValue)
                 AND ((int) $timestampValue <=  PHP_INT_MAX)
                 AND ((int) $timestampValue >= ~PHP_INT_MAX);
+    }
+
+    /**
+     * Checks if a string is a valid timestamp.
+     *
+     * @param \string $timestampValue
+     * @return \boolean
+     */
+    public function getIsWeekend() {
+        if(($this->mode == self::$modeDay) && (date('N', $this->timestamp) >= 6)) {
+            return TRUE;
+        } 
+
+        return FALSE;
     }
 }
 ?>

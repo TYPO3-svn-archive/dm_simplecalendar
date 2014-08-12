@@ -19,4 +19,10 @@ if (!defined('TYPO3_MODE')) {
     )
 );
 
+$extConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]);
+
+if ($extConfiguration['enableDmSimpleCalendarPageTSconfig']) {
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:dm_simplecalendar/Configuration/TypoScript/pageTSconfig.txt">');
+}
+
 ?>

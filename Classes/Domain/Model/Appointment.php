@@ -36,6 +36,7 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * attachments
      *
+     * @lazy
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\DieMedialen\DmSimplecalendar\Domain\Model\Attachment>
      */
     protected $attachments;
@@ -43,6 +44,7 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * categories
      *
+     * @lazy
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\DieMedialen\DmSimplecalendar\Domain\Model\Category>
      */
     protected $categories;

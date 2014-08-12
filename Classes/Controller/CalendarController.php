@@ -25,16 +25,14 @@ namespace DieMedialen\DmSimplecalendar\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-define('STR_PERIOD_TYPE', 'periodType');
-
 /**
  * CalendarController.
  *
  * @package dm_simplecalendar
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
 class CalendarController extends AbstractController {
+    public static $periodType = 'periodType';
 
     /**
      * action show
@@ -46,10 +44,6 @@ class CalendarController extends AbstractController {
     public function showAction($viewMode = NULL, $viewTimestamp = NULL) {
         /* required line for tempalte switch system */
         $this->view = $this->handleCustomTemplatePaths($this->view, $this->settings);
-
-        ini_set('max_execution_time', '60');
-        ini_set('memory_limit', '64M');
-
         $this->setupTimezoneAndLanguage();
         $viewCalendar = $this->objectManager->get('DieMedialen\DmSimplecalendar\Domain\Model\ViewCalendar');
 
@@ -57,8 +51,8 @@ class CalendarController extends AbstractController {
             $viewCalendar->setMode($viewMode);
         } 
         else {
-            if ($this->settings[STR_PERIOD_TYPE] !== NULL && !empty($this->settings[STR_PERIOD_TYPE])) {
-                $viewCalendar->setMode($this->settings[STR_PERIOD_TYPE]);
+            if ($this->settings[self::$periodType] !== NULL && !empty($this->settings[self::$periodType])) {
+                $viewCalendar->setMode($this->settings[self::$periodType]);
             }
         }
 
@@ -88,8 +82,10 @@ class CalendarController extends AbstractController {
             if(count($_REQUEST['tx_dmsimplecalendar_simplecalendar']) == 2 && $_REQUEST['tx_dmsimplecalendar_simplecalendar']['action'] == 'show' && $_REQUEST['tx_dmsimplecalendar_simplecalendar']['controller'] = 'Calendar') {
                 return TRUE;
             }
-           return FALSE;
+
+            return FALSE;
         }
+        
         return TRUE;
     }
 }

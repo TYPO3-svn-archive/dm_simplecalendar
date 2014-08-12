@@ -1,2 +1,2 @@
-# cat=basic/enable; type=boolean; label=Enable pageTSconfig from this extension (disable on your own risk)
-enableDmCalendarPageTSconfig = 1
+# cat=basic/enable; type=boolean; label=Show hidden objects in list view
+#enableDmSimpleCalendarPageTSconfig = 1

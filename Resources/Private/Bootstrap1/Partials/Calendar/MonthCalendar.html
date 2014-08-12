@@ -57,6 +57,8 @@
                                                 <f:then>
                                                     <div class="list-group">
                                                     <f:for each="{dayCalendar.appointments}" as="appointment" iteration="appointmentIterator">
+                                                    <f:if condition="{settings.appointmentAmountLimit}">
+                                                    <f:then>
                                                         <f:if condition="{appointmentIterator.index} < {settings.appointmentAmountLimit}">
                                                         <div class="list-group-item list-group-item-warning">
                                                             <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}">{appointment.title}</f:link.action>
@@ -65,13 +67,27 @@
                                                             
                                                         </div>
                                                         </f:if>
-                                                    </f:for>
-                                                    </div>
-                                                    <!-- START: More Link to day mode -->
-                                                    <f:if condition="{dayCalendar.appointments -> f:count()} > {settings.appointmentAmountLimit}">
-                                                        <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">...</f:link.action>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <div class="list-group-item list-group-item-warning">
+                                                            <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}">{appointment.title}</f:link.action>
+
+                                                            <f:render partial="Calendar/Blocks/ItemCategoryColorBlock" arguments="{appointment:appointment}" />
+                                                            
+                                                        </div>
+                                                    </f:else>
                                                     </f:if>
-                                                    <!-- END: More Link to day mode -->
+                                                    </f:for>
+                                                    <f:if condition="{settings.appointmentAmountLimit}">
+                                                        <!-- START: More Link to day mode -->
+                                                        <f:if condition="{dayCalendar.appointments -> f:count()} > {settings.appointmentAmountLimit}">
+                                                        <div class="list-group-item list-group-item-warning">
+                                                            <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">...</f:link.action>
+                                                        </div>
+                                                        </f:if>
+                                                        <!-- END: More Link to day mode -->
+                                                    </f:if>
+                                                    </div>
                                                 </f:then>
                                                 <f:else>
                                                     <p>

@@ -1,8 +1,9 @@
 {namespace dmd=DieMedialen\DmDebugger\ViewHelpers} {namespace dmc=DieMedialen\DmSimplecalendar\ViewHelpers}
-<h3>
-    {f:translate(key:'tx_dmsimplecalendar_view_dayview',default:'Tagesansicht')}&nbsp;
-    <f:format.date format="d.m.Y">{viewCalendar.timestamp}</f:format.date>
-</h3>
+<div class="calendar-day-header">
+    <h3>
+        {f:translate(key:'tx_dmsimplecalendar_view_dayview',default:'Tagesansicht')}&nbsp;<f:format.date format="d.m.">{viewCalendar.timestamp}</f:format.date><f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.timestamp, viewMode: 'year'}"><f:format.date format="Y">{viewCalendar.timestamp}</f:format.date></f:link.action>
+    </h3>
+</div>
 
 <br />
 
@@ -76,7 +77,7 @@
 
                         </f:then>
                         <f:else>
-<!-- KEINE TERMINE VORHANDEN -->
+                            {f:translate(key:'calendar.day.noAppointments',default:'')}
                         </f:else>
                         </f:if>
                 </f:then>
@@ -89,9 +90,8 @@
     </f:if>
 </dmc:renderAsDayCalendars>
 
-
-
 <br />
+
 <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.previous, viewMode: viewCalendar.mode}">
     {f:translate(key:'tx_dmsimplecalendar_view_date_prevday',default:'Vorheriger Tag')}
 </f:link.action>

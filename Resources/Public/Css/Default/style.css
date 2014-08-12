@@ -88,6 +88,10 @@ table.calendar td.calendar-month-name {
 table.calendar td.calendar-month-name a {
     color: black;
 }
+div.tx-dm-simplecalendar.dmsimplecalendar_simplecalendar > div.calendar-day-header > h3 > a {
+    color: black;
+}
+
 table.calendar td.calendar-kw-head, table.calendar td.calendar-day-head {
     background: #C1DBF5;
     font-weight:bold;

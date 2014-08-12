@@ -1,2 +1,3 @@
 # hide "MOBELNAME"-table in list, because create them via IRRE logic in "OTHER-MODELNAME"
-#mod.web_list.hideTables = tx_dmsimplecalendar_domain_model_calendar
+mod.web_list.table.tx_dmsimplecalendar_domain_model_attachment.hideTable = 1
+mod.web_list.hideTables = tx_dmsimplecalendar_domain_model_attachment

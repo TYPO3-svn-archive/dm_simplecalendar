@@ -44,7 +44,7 @@
                         <f:then>
                             <f:if condition="{dayCalendar.timestamp} <= {viewCalendar.endDate.timestamp}">
                                 <f:then>
-                                    <td class="calendar-day">
+                                    <td class="calendar-day{f:if(condition: '{dayCalendar.isWeekend}', then: ' weekend', else: '')}">
                                         <div class="day-number">
                                             <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">
                                                 <f:format.date format="d">{dayCalendar.timestamp}</f:format.date>
@@ -53,22 +53,36 @@
                                         <f:if condition="{dayCalendar.appointments -> f:count()} > 0">
                                             <f:then>
                                                 <f:for each="{dayCalendar.appointments}" as="appointment" iteration="appointmentIterator">
-                                                    <f:if condition="{appointmentIterator.index} < 3">
-                                                    <div class="calendar-item">
+                                                <f:if condition="{settings.appointmentAmountLimit}">
+                                                <f:then>
+                                                    <f:if condition="{appointmentIterator.index} < {settings.appointmentAmountLimit}">
+                                                    <div class="item">
                                                         <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}">{appointment.title}</f:link.action>
+
+                                                        <f:render partial="Calendar/Blocks/ItemCategoryColorBlock" arguments="{appointment:appointment}" />
                                                     </div>
-                                                    <f:render partial="Calendar/Blocks/ItemCategoryColorBlock" arguments="{appointment:appointment}" />
                                                     </f:if>
-                                                </f:for>
-                                                <!-- START: More Link to day mode -->
-                                                <f:if condition="{dayCalendar.appointments -> f:count()} > 3">
-                                                    <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">...</f:link.action>
+                                                </f:then>
+                                                <f:else>
+                                                    <div class="item">
+                                                        <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}">{appointment.title}</f:link.action>
+
+                                                        <f:render partial="Calendar/Blocks/ItemCategoryColorBlock" arguments="{appointment:appointment}" />
+                                                    </div>
+                                                </f:else>
                                                 </f:if>
-                                                <!-- END: More Link to day mode -->
+                                                </f:for>
+                                                <f:if condition="{settings.appointmentAmountLimit}">
+                                                    <!-- START: More Link to day mode -->
+                                                    <f:if condition="{dayCalendar.appointments -> f:count()} > {settings.appointmentAmountLimit}">
+                                                        <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">...</f:link.action>
+                                                    </f:if>
+                                                    <!-- END: More Link to day mode -->
+                                                </f:if>
                                             </f:then>
                                             <f:else>
                                                 <p>
-                                                    {f:translate(key:'tx_dmsimplecalendar_view_appointment_none',default:'')}
+                                                    {f:translate(key:'calendar.month.noAppointments',default:'')}
                                                 </p>
                                             </f:else>
                                             <br />
@@ -76,7 +90,7 @@
                                     </td>
                                 </f:then>
                                 <f:else>
-                                    <td class="calendar-day-np">
+                                    <td class="calendar-day-np{f:if(condition: '{dayCalendar.isWeekend}', then: ' weekend', else: '')}">
                                         <div class="day-number">
                                             <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">
                                                 <f:format.date format="d">{dayCalendar.timestamp}</f:format.date>
@@ -87,7 +101,7 @@
                             </f:if>
                         </f:then>
                         <f:else>
-                            <td class="calendar-day-np">
+                            <td class="calendar-day-np{f:if(condition: '{dayCalendar.isWeekend}', then: ' weekend', else: '')}">
                                 <div class="day-number">
                                     <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">
                                         <f:format.date format="d">{dayCalendar.timestamp}</f:format.date>

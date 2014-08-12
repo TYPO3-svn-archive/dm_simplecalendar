@@ -33,16 +33,7 @@ namespace DieMedialen\DmSimplecalendar\Controller;
  *
  */
 class AppointmentController extends AbstractController {
-
     const ICAL_DT_FORMAT = 'Ymd\THis\Z';
-
-    /**
-     * initialize action
-     *
-     * @return void
-     */
-    protected function initializeAction() {
-    }
 
     /**
      * action show
@@ -53,7 +44,6 @@ class AppointmentController extends AbstractController {
     public function showAction(\DieMedialen\DmSimplecalendar\Domain\Model\Appointment $appointment) {
         /* required line for tempalte switch system */
         $this->view = $this->handleCustomTemplatePaths($this->view, $this->settings);
-
         $this->view->assign('appointment', $appointment);
     }
 

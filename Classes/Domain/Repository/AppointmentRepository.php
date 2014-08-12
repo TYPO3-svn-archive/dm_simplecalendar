@@ -32,6 +32,11 @@ namespace DieMedialen\DmSimplecalendar\Domain\Repository;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class AppointmentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+    protected static $columnUid = 'uid';
+    protected static $columnCategories = 'categories';
+    protected static $columnStartTime = 'starttime';
+    protected static $columnEndTime = 'endtime';
+
     /**
      * Get all appointments from calendar.
      * 
@@ -55,7 +60,7 @@ class AppointmentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
                 $categoryUids = explode(",", $categories);
                 
                 foreach($categoryUids as $categoryUid) {
-                    $categoryOrConstraints[] = $query->contains('categories', $categoryUid);
+                    $categoryOrConstraints[] = $query->contains(self::$columnCategories, $categoryUid);
                 }
                 
                 $categoryConstraints = $query->logicalOr($categoryOrConstraints);
@@ -64,7 +69,7 @@ class AppointmentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
                 $excludeEventsUids = explode(',', $excludeEvents);
 
                 foreach($excludeEventsUids as $excludeEventsUid) {
-                    $excludeEventsOrConstraints[] = $query->logicalNot($query->equals('uid', $excludeEventsUid));
+                    $excludeEventsOrConstraints[] = $query->logicalNot($query->equals(self::$columnUid, $excludeEventsUid));
                 }
                 
                 $excludeEventsConstraints = $query->logicalAnd($excludeEventsOrConstraints);
@@ -74,7 +79,7 @@ class AppointmentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
                 $includeEventsUids = explode(',', $includeEvents);
                 
                 foreach($includeEventsUids as $includeEventsUid) {
-                    $includeEventsOrConstraints[] = $query->equals('uid', $includeEventsUid);
+                    $includeEventsOrConstraints[] = $query->equals(self::$columnUid, $includeEventsUid);
                 }
                 
                 $includeEventsConstraints = $query->logicalAnd($query->logicalOr($includeEventsOrConstraints));
@@ -113,26 +118,25 @@ class AppointmentRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
         $queryContraints[] = $query->logicalOr(
             $query->logicalAnd(
-                $query->greaterThanOrEqual('startdate', $viewCalendar->getStartDate()),
-                $query->lessThanOrEqual('enddate', $viewCalendar->getEndDate())
+                $query->greaterThanOrEqual(self::$columnStartTime, $viewCalendar->getStartDate()),
+                $query->lessThanOrEqual(self::$columnEndTime, $viewCalendar->getEndDate())
             ),
             $query->logicalAnd(
-                $query->lessThanOrEqual('startdate', $viewCalendar->getStartDate()),
-                $query->lessThanOrEqual('enddate', $viewCalendar->getEndDate())
+                $query->lessThanOrEqual(self::$columnStartTime, $viewCalendar->getStartDate()),
+                $query->lessThanOrEqual(self::$columnEndTime, $viewCalendar->getEndDate())
             ),
             $query->logicalAnd(
-                $query->lessThanOrEqual('startdate', $viewCalendar->getStartDate()),
-                $query->greaterThanOrEqual('enddate', $viewCalendar->getEndDate())
+                $query->lessThanOrEqual(self::$columnStartTime, $viewCalendar->getStartDate()),
+                $query->greaterThanOrEqual(self::$columnEndTime, $viewCalendar->getEndDate())
             ),
             $query->logicalAnd(
-                $query->greaterThanOrEqual('startdate', $viewCalendar->getStartDate()),
-                $query->greaterThanOrEqual('enddate', $viewCalendar->getEndDate())
+                $query->greaterThanOrEqual(self::$columnStartTime, $viewCalendar->getStartDate()),
+                $query->greaterThanOrEqual(self::$columnEndTime, $viewCalendar->getEndDate())
             )
         );
         
         $query->matching($query->logicalAnd($queryContraints));
-
-        $query->setOrderings(array('startdate' => \Tx_Extbase_Persistence_QueryInterface::ORDER_DESCENDING));
+        $query->setOrderings(array(self::$columnStartTime => \Tx_Extbase_Persistence_QueryInterface::ORDER_DESCENDING));
 
         return $query->execute();
     }

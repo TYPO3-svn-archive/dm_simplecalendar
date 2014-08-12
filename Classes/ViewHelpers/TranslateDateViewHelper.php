@@ -33,6 +33,7 @@ namespace DieMedialen\DmSimplecalendar\ViewHelpers;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class TranslateDateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+    
     /**
      * Render Monthname.
      * 
@@ -50,14 +51,15 @@ class TranslateDateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractV
         $dateName = '';
 
         switch($type) {
-            case 'month':
+            case \DieMedialen\DmSimplecalendar\Domain\Model\ViewCalendar::$modeMonth:
                 $dateName = $dateTime->format('F');
                 $translationPrefix = 'date.month.';
                 break;
-            case 'week':
-                $sonar = 'sonar';
+            case \DieMedialen\DmSimplecalendar\Domain\Model\ViewCalendar::$modeWeek:
+                $sonarFix = 'sonar';
+                unset($sonarFix);    
                 break;
-            case 'day':
+            case \DieMedialen\DmSimplecalendar\Domain\Model\ViewCalendar::$modeDay:
                 $dateName = $dateTime->format('D');
                 $translationPrefix = 'date.weekday.';
                 break;

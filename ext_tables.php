@@ -86,13 +86,13 @@ $TCA['tx_dmsimplecalendar_domain_model_calendar'] = array(
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_dmsimplecalendar_domain_model_attachment');
 $TCA['tx_dmsimplecalendar_domain_model_attachment'] = array(
     'ctrl' => array(
+        'hideTable' => TRUE,
         'title'    => 'LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_db.xlf:tx_dmsimplecalendar_domain_model_attachment',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
         'dividers2tabs' => TRUE,
-        'sortby' => 'sorting',
 
         'versioningWS' => 2,
         'versioning_followPages' => TRUE,

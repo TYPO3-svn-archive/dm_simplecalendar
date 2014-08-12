@@ -58,29 +58,6 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     protected $attachmentRepository;
 
-    protected function initializeAction() {
-    }
-
-    /**
-     * Debug object.
-     *
-     * @param $object
-     * @param \boolean $useHTML
-     * @param \boolean $forceExit
-     */
-    public function debug($object, $useHTML = TRUE, $forceExit = FALSE) {
-        if($useHTML) {
-            \DieMedialen\DmDebugger\Utility\DmDebugger::debugHtml($object);
-        }
-        else {
-            \DieMedialen\DmDebugger\Utility\DmDebugger::debugText($object);
-        }
-
-        if($forceExit) {
-            die();
-        }
-    }
-
     /**
      * Setup the timezone and language.
      */
@@ -102,17 +79,18 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         $extensionManager = new \TYPO3\CMS\Core\Utility\ExtensionManagementUtility();
         $generalUtility = new \TYPO3\CMS\Core\Utility\GeneralUtility();
 
+        $extPathPrivateResources = 'EXT:dm_simplecalendar/Resources/Private/';
+
         $customTemplateSettings = array();
-        $customTemplateSettings['EXT:dm_simplecalendar/Resources/Private/Default/'] = array();
-        $customTemplateSettings['EXT:dm_simplecalendar/Resources/Private/Default/']['cssFilePath'] = $extensionManager->siteRelPath($this->request->getControllerExtensionKey()) . "Resources/Public/Css/style.css";
-        $customTemplateSettings['EXT:dm_simplecalendar/Resources/Private/Bootstrap1/'] = array();
-        $customTemplateSettings['EXT:dm_simplecalendar/Resources/Private/Bootstrap1/']['cssFilePath'] = $extensionManager->siteRelPath($this->request->getControllerExtensionKey()) . "Resources/Public/Css/Bootstrap1/style.css";
+        $customTemplateSettings[$extPathPrivateResources . 'Default/'] = array();
+        $customTemplateSettings[$extPathPrivateResources . 'Default/']['cssFilePath'] = $extensionManager->siteRelPath($this->request->getControllerExtensionKey()) . "Resources/Public/Css/Default/style.css";
+        $customTemplateSettings[$extPathPrivateResources . 'Bootstrap1/'] = array();
+        $customTemplateSettings[$extPathPrivateResources . 'Bootstrap1/']['cssFilePath'] = $extensionManager->siteRelPath($this->request->getControllerExtensionKey()) . "Resources/Public/Css/Bootstrap1/style.css";
 
         if($settings['useCustomTemplates'] != 1) {
             $view->setPartialRootPath($settings['customTemplatePath'] . "Partials/");
             $view->setLayoutRootPath($settings['customTemplatePath'] . "Layouts/");
             $view->setTemplateRootPath($settings['customTemplatePath'] . "Templates/");
-
 
             $cssFile = $customTemplateSettings[$settings['customTemplatePath']]['cssFilePath'];
 

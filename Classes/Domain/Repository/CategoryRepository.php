@@ -32,6 +32,7 @@ namespace DieMedialen\DmSimplecalendar\Domain\Repository;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class CategoryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+    protected static $columnUid = 'uid';
 
     /**
      * Find Categories by uid.
@@ -51,7 +52,7 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         }
 
         foreach($categoryUids as $categoryUid) {
-            $queryContraints[] = $query->equals('uid', $categoryUid);
+            $queryContraints[] = $query->equals(self::$columnUid, $categoryUid);
         }
         
         if($queryContraints) {

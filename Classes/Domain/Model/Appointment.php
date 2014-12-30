@@ -34,20 +34,19 @@ namespace DieMedialen\DmSimplecalendar\Domain\Model;
 class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
     /**
-     * attachments
-     *
-     * @lazy
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\DieMedialen\DmSimplecalendar\Domain\Model\Attachment>
-     */
-    protected $attachments;
-
-    /**
      * categories
      *
-     * @lazy
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\DieMedialen\DmSimplecalendar\Domain\Model\Category>
+     * @cascade remove
      */
-    protected $categories;
+    protected $categories = NULL;
+
+    /**
+     * media
+     *
+     * @var \DieMedialen\DmSimplecalendar\Domain\Model\Media
+     */
+    protected $media = NULL;
 
     /**
      * preAppointment
@@ -102,22 +101,43 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     protected $title;
 
     /**
-     * Returns the attachments
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\DieMedialen\DmSimplecalendar\Domain\Model\Attachment> $attachments
+     * __construct
      */
-    public function getAttachments() {
-        return $this->attachments;
+    public function __construct() {
+        //Do not remove the next line: It would break the functionality
+        $this->initStorageObjects();
     }
 
     /**
-     * Sets the attachments
+     * Initializes all ObjectStorage properties
+     * Do not modify this method!
+     * It will be rewritten on each save in the extension builder
+     * You may modify the constructor of this class instead
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\DieMedialen\DmSimplecalendar\Domain\Model\Attachment> $attachments
      * @return void
      */
-    public function setAttachments(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $attachments) {
-        $this->attachments = $attachments;
+    protected function initStorageObjects() {
+        $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    }
+
+    /**
+     * Adds a Category
+     *
+     * @param \DieMedialen\DmSimplecalendar\Domain\Model\Category $category
+     * @return void
+     */
+    public function addCategory(\DieMedialen\DmSimplecalendar\Domain\Model\Category $category) {
+        $this->categories->attach($category);
+    }
+
+    /**
+     * Removes a Category
+     *
+     * @param \DieMedialen\DmSimplecalendar\Domain\Model\Category $categoryToRemove The Category to be removed
+     * @return void
+     */
+    public function removeCategory(\DieMedialen\DmSimplecalendar\Domain\Model\Category $categoryToRemove) {
+        $this->categories->detach($categoryToRemove);
     }
 
     /**
@@ -137,6 +157,25 @@ class Appointment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      */
     public function setCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories) {
         $this->categories = $categories;
+    }
+
+    /**
+     * Returns the media
+     *
+     * @return \DieMedialen\DmSimplecalendar\Domain\Model\Media $media
+     */
+    public function getMedia() {
+        return $this->media;
+    }
+
+    /**
+     * Sets the media
+     *
+     * @param \DieMedialen\DmSimplecalendar\Domain\Model\Media $media
+     * @return void
+     */
+    public function setMedia(\DieMedialen\DmSimplecalendar\Domain\Model\Media $media) {
+        $this->media = $media;
     }
 
     /**

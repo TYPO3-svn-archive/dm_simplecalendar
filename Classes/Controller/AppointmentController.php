@@ -54,11 +54,12 @@ class AppointmentController extends AbstractController {
      * @return void
      */
     protected function icsDownloadAction(\DieMedialen\DmSimplecalendar\Domain\Model\Appointment $appointment) {
+        // prepare variables
         $name = $appointment->getTitle();
         $start = $appointment->getStartdate()->getTimestamp();
         $end = $appointment->getEnddate()->getTimestamp();
         $description = strip_tags($appointment->getDescription());
-        $description = str_replace(",", "\,", $description);
+        $description = preg_replace('/([\,;])/','\\\$1', $description);
         $description = htmlspecialchars_decode($description);
         $description = html_entity_decode($description);
 
@@ -86,14 +87,13 @@ DESCRIPTION:Reminder
 END:VALARM
 END:VEVENT
 END:VCALENDAR";
-
-        header("Content-type:text/calendar; charset=utf-8");
+        // set correct headers
+        header("Content-type: text/calendar; charset=utf-8");
         header('Content-Disposition: attachment; filename="'.$name.'.ics"');
         Header('Content-Length: '.strlen($data));
         Header('Connection: close');
         echo $data;
         exit;
     }
-
 }
 ?>

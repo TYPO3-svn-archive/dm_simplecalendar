@@ -7,20 +7,20 @@
 <dmc:renderAsMonthCalendars viewCalendar="{viewCalendar}" as="monthCalendar">
     <h4>
         <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: monthCalendar.timestamp, viewMode: monthCalendar.mode}">
-            <f:format.date format="F">{monthCalendar.timestamp}</f:format.date>
+            <dmc:translateDate dateTime="{monthCalendar.startDate}" fullName="1" type="month" />
         </f:link.action>
     </h4>
     <table cellpadding="0" cellspacing="0" class="calendar">
         <thead>
             <tr class="calendar-row">
-                <td class="calendar-kw-head">{f:translate(key:'date.cw',default:'KW')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.1',default:'Mo')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.2',default:'Di')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.3',default:'Mi')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.4',default:'Do')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.5',default:'Fr')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.6',default:'Sa')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.0',default:'So')}</td>
+                <td class="calendar-kw-head">{f:translate(key: 'date.cw', default:'CW')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.1', default:'Mon')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.2', default:'Tue')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.3', default:'Wed')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.4', default:'Thu')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.5', default:'Fri')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.6', default:'Sat')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.0', default:'Sun')}</td>
             </tr>
         </thead>
         <tbody>
@@ -46,15 +46,23 @@
                                             </div>
                                             <f:if condition="{dayCalendar.appointments -> f:count()} > 0">
                                                 <f:then>
-                                                    <p>
-                                                        <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">
-                                                            <f:translate key="tx_dmsimplecalendar_view_appointment_count" />:
-                                                            <f:count subject="{dayCalendar.appointments}" /></f:link.action>
-                                                    </p>
+                                                    <f:for each="{dayCalendar.appointments}" as="appointment" iteration="appointmentIterator">
+                                                        <f:if condition="{appointmentIterator.index} < 3">
+                                                        <div class="calendar-item">
+                                                            <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}">{appointment.title}</f:link.action>
+                                                        </div>
+                                                        <f:render partial="Calendar/Blocks/ItemCategoryColorBlock" arguments="{appointment:appointment}" />
+                                                        </f:if>
+                                                    </f:for>
+                                                    <!-- START: More Link to day mode -->
+                                                    <f:if condition="{dayCalendar.appointments -> f:count()} > 3">
+                                                        <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">...</f:link.action>
+                                                    </f:if>
+                                                    <!-- END: More Link to day mode -->
                                                 </f:then>
                                                 <f:else>
                                                     <p>
-                                                        {f:translate(key:'tx_dmsimplecalendar_view_appointment_none',default:'')}
+                                                        {f:translate(key: 'calendar.year.noAppointments', default:'')}
                                                     </p>
                                                 </f:else>
                                                 <br />

@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_dmsimplecalendar_domain_model_appointment'] = array(
     'ctrl' => $TCA['tx_dmsimplecalendar_domain_model_appointment']['ctrl'],
     'interface' => array(
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, startdate, enddate, location, description, shortdescription, calendar, attachments, categories, pre_appointment',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, startdate, enddate, location, description, shortdescription, calendar, categories, media, pre_appointment',
     ),
     'types' => array(
-        '1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, startdate, enddate, location, description, shortdescription, calendar, attachments, categories, pre_appointment,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime'),
+        '1' => array('showitem' => 'title, startdate, enddate, location, description, shortdescription, calendar, categories, pre_appointment,--div--;Referenzen,media,--div--;Translate,sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource;;1,--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,starttime, endtime,hidden, '),
     ),
     'palettes' => array(
         '1' => array('showitem' => ''),
@@ -133,7 +133,7 @@ $TCA['tx_dmsimplecalendar_domain_model_appointment'] = array(
                 'wrap' => 'off',
                 'eval' => 'trim'
             ),
-            'defaultExtras' => 'richtext[]'
+            //'defaultExtras' => 'richtext[]'
         ),
         'startdate' => array(
             'exclude' => 0,
@@ -179,76 +179,21 @@ $TCA['tx_dmsimplecalendar_domain_model_appointment'] = array(
                 'type' => 'passthrough',
             ),
         ),
-        'categories' => array(
+        'media' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_db.xlf:tx_dmsimplecalendar_domain_model_appointment.categories',
+            'label' => 'LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_db.xlf:tx_dmsimplecalendar_domain_model_appointment.media',
+            'label' => 'Media',
             'config' => array(
-                'type' => 'select',
-                'foreign_table' => 'tx_dmsimplecalendar_domain_model_category',
-                'MM' => 'tx_dmsimplecalendar_appointment_category_mm',
-                'size' => 10,
-                'autoSizeMax' => 30,
-                'maxitems' => 9999,
-                'multiple' => 0,
-                'wizards' => array(
-                    '_PADDING' => 1,
-                    '_VERTICAL' => 1,
-                    'edit' => array(
-                        'type' => 'popup',
-                        'title' => 'Edit',
-                        'script' => 'wizard_edit.php',
-                        'icon' => 'edit2.gif',
-                        'popup_onlyOpenIfSelected' => 1,
-                        'JSopenParams' => 'height=600,width=580,status=0,menubar=0,scrollbars=1',
-                        ),
-                    'add' => Array(
-                        'type' => 'script',
-                        'title' => 'Create new',
-                        'icon' => 'add.gif',
-                        'params' => array(
-                            'table' => 'tx_dmsimplecalendar_domain_model_category',
-                            'pid' => '###CURRENT_PID###',
-                            'setValue' => 'prepend'
-                            ),
-                        'script' => 'wizard_add.php',
-                    ),
-                ),
-            ),
-        ),
-        'attachments' => array(
-            'exclude' => 0,
-            'label' => 'LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_db.xlf:tx_dmsimplecalendar_domain_model_appointment.attachments',
-            'config' => array(
-                'type' => 'select',
-                'foreign_table' => 'tx_dmsimplecalendar_domain_model_attachment',
-                'MM' => 'tx_dmsimplecalendar_appointment_attachment_mm',
-                'size' => 5,
-                'max' => 5,
-                'autoSizeMax' => 5,
-                'maxitems' => 9999,
-                'multiple' => 0,
-                'wizards' => array(
-                    '_PADDING' => 1,
-                    '_VERTICAL' => 1,
-                    'edit' => array(
-                        'type' => 'popup',
-                        'title' => 'Edit',
-                        'script' => 'wizard_edit.php',
-                        'icon' => 'edit2.gif',
-                        'popup_onlyOpenIfSelected' => 1,
-                        'JSopenParams' => 'height=600,width=580,status=0,menubar=0,scrollbars=1',
-                        ),
-                    'add' => Array(
-                        'type' => 'script',
-                        'title' => 'Create new',
-                        'icon' => 'add.gif',
-                        'params' => array(
-                            'table' => 'tx_dmsimplecalendar_domain_model_attachment',
-                            'pid' => '###CURRENT_PID###',
-                            'setValue' => 'prepend'
-                            ),
-                        'script' => 'wizard_add.php',
-                    ),
+                'type' => 'inline',
+                'foreign_table' => 'tx_dmsimplecalendar_domain_model_media',
+                'minitems' => 0,
+                'maxitems' => 1,
+                'appearance' => array(
+                    'collapseAll' => 0,
+                    'levelLinksPosition' => 'top',
+                    'showSynchronizationLink' => 1,
+                    'showPossibleLocalizationRecords' => 1,
+                    'showAllLocalizationLink' => 1
                 ),
             ),
         ),

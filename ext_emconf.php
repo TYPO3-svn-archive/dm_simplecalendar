@@ -1,13 +1,5 @@
 <?php
-
-/***************************************************************
- * Extension Manager/Repository config file for ext: "dm_simplecalendar"
- *
- * Manual updates:
- * Only the data in the array - anything else is removed by next write.
- * "version" and "dependencies" must not be touched!
- ***************************************************************/
-
+// Extension Manager/Repository config file for ext: "dm_simplecalendar"
 $EM_CONF[$_EXTKEY] = array(
     'title' => 'SimpleCalendar',
     'description' => 'With this extension you can create appointments and display them in a calendar view.',
@@ -25,7 +17,7 @@ $EM_CONF[$_EXTKEY] = array(
     'modify_tables' => '',
     'clearCacheOnLoad' => 0,
     'lockType' => '',
-    'version' => '0.1.4',
+    'version' => '0.2.0',
     'constraints' => array(
         'depends' => array(
             'typo3' => '6.0.0-6.2.99',
@@ -36,4 +28,3 @@ $EM_CONF[$_EXTKEY] = array(
         ),
     ),
 );
-?>

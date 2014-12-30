@@ -38,9 +38,9 @@ class TranslateDateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractV
      * Render Monthname.
      * 
      * @param \DateTime $dateTime
-     * @param \int $fullName
-     * @param \string $type
-     * @return \string
+     * @param int $fullName
+     * @param string $type
+     * @return string
      */
     public function render(\DateTime $dateTime, $fullName, $type) {
         if(empty($type)) {
@@ -68,7 +68,7 @@ class TranslateDateViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractV
         }
 
         if(!empty($translationPrefix) && !empty($dateName)) {
-            $translationKey = $translationPrefix . ($fullName == 1 ? '' : 'short.') . $dateName;
+            $translationKey = $translationPrefix . ($fullName == 1 ? 'full.' : 'short.') . $dateName;
             return \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate($translationKey, 'DmSimplecalendar') . $this->renderChildren();
         }
         else {

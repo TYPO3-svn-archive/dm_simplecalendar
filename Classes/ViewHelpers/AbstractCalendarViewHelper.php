@@ -47,7 +47,6 @@ class AbstractCalendarViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ForViewHel
      * @return \string
      */
     public function render(\DieMedialen\DmSimplecalendar\Domain\Model\ViewCalendar $viewCalendar, $as, $key = '', $reverse = FALSE, $iteration = NULL) {
-        $this->setupTimezoneAndLanguage();
         
         return self::renderStatic($this->arguments, $this->buildRenderChildrenClosure(), $this->renderingContext);
     }
@@ -66,14 +65,6 @@ class AbstractCalendarViewHelper extends \TYPO3\CMS\Fluid\ViewHelpers\ForViewHel
         $arguments['each'] = $viewCalendar->getSubCalendars(static::$subCalendarMode);
 
         return parent::renderStatic($arguments,  $renderChildrenClosure, $renderingContext);
-    }
-
-    /**
-     * Setup the timezone and language.
-     */
-    public function setupTimezoneAndLanguage() {
-        setlocale(LC_ALL, 'de_DE');
-        date_default_timezone_set('Europe/Berlin');
     }
 }
 ?>

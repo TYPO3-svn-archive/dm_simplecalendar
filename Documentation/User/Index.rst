@@ -38,13 +38,13 @@ Users Manual
 
      (if you don't define a storage folder, the data will be saved on this page, where the calendar plugin is placed. You can also define different storage folder for each plugin in Tab “Behaviour”.)
 
-#. **Go to a page where you want to insert a calendar plugin. Create a category item and then create an appoitment item using list view.**
+#. **Go to a page where you want to insert a calendar plugin. Create an appoitment item using list view.**
 
    - .. figure:: ../Images/UserManual/Pagetree.png
       :alt: Pagetree
 
-   - .. figure:: ../Images/UserManual/CreateDataAppointmentCategory.png
-      :alt: CreateDataAppointmentCategory
+   - .. figure:: ../Images/UserManual/CreateDataAppointment.png
+      :alt: CreateDataAppointment
 
    - .. figure:: ../Images/UserManual/DataAppointmentCategory.png
       :alt: DataAppointmentCategory

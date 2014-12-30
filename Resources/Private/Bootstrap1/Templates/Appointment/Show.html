@@ -11,10 +11,9 @@
         <h3 class="panel-title">{appointment.title}
         <f:if condition="{settings.showIcsLink}">
         <f:link.action action="icsDownload" controller="Appointment" arguments="{appointment:appointment}" class="pull-right">
-            <span class="glyphicon glyphicon-floppy-save" title="{f:translate(key:'tx_dmsimplecalendar_domain_model_appointment.icsDownload',default:'')}"></span>
+            <span class="glyphicon glyphicon-floppy-save" title="{f:translate(key: 'tx_dmsimplecalendar_domain_model_appointment.icsDownload', default:'')}"></span>
         </f:link.action>
         </f:if>
-
         </h3>
     </div>
     <div class="panel-footer">
@@ -41,6 +40,9 @@
         <div class="row">
             
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                <div class="well">
+                    <f:format.raw>{appointment.shortDescription}</f:format.raw>
+                </div>
                 <f:format.raw>{appointment.description}</f:format.raw>
             </div>
 
@@ -49,39 +51,64 @@
     <div class="panel-footer">
         <div class="row">
             
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
-                <f:translate key="tx_dmsimplecalendar_domain_model_appointment.shortDescription" />
-                <f:format.raw>{appointment.shortDescription}</f:format.raw>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
-            <f:if condition="{appointment.attachments}">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <f:translate key="tx_dmsimplecalendar_domain_model_appointment.attachments" />
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 ">
+                <f:if condition="{appointment.media.files}">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            {f:translate(key: 'appointment.media.files', default:'Dokumente')}
+                        </div>
+                        <table class="table table-responsive">
+                            <tr>
+                                <th>#</th>
+                                <th>{f:translate(key: 'appointment.attackment.file', default:'Datei')}
+                                </th>
+                                <th>{f:translate(key: 'appointment.attackment.size', default:'Größe')}
+                                </th>
+                            </tr>
+                            <f:for each="{appointment.media.files}" as="file" iteration="fileIterator">
+                            <tr>
+                                <td>{fileIterator.index}</td>
+                                <td>
+                                    <dmc:link.external uri="{file.originalResource.publicUrl}" insertHost="1" target="_blank">{file.originalResource.name}</dmc:link.external>
+                                </td>
+                                <td>
+                                    <dmc:link.external uri="{file.originalResource.publicUrl}" insertHost="1" target="_blank">56{f:translate(key: 'appointment.attackment.sizeFormat', default:'kb')}</dmc:link.external>
+                                </td>
+                            </tr>
+                            </f:for>
+                        </table>
                     </div>
-                    <table class="table table-responsive">
-                        <tr>
-                            <th>#</th>
-                            <th>{f:translate(key:'appointment.attackment.file',default:'Datei')}
-                            </th>
-                            <th>{f:translate(key:'appointment.attackment.size',default:'Größe')}
-                            </th>
-                        </tr>
-                        <f:for each="{appointment.attachments}" as="attachment" iteration="attachmentIterator">
-                        <tr>
-                            <td>{attachmentIterator.index}</td>
-                            <td>
-                                <dmc:link.external uri="uploads/tx_dmsimplecalendar/{attachment.file}" insertHost="1" target="_blank">{attachment.file}</dmc:link.external>
-                            </td>
-                            <td>
-                                <dmc:link.external uri="uploads/tx_dmsimplecalendar/{attachment.file}" insertHost="1" target="_blank">56{f:translate(key:'appointment.attackment.sizeFormat',default:'kb')}</dmc:link.external>
-                            </td>
-                        </tr>
-                        </f:for>
-                    </table>
-                </div>
-            </f:if>
+                </f:if>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 ">
+                <f:if condition="{appointment.media.images}">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            {f:translate(key: 'appointment.media.images', default:'Bilder')}
+                        </div>
+                        <table class="table table-responsive">
+                            <tr>
+                                <th>#</th>
+                                <th>{f:translate(key: 'appointment.attackment.file', default:'Datei')}
+                                </th>
+                                <th>{f:translate(key: 'appointment.attackment.size', default:'Größe')}
+                                </th>
+                            </tr>
+                            <f:for each="{appointment.media.images}" as="image" iteration="fileIterator">
+                            <tr>
+                                <td>{fileIterator.index}</td>
+                                <td>
+                                    <dmc:link.external uri="{image.originalResource.publicUrl}" insertHost="1" target="_blank">{image.originalResource.name}</dmc:link.external>
+                                </td>
+                                <td>
+                                    <dmc:link.external uri="{image.originalResource.publicUrl}" insertHost="1" target="_blank">56{f:translate(key: 'appointment.attackment.sizeFormat', default:'kb')}</dmc:link.external>
+                                </td>
+                            </tr>
+                            </f:for>
+                        </table>
+                    </div>
+                </f:if>
+
             </div>
 
             <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 ">

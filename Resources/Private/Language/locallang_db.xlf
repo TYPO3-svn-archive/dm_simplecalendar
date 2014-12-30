@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="default" datatype="plaintext" original="messages" date="2013-12-09T16:09:54Z" product-name="dm_simplecalendar">
+    <file source-language="en" datatype="plaintext" original="messages" date="2013-12-09T16:09:54Z" product-name="dm_simplecalendar">
         <header/>
         <body>
+            <trans-unit id="tx_dmsimplecalendar.tx_extbase_type">
+                <source>Extbase Type</source>
+            </trans-unit>
+
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment">
                 <source>Appointment</source>
             </trans-unit>
@@ -27,8 +31,8 @@
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.calendar">
                 <source>Calendar</source>
             </trans-unit>
-            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.attachments">
-                <source>Attachments</source>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.media">
+                <source>Media</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.categories">
                 <source>Categories</source>
@@ -54,20 +58,27 @@
                 <source>Color</source>
             </trans-unit>
 
-            <trans-unit id="tx_dmsimplecalendar_domain_model_attachment">
-                <source>Attachment</source>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_media">
+                <source>Media</source>
             </trans-unit>
-            <trans-unit id="tx_dmsimplecalendar_domain_model_attachment.title">
-                <source>Title</source>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_media.files">
+                <source>Documents</source>
             </trans-unit>
-            <trans-unit id="tx_dmsimplecalendar_domain_model_attachment.file">
-                <source>File</source>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_media.images">
+                <source>Images</source>
+            </trans-unit>
+            <trans-unit id="sys_category.tx_extbase_type.Tx_DmSimplecalendar_Category">
+                <source>Tx_DmSimplecalendar_Category</source>
             </trans-unit>
         </body>
     </file>
-    <file source-language="de" datatype="plaintext" original="messages" date="2013-12-09T16:09:54Z" product-name="dm_simplecalendar">
+    <file source-language="default" datatype="plaintext" original="messages" date="2013-12-09T16:09:54Z" product-name="dm_simplecalendar">
         <header/>
         <body>
+            <trans-unit id="tx_dmsimplecalendar.tx_extbase_type">
+                <source>Extbase Typ</source>
+            </trans-unit>
+
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment">
                 <source>Termin</source>
             </trans-unit>
@@ -92,8 +103,8 @@
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.calendar">
                 <source>Kalendar</source>
             </trans-unit>
-            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.attachments">
-                <source>Anhänge</source>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.media">
+                <source>Media</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.categories">
                 <source>Kategorien</source>
@@ -119,14 +130,14 @@
                 <source>Farbe für Farbleitsystem</source>
             </trans-unit>
 
-            <trans-unit id="tx_dmsimplecalendar_domain_model_attachment">
-                <source>Anhang</source>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_media">
+                <source>Media</source>
             </trans-unit>
-            <trans-unit id="tx_dmsimplecalendar_domain_model_attachment.title">
-                <source>Titel</source>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_media.files">
+                <source>Dokumente</source>
             </trans-unit>
-            <trans-unit id="tx_dmsimplecalendar_domain_model_attachment.file">
-                <source>Datei</source>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_media.images">
+                <source>Bilder</source>
             </trans-unit>
         </body>
     </file>

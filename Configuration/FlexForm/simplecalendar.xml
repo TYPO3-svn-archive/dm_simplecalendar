@@ -52,16 +52,27 @@
                     </settings.periodType>
                     <settings.categories>
                         <TCEforms>
-                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:mainsheet.categories</label>
-                            <config>
-                                <type>select</type>
-                                <size>5</size> 
-                                <maxitems>10</maxitems> 
-                                <foreign_table>tx_dmsimplecalendar_domain_model_category</foreign_table>
-                                <minitems>1</minitems>
-                            </config>
+                          <exclude>1</exclude>
+                          <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:mainsheet.categories</label>
+                          <config>
+                            <type>select</type>
+                            <autoSizeMax>50</autoSizeMax>
+                            <foreign_table>sys_category</foreign_table>
+                            <foreign_table_where> AND sys_category.tx_extbase_type = 'Tx_DmSimplecalendar_Category' AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.uid ASC</foreign_table_where>
+                            <minitems>1</minitems>
+                            <maxitems>9999</maxitems>
+                            <renderMode>tree</renderMode>
+                            <size>10</size>
+                            <treeConfig>
+                                <appearance>
+                                    <expandAll>1</expandAll>
+                                    <showHeader>1</showHeader>
+                                </appearance>
+                                <parentField>parent</parentField>
+                            </treeConfig>
+                          </config>
                         </TCEforms>
-                    </settings.categories>
+                    </settings.categories>                    
                     <settings.jqFullcalendarViews>
                         <TCEforms>
                             <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:mainsheet.jqFullcalendarViews</label>
@@ -105,11 +116,11 @@
                                     <items type="array">
                                       <numIndex index="0" type="array">
                                         <numIndex index="0">LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:customizesheet.weekdayLength.labelShort</numIndex>
-                                        <numIndex index="1">0</numIndex>
+                                        <numIndex index="1">short</numIndex>
                                       </numIndex>
                                       <numIndex index="1" type="array">
                                         <numIndex index="0">LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:customizesheet.weekdayLength.labelFull</numIndex>
-                                        <numIndex index="1">1</numIndex>
+                                        <numIndex index="1">full</numIndex>
                                       </numIndex>
                                     </items>
                                     <maxitems>1</maxitems>
@@ -280,7 +291,7 @@
                     </settings.appointmentAmountLimit>
                     <settings.useCustomTemplates>
                         <TCEforms>
-                            <label>Eigene Templates verwenden</label>
+                            <label>LLL:EXT:dm_simplecalendar/Resources/Private/Language/locallang_simplecalendar.xml:templatesheet.useOwnTemplates</label>
                             <onChange>reload</onChange>
                             <config>
                                 <type>check</type>
@@ -296,7 +307,7 @@
                                 <items type="array">
                                   <numIndex index="0" type="array">
                                     <numIndex index="0">Standard Template</numIndex>
-                                    <numIndex index="1">EXT:dm_simplecalendar/Resources/Private/Default/</numIndex>
+                                    <numIndex index="1">EXT:dm_simplecalendar/Resources/Private/</numIndex>
                                   </numIndex>
                                   <numIndex index="1" type="array">
                                     <numIndex index="0">Bootstrap Template</numIndex>

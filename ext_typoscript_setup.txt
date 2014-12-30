@@ -1,0 +1,21 @@
+
+config.tx_extbase{
+    persistence{
+        classes{
+
+            TYPO3\CMS\Extbase\Domain\Model\Category {
+                subclasses {
+                    Tx_DmSimplecalendar_Category = DieMedialen\DmSimplecalendar\Domain\Model\Category
+					
+          		}
+            }
+            DieMedialen\DmSimplecalendar\Domain\Model\Category {
+                mapping {
+                    tableName = sys_category
+                    recordType = Tx_DmSimplecalendar_Category
+                }
+            }
+            
+    	}
+    }
+}

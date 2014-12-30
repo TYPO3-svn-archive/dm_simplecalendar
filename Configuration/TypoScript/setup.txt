@@ -26,4 +26,18 @@ plugin.tx_dmsimplecalendar._CSS_DEFAULT_STYLE (
         background-color:#FF9F9F;
         border: 1px #FF0000 solid;
     }
+    .tx-dm-simplecalendar table.table,
+    .tx-dm-simplecalendar table.calendar {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .tx-dm-simplecalendar table.table tr.calendar-row td,
+    .tx-dm-simplecalendar table.calendar tr.calendar-row td {
+        width: 2000px;
+        padding: 4px;
+        vertical-align:top;
+    }
+    .tx-dm-simplecalendar table tr.table_head .icsArea {
+        float: right;
+    }
 )

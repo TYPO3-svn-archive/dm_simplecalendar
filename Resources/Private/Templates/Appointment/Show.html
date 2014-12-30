@@ -8,86 +8,81 @@
 
     <table class="calendar_table_class">
         <tr class="table_head">
-            <td colSpan="2">
-                {appointment.title}
+            <td colSpan="4">
+                <h3 class="panel-title">{appointment.title}
+                <f:if condition="{settings.showIcsLink}">
+                    <div class="icsArea">
+                        <f:link.action action="icsDownload" controller="Appointment" arguments="{appointment:appointment}">
+                            <dmc:image src="{f:uri.resource(path:'Icons/appointment_ics.png')}" width="14" height="14" alt="ICS Download" title="ICS Download" />
+                        </f:link.action>
+                    </div>
+                </f:if>
+                </h3>
             </td>
         </tr>
         <tr>
             <td><f:translate key="tx_dmsimplecalendar_domain_model_appointment.starttime" /></td>
             <td><f:format.date format="d.m.Y h:i">{appointment.startdate}</f:format.date></td>
-        </tr>
-        <tr>
             <td><f:translate key="tx_dmsimplecalendar_domain_model_appointment.endtime" /></td>
             <td><f:format.date format="d.m.Y h:i">{appointment.enddate}</f:format.date></td>
         </tr>
         <tr>
-            <td colspan="2"><f:translate key="tx_dmsimplecalendar_domain_model_appointment.description" /></td>
+            <td colspan="4">
+                <f:translate key="tx_dmsimplecalendar_domain_model_appointment.shortDescription" />: <f:format.raw>{appointment.shortDescription}</f:format.raw>
+            </td>
         </tr>
         <tr>
-            <td colspan="2"><f:format.raw>{appointment.description}</f:format.raw></td>
+            <td colspan="4"><f:format.raw>{appointment.description}</f:format.raw></td>
         </tr>
         <tr>
-            <td colspan="2"><f:translate key="tx_dmsimplecalendar_domain_model_appointment.shortDescription" /></td>
-        </tr>
-        <tr>
-            <td colspan="2"><f:format.raw>{appointment.shortDescription}</f:format.raw></td>
-        </tr>
-        <f:if condition="{settings.showQrCode}">
-        <tr>
-            <td>QR Code</td>
-            <td>
-                <f:if condition="{settings.qrCodeSize}">
+            <td colspan="3">
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="50%">
+                        <f:if condition="{appointment.media.files}">
+                            <label>{f:translate(key: 'appointment.media.files', default:'Dokumente')}</label>
+                            <ul>
+                            <f:for each="{appointment.media.files}" as="file" iteration="fileIterator">
+                                <li><dmc:link.external uri="{file.originalResource.publicUrl}" insertHost="1" target="_blank">{file.originalResource.name}</dmc:link.external> [<dmc:link.external uri="{file.originalResource.publicUrl}" insertHost="1" target="_blank">56{f:translate(key: 'appointment.attackment.sizeFormat', default:'kb')}</dmc:link.external>]</li>
+                            </f:for>
+                            </ul>
+                        </f:if>
+                        </td>
+                        <td width="50%">
+                        <f:if condition="{appointment.media.images}">
+                            <label>{f:translate(key: 'appointment.media.images', default:'Bilder')}</label>
+                            <ul>
+                            <f:for each="{appointment.media.images}" as="image" iteration="fileIterator">
+                                <li><dmc:link.external uri="{image.originalResource.publicUrl}" insertHost="1" target="_blank">{image.originalResource.name}</dmc:link.external> [<dmc:link.external uri="{image.originalResource.publicUrl}" insertHost="1" target="_blank">56{f:translate(key: 'appointment.attackment.sizeFormat', default:'kb')}</dmc:link.external>]</li>
+                            </f:for>
+                            </ul>
+                        </f:if>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td colspan="1">
+            <f:if condition="{settings.showQrCode}">
+            <f:if condition="{settings.qrCodeSize}">
+            <f:then>
+
+                <f:if condition="{0:settings.qrShortUrlProvider} == {0:'none'}">
                 <f:then>
-
-                    <f:if condition="{0:settings.qrShortUrlProvider} == {0:'none'}">
-                    <f:then>
-                        <img src="https://chart.googleapis.com/chart?chs={settings.qrCodeSize}&cht=qr&chl=<dmc:url.currentUrl />&choe=UTF-8" title="QR Code - {appointment.title}" />
-                    </f:then>
-                    <f:else>
-                        <img src="https://chart.googleapis.com/chart?chs={settings.qrCodeSize}&cht=qr&chl=<dmc:url.shorten />&choe=UTF-8" title="QR Code - {appointment.title}" />
-                    </f:else>
-                    </f:if>
-
+                    <img src="https://chart.googleapis.com/chart?chs={settings.qrCodeSize}&cht=qr&chl=<dmc:url.currentUrl />&choe=UTF-8" title="QR Code - {appointment.title}" />
                 </f:then>
                 <f:else>
-                    <p>Im Plugin muss eine Größe für QR-Code eingegeben werden.</p>
+                    <img src="https://chart.googleapis.com/chart?chs={settings.qrCodeSize}&cht=qr&chl=<dmc:url.shorten />&choe=UTF-8" title="QR Code - {appointment.title}" />
                 </f:else>
                 </f:if>
-            </td>
-        </tr>
-        </f:if>
-        <f:if condition="{appointment.attachments}">
-        <tr>
-            <td><f:translate key="tx_dmsimplecalendar_domain_model_appointment.attachments" /></td>
-            <td>
 
-                <div class="attachmentsArea">
-                    <ul>
-                    <f:for each="{appointment.attachments}" as="attachment">
-                        <li class="attachmentItem">
-                            <dmc:link.external uri="uploads/tx_dmsimplecalendar/{attachment.file}" insertHost="1" target="_blank">
-                                {attachment.file}
-                            </dmc:link.external>
-                            <span class="attachmentButtons"><a href="{attachment.deleteLink}" class="removeAttachmentButton"><f:translate key="general.Delete" /></a></span>
-                        </li>
-                    </f:for>
-                    </ul>
-                </div>
+            </f:then>
+            <f:else>
+                <p>Im Plugin muss eine Größe für QR-Code eingegeben werden.</p>
+            </f:else>
+            </f:if>
+            </f:if>
             </td>
         </tr>
-        </f:if>
-        <f:if condition="{settings.showIcsLink}">
-        <tr>
-            <td><f:translate key="tx_dmsimplecalendar_domain_model_appointment.icsDownload" /></td>
-            <td>
-                <div class="icsArea">
-                    <f:link.action action="icsDownload" controller="Appointment" arguments="{appointment:appointment}">
-                        <dmc:image src="{f:uri.resource(path:'Icons/appointment_ics.png')}" width="14" height="14" alt="ICS Download" title="ICS Download" />
-                    </f:link.action>
-                </div>
-            </td>
-        </tr>
-        </f:if>
     </table>
 
 </f:section>

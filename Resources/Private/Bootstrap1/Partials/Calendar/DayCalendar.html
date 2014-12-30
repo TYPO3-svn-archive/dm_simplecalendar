@@ -1,7 +1,7 @@
 {namespace dmd=DieMedialen\DmDebugger\ViewHelpers} {namespace dmc=DieMedialen\DmSimplecalendar\ViewHelpers}
 <div class="calendar-day-header">
     <h3>
-        {f:translate(key:'tx_dmsimplecalendar_view_dayview',default:'Tagesansicht')}&nbsp;<f:format.date format="d.m.">{viewCalendar.timestamp}</f:format.date><f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.timestamp, viewMode: 'year'}"><f:format.date format="Y">{viewCalendar.timestamp}</f:format.date></f:link.action>
+        {f:translate(key: 'tx_dmsimplecalendar_view_dayview', default:'Tagesansicht')}&nbsp;<f:format.date format="d.m.">{viewCalendar.timestamp}</f:format.date><f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.timestamp, viewMode: 'year'}"><f:format.date format="Y">{viewCalendar.timestamp}</f:format.date></f:link.action>
     </h3>
 </div>
 
@@ -21,17 +21,17 @@
                                     <td class="calendar-item-time">
                                     <f:if condition="{appointment.enddateExists}">
                                     <f:then>
-                                        Ab:
+                                        {f:translate(key: 'tx_dmsimplecalendar_view_time_from', default:'From:')}
                                         <strong>
                                             <f:format.date format="H:i">{appointment.startdate}</f:format.date>
                                         </strong>
-                                        Bis:
+                                        {f:translate(key: 'tx_dmsimplecalendar_view_time_to', default:'To:')}
                                         <strong>
                                             <f:format.date format="H:i">{appointment.enddate}</f:format.date>
                                         </strong>
                                     </f:then>
                                     <f:else>
-                                        Um:
+                                        {f:translate(key: 'tx_dmsimplecalendar_view_time_at', default:'At:')}
                                         <strong>
                                             <f:format.date format="H:i">{appointment.startdate}</f:format.date>
                                         </strong>
@@ -46,7 +46,7 @@
                                     <br />
 
                                     <br />
-                                    Ort:
+                                    {f:translate(key: 'tx_dmsimplecalendar_view_location', default:'Location:')}
                                     <strong>{appointment.location}</strong>
 
                                     <br />
@@ -75,7 +75,7 @@
 
                         </f:then>
                         <f:else>
-                            {f:translate(key:'calendar.day.noAppointments',default:'')}
+                            {f:translate(key: 'calendar.day.noAppointments', default:'')}
                         </f:else>
                         </f:if>
                 </f:then>
@@ -98,7 +98,7 @@
 
             <div class="row">
                 <div class="col-lg-2 col-md-2  col-sm-2  col-xs-2 ">
-                    {f:translate(key:'calendar.day.allday',default:'Ganztägig')}
+                    {f:translate(key: 'calendar.day.allday', default:'Ganztägig')}
                 </div>
                 <div class="col-lg-10 col-md-10  col-sm-10  col-xs-10 ">
                     <f:if condition="{dayCalendar.appointments -> f:count()} > 0">
@@ -127,17 +127,17 @@
                         <f:if condition="{key} >= {appointment.startdate -> f:format.date(format:'H')}">
                         <f:if condition="{key} <= {appointment.enddate -> f:format.date(format:'H')}">
                             <li class="list-group-item">
-                                <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}">{appointment.title}</f:link.action> Ort: <strong>{appointment.location}</strong>
+                                <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}">{appointment.title}</f:link.action> {f:translate(key: 'tx_dmsimplecalendar_view_location', default:'Location:')} <strong>{appointment.location}</strong>
 
                                 <br />
 
                                 <f:if condition="{appointment.enddateExists}">
                                 <f:then>
-                                    (Ab: <strong><f:format.date format="H:i">{appointment.startdate}</f:format.date></strong>
-                                    Bis: <strong><f:format.date format="H:i">{appointment.enddate}</f:format.date></strong>)
+                                    ({f:translate(key: 'tx_dmsimplecalendar_view_time_from', default:'From:')} <strong><f:format.date format="H:i">{appointment.startdate}</f:format.date></strong>
+                                    {f:translate(key: 'tx_dmsimplecalendar_view_time_to', default:'To:')} <strong><f:format.date format="H:i">{appointment.enddate}</f:format.date></strong>)
                                 </f:then>
                                 <f:else>
-                                    (Um: <strong><f:format.date format="H:i">{appointment.startdate}</f:format.date></strong>)
+                                    ({f:translate(key: 'tx_dmsimplecalendar_view_time_at', default:'At:')} <strong><f:format.date format="H:i">{appointment.startdate}</f:format.date></strong>)
                                 </f:else>
                                 </f:if>
                                 <br />
@@ -168,17 +168,17 @@
 
 <br />
 <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.previous, viewMode: viewCalendar.mode}">
-    {f:translate(key:'tx_dmsimplecalendar_view_date_prevday',default:'Vorheriger Tag')}
+    {f:translate(key: 'tx_dmsimplecalendar_view_date_prevday', default:'Previous day')}
 </f:link.action>
 &nbsp;&dash;&nbsp;
 <f:if condition="{viewCalendar.timestamp -> f:format.date(format: 'd.m.Y')} != {viewCalendar.current -> f:format.date(format: 'd.m.Y')}">
     <f:then>
         <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.current, viewMode: viewCalendar.mode}">
-            {f:translate(key:'tx_dmsimplecalendar_view_date_currentday',default:'Aktueller Tag')}
+            {f:translate(key: 'tx_dmsimplecalendar_view_date_currentday', default:'Current day')}
         </f:link.action>
         &nbsp;&dash;&nbsp;
     </f:then>
 </f:if>
 <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.next, viewMode: viewCalendar.mode}">
-    {f:translate(key:'tx_dmsimplecalendar_view_date_nextday',default:'Nächster Tag')}
+    {f:translate(key: 'tx_dmsimplecalendar_view_date_nextday', default:'Next day')}
 </f:link.action>

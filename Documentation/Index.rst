@@ -36,7 +36,7 @@ SimpleCalendar
 		Salvatore Eckel, Kai Ratzeburg
 
 	:Email:
-		salvatore.eckel@diemedialen.de, kai-ratzeburg@diemedialen.de
+		salvatore.eckel@diemedialen.de, kai.ratzeburg@diemedialen.de
 
 	:License:
 		This document is published under the Open Content License

@@ -1,211 +1,208 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="default" datatype="plaintext" original="messages" date="2013-12-09T16:09:54Z" product-name="dm_simplecalendar">
+    <file source-language="en" datatype="plaintext" original="messages" date="2014-11-11T14:00:00Z" product-name="dm_simplecalendar">
         <header/>
         <body>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment">
-                <source>Termin</source>
+                <source>Appointment</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.location">
-                <source>Ort</source>
+                <source>Location</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.description">
-                <source>Beschreibung</source>
+                <source>Description</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.shortDescription">
-                <source>Kurz-Beschreibung</source>
+                <source>Short-Description</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.startdate">
-                <source>Start-Datum</source>
+                <source>Startdate</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.enddate">
-                <source>End-Datum</source>
+                <source>Enddate</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.title">
-                <source>Titel</source>
+                <source>Title</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.calendar">
-                <source>Kalendar</source>
+                <source>Calendar</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.starttime">
-                <source>Startzeitpunkt</source>
+                <source>Starttime</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.endtime">
-                <source>Endzeitpunkt</source>
+                <source>Endtime</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.icsDownload">
                 <source>ICS Download</source>
             </trans-unit>
-            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.attachments">
-                <source>Anhänge</source>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.media">
+                <source>Media</source>
             </trans-unit>
-            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.attachment">
-                <source>Anhang</source>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.media.files">
+                <source>Documents</source>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.media.images">
+                <source>Images</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.categories">
-                <source>Kategorien</source>
+                <source>Categories</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.pre_event">
-                <source>Der vorherige Termin in einer Kette von automatisch generierten Terminen</source>
+                <source>The Pre-Appointment in a chain of automatic generated Appointments</source>
             </trans-unit>
 
 
             <trans-unit id="tx_dmsimplecalendar_domain_model_calendar">
-                <source>Kalendar</source>
+                <source>Calendar</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_domain_model_calendar.appointments">
-                <source>Termine</source>
+                <source>Appointments</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_title">
-                <source>Kalendar</source>
+                <source>Calendar</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_dayview">
-                <source>Tagesansicht</source>
+                <source>Dayview</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_weekview">
-                <source>Wochenansicht</source>
+                <source>Weekview</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_monthview">
-                <source>Monatsansicht</source>
+                <source>Monthview</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_yearview">
-                <source>Jahresansicht</source>
+                <source>Yearview</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_the">
-                <source>den</source>
+                <source>the</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_kw">
-                <source>KW</source>
+                <source>CW</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_nextday">
-                <source>Nächster Tag</source>
+                <source>Next day</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_prevday">
-                <source>Vorheriger Tag</source>
+                <source>Previous day</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_currentday">
-                <source>Aktueller Tag</source>
+                <source>Today</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_nextweek">
-                <source>Nächste Woche</source>
+                <source>Next week</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_prevweek">
-                <source>Vorherige Woche</source>
+                <source>Previous week</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_currentweek">
-                <source>Aktuelle Woche</source>
+                <source>Today</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_nextmonth">
-                <source>Nächster Monat</source>
+                <source>Next month</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_prevmonth">
-                <source>Vorheriger Monat</source>
+                <source>Previous month</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_currentmonth">
-                <source>Aktueller Monat</source>
+                <source>Today</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_nextyear">
-                <source>Nächstes Jahr</source>
+                <source>Next year</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_prevyear">
-                <source>Vorheriges Jahr</source>
+                <source>Previous year</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_date_currentyear">
-                <source>Aktuelles Jahr</source>
+                <source>Today</source>
             </trans-unit>
             <trans-unit id="tx_dmsimplecalendar_view_appointment_count">
-                <source>Termine-Anzahl</source>
-            </trans-unit>
-            <trans-unit id="tx_dmsimplecalendar_view_appointment_none">
-                <source>Keine Termine</source>
-            </trans-unit>
-            <trans-unit id="tx_dmsimplecalendar_view_appointment_none">
-                <source>Keine Termine</source>
+                <source>Appointment amount</source>
             </trans-unit>
 
     <!-- MERGING EXTENSIONS -->
 
             <trans-unit id="general.back">
-                <source>Zurück</source>
+                <source>Back</source>
             </trans-unit>
             <trans-unit id="general.backToCalendar">
-                <source>Zurück zum Kalender</source>
+                <source>Back to calendar</source>
             </trans-unit>
             <trans-unit id="general.edit">
-                <source>Bearbeiten</source>
+                <source>Edit</source>
             </trans-unit>
             <trans-unit id="general.delete">
-                <source>Löschen</source>
+                <source>Delete</source>
             </trans-unit>
             <trans-unit id="general.select.placeholder">
-                <source>Keine</source>
+                <source>None</source>
             </trans-unit>
             <trans-unit id="general.legend">
-                <source>Legende</source>
+                <source>Legend</source>
             </trans-unit>
             
             <trans-unit id="general.daily">
-                <source>Täglich</source>
+                <source>Dayly</source>
             </trans-unit>
             <trans-unit id="general.weekly">
-                <source>Wöchentlich</source>
+                <source>Weekly</source>
             </trans-unit>
             <trans-unit id="general.monthly">
-                <source>Monatlich</source>
+                <source>Monthly</source>
             </trans-unit>
             <trans-unit id="general.yearly">
-                <source>Jährlich</source>
+                <source>Yearly</source>
             </trans-unit>
 
         <!-- Date translations -->
 
             <!-- calendar week  -->
             <trans-unit id="date.calendarWeek">
-                <source>Kalenderwoche</source>
+                <source>Calendar week</source>
             </trans-unit>
             <trans-unit id="date.cw">
-                <source>KW</source>
+                <source>CW</source>
             </trans-unit>
             <trans-unit id="date.today">
-                <source>Heute</source>
+                <source>Today</source>
             </trans-unit>
             
         <!-- monthnames -->
-            <trans-unit id="date.month.January">
-                <source>Januar</source>
+            <trans-unit id="date.month.full.January">
+                <source>January</source>
             </trans-unit>
-            <trans-unit id="date.month.February">
-                <source>Februar</source>
+            <trans-unit id="date.month.full.February">
+                <source>February</source>
             </trans-unit>
-            <trans-unit id="date.month.March">
-                <source>März</source>
+            <trans-unit id="date.month.full.March">
+                <source>March</source>
             </trans-unit>
-            <trans-unit id="date.month.April">
+            <trans-unit id="date.month.full.April">
                 <source>April</source>
             </trans-unit>
-            <trans-unit id="date.month.May">
-                <source>Mai</source>
+            <trans-unit id="date.month.full.May">
+                <source>May</source>
             </trans-unit>
-            <trans-unit id="date.month.June">
-                <source>Juni</source>
+            <trans-unit id="date.month.full.June">
+                <source>June</source>
             </trans-unit>
-            <trans-unit id="date.month.July">
-                <source>Juli</source>
+            <trans-unit id="date.month.full.July">
+                <source>July</source>
             </trans-unit>
-            <trans-unit id="date.month.August">
+            <trans-unit id="date.month.full.August">
                 <source>August</source>
             </trans-unit>
-            <trans-unit id="date.month.September">
+            <trans-unit id="date.month.full.September">
                 <source>September</source>
             </trans-unit>
-            <trans-unit id="date.month.October">
-                <source>Oktober</source>
+            <trans-unit id="date.month.full.October">
+                <source>October</source>
             </trans-unit>
-            <trans-unit id="date.month.November">
+            <trans-unit id="date.month.full.November">
                 <source>November</source>
             </trans-unit>
-            <trans-unit id="date.month.December">
-                <source>Dezember</source>
+            <trans-unit id="date.month.full.December">
+                <source>December</source>
             </trans-unit>
 
             <trans-unit id="date.month.short.January">
@@ -215,13 +212,13 @@
                 <source>Feb</source>
             </trans-unit>
             <trans-unit id="date.month.short.March">
-                <source>Mär</source>
+                <source>Mar</source>
             </trans-unit>
             <trans-unit id="date.month.short.April">
                 <source>Apr</source>
             </trans-unit>
             <trans-unit id="date.month.short.May">
-                <source>Mai</source>
+                <source>May</source>
             </trans-unit>
             <trans-unit id="date.month.short.June">
                 <source>Jun</source>
@@ -236,144 +233,59 @@
                 <source>Sep</source>
             </trans-unit>
             <trans-unit id="date.month.short.October">
-                <source>Okt</source>
+                <source>Oct</source>
             </trans-unit>
             <trans-unit id="date.month.short.November">
                 <source>Nov</source>
             </trans-unit>
             <trans-unit id="date.month.short.December">
-                <source>Dez</source>
+                <source>Dec</source>
             </trans-unit>
             
         <!-- weekday names -->
-            <trans-unit id="date.weekday.Sun">
-                <source>Sonntag</source>
+            <trans-unit id="date.weekday.full.0">
+                <source>Sunday</source>
             </trans-unit>
-            <trans-unit id="date.weekday.0">
-                <source>Sonntag</source>
+            <trans-unit id="date.weekday.full.1">
+                <source>Monday</source>
             </trans-unit>
-            <trans-unit id="date.weekday.Mon">
-                <source>Montag</source>
+            <trans-unit id="date.weekday.full.2">
+                <source>Tuesday</source>
             </trans-unit>
-            <trans-unit id="date.weekday.1">
-                <source>Montag</source>
+            <trans-unit id="date.weekday.full.3">
+                <source>Wednesday</source>
             </trans-unit>
-            <trans-unit id="date.weekday.Tue">
-                <source>Dienstag</source>
+            <trans-unit id="date.weekday.full.4">
+                <source>Thursday</source>
             </trans-unit>
-            <trans-unit id="date.weekday.2">
-                <source>Dienstag</source>
+            <trans-unit id="date.weekday.full.5">
+                <source>Friday</source>
             </trans-unit>
-            <trans-unit id="date.weekday.Wed">
-                <source>Mittwoch</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.3">
-                <source>Mittwoch</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.Thu">
-                <source>Donnerstag</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.4">
-                <source>Donnerstag</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.Fri">
-                <source>Freitag</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.5">
-                <source>Freitag</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.Sat">
-                <source>Samstag</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.6">
-                <source>Samstag</source>
+            <trans-unit id="date.weekday.full.6">
+                <source>Saturday</source>
             </trans-unit>
 
         <!-- weekday shortNames -->
-            <trans-unit id="date.weekday.short.Sun">
-                <source>So</source>
-            </trans-unit>
             <trans-unit id="date.weekday.short.0">
-                <source>So</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.short.Mon">
-                <source>Mo</source>
+                <source>Sun</source>
             </trans-unit>
             <trans-unit id="date.weekday.short.1">
-                <source>Mo</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.short.Tue">
-                <source>Di</source>
+                <source>Mon</source>
             </trans-unit>
             <trans-unit id="date.weekday.short.2">
-                <source>Di</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.short.Wed">
-                <source>Mi</source>
+                <source>Tue</source>
             </trans-unit>
             <trans-unit id="date.weekday.short.3">
-                <source>Mi</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.short.Thu">
-                <source>Do</source>
+                <source>Wed</source>
             </trans-unit>
             <trans-unit id="date.weekday.short.4">
-                <source>Do</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.short.Fri">
-                <source>Fr</source>
+                <source>Thu</source>
             </trans-unit>
             <trans-unit id="date.weekday.short.5">
-                <source>Fr</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.short.Sat">
-                <source>Sa</source>
+                <source>Fri</source>
             </trans-unit>
             <trans-unit id="date.weekday.short.6">
-                <source>Sa</source>
-            </trans-unit>
-
-            <trans-unit id="date.weekday.0.Sun">
-                <source>So</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.0">
-                <source>So</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.Mon">
-                <source>Mo</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.1">
-                <source>Mo</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.Tue">
-                <source>Di</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.2">
-                <source>Di</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.Wed">
-                <source>Mi</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.3">
-                <source>Mi</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.Thu">
-                <source>Do</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.4">
-                <source>Do</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.Fri">
-                <source>Fr</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.5">
-                <source>Fr</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.Sat">
-                <source>Sa</source>
-            </trans-unit>
-            <trans-unit id="date.weekday.0.6">
-                <source>Sa</source>
+                <source>Sat</source>
             </trans-unit>
         </body>
     </file>

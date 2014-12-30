@@ -2,7 +2,7 @@ DmSimplecalendar
 =================
 
 Extension Key: dm_simplecalendar
-Copyright 2014-2014,
+Copyright 2014-2015,
 
 Salvatore Eckel, <salvatore.eckel@diemedialen.de>
 Kai Ratzeburg, <kai.ratzeburg@diemedialen.de>

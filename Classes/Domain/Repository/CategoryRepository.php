@@ -37,7 +37,7 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
     /**
      * Find Categories by uid.
      *
-     * @param \mixed $categories
+     * @param mixed $categories
      * @return \array
      */
     public function findManyByUid($categories) {

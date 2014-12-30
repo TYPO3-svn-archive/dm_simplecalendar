@@ -14,7 +14,7 @@
                 </span>
 
                 <span>
-                    {f:translate(key:'date.cw')} {viewCalendar.timestamp -> f:format.date(format:'W')}:&nbsp;
+                    {f:translate(key: 'date.cw')} {viewCalendar.timestamp -> f:format.date(format:'W')}:&nbsp;
 
                     <dmc:translateDate dateTime="{viewCalendar.startdate}" fullName="0" type="month" />
                     <f:format.date format="d">{viewCalendar.startdate}</f:format.date>
@@ -69,17 +69,17 @@
                                                     <br />
                                                     <f:if condition="{appointment.enddateExists}">
                                                     <f:then>
-                                                        Ab:
+                                                        {f:translate(key: 'tx_dmsimplecalendar_view_time_from', default:'From:')}
                                                         <strong>
                                                             <f:format.date format="H:i">{appointment.startdate}</f:format.date>
                                                         </strong>
-                                                        Bis:
+                                                        {f:translate(key: 'tx_dmsimplecalendar_view_time_to', default:'To:')}
                                                         <strong>
                                                             <f:format.date format="H:i">{appointment.enddate}</f:format.date>
                                                         </strong>
                                                     </f:then>
                                                     <f:else>
-                                                        Um:
+                                                        {f:translate(key: 'tx_dmsimplecalendar_view_time_at', default:'At:')}
                                                         <strong>
                                                             <f:format.date format="H:i">{appointment.startdate}</f:format.date>
                                                         </strong>
@@ -87,7 +87,7 @@
                                                     </f:if>
 
                                                     <br />
-                                                    Ort:
+                                                    {f:translate(key: 'tx_dmsimplecalendar_view_location', default:'Location:')}
                                                     <strong>{appointment.location}</strong>
 
             <!-- START - Farbleitsystem -->
@@ -109,7 +109,7 @@
                                         </f:then>
                                         <f:else>
                                             <p>
-                                                {f:translate(key:'tx_dmsimplecalendar_view_appointment_none',default:'')}
+                                                {f:translate(key: 'calendar.week.noAppointments', default:'')}
                                             </p>
                                         </f:else>
                                         <br />
@@ -137,6 +137,6 @@
 
 <f:if condition="{viewCalendar.timestamp -> f:format.date(format: 'W m.Y')} != {viewCalendar.current -> f:format.date(format: 'W m.Y')}">
     <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.current, viewMode: viewCalendar.mode}">
-        {f:translate(key:'tx_dmsimplecalendar_view_date_currentweek',default:'Aktuelle Woche')}
+        {f:translate(key: 'tx_dmsimplecalendar_view_date_currentweek', default:'Current week')}
     </f:link.action>
 </f:if>

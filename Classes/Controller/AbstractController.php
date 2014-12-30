@@ -51,22 +51,6 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     protected $categoryRepository;
 
     /**
-     * attachmentRepository
-     *
-     * @var \DieMedialen\DmSimplecalendar\Domain\Repository\AttachmentRepository
-     * @inject
-     */
-    protected $attachmentRepository;
-
-    /**
-     * Setup the timezone and language.
-     */
-    public function setupTimezoneAndLanguage() {
-        setlocale(LC_ALL, 'de_DE');
-        date_default_timezone_set('Europe/Berlin');
-    }
-    
-    /**
      * Handle Custom Template Paths
      * 
      * @param \TYPO3\CMS\Fluid\View\TemplateView $view
@@ -76,26 +60,23 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     protected function handleCustomTemplatePaths($view, $settings) {
         /* The Template System will be rewritten, don't worry! */
-        $extensionManager = new \TYPO3\CMS\Core\Utility\ExtensionManagementUtility();
-        $generalUtility = new \TYPO3\CMS\Core\Utility\GeneralUtility();
-
         $extPathPrivateResources = 'EXT:dm_simplecalendar/Resources/Private/';
 
         $customTemplateSettings = array();
-        $customTemplateSettings[$extPathPrivateResources . 'Default/'] = array();
-        $customTemplateSettings[$extPathPrivateResources . 'Default/']['cssFilePath'] = $extensionManager->siteRelPath($this->request->getControllerExtensionKey()) . "Resources/Public/Css/Default/style.css";
+        $customTemplateSettings[$extPathPrivateResources] = array();
+        $customTemplateSettings[$extPathPrivateResources]['cssFilePath'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . "Resources/Public/Css/style.css";
         $customTemplateSettings[$extPathPrivateResources . 'Bootstrap1/'] = array();
-        $customTemplateSettings[$extPathPrivateResources . 'Bootstrap1/']['cssFilePath'] = $extensionManager->siteRelPath($this->request->getControllerExtensionKey()) . "Resources/Public/Css/Bootstrap1/style.css";
+        $customTemplateSettings[$extPathPrivateResources . 'Bootstrap1/']['cssFilePath'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . "Resources/Public/Css/Bootstrap1/style.css";
 
         if($settings['useCustomTemplates'] != 1) {
-            $view->setPartialRootPath($settings['customTemplatePath'] . "Partials/");
-            $view->setLayoutRootPath($settings['customTemplatePath'] . "Layouts/");
-            $view->setTemplateRootPath($settings['customTemplatePath'] . "Templates/");
+            $view->setPartialRootPath($settings['customTemplatePath'] . "Partials");
+            $view->setLayoutRootPath($settings['customTemplatePath'] . "Layouts");
+            $view->setTemplateRootPath($settings['customTemplatePath'] . "Templates");
 
             $cssFile = $customTemplateSettings[$settings['customTemplatePath']]['cssFilePath'];
 
             if (!empty($cssFile) && substr($cssFile, -1) != '/') {
-                if (file_exists($generalUtility->getFileAbsFileName($cssFile)) && filesize($generalUtility->getFileAbsFileName($cssFile)) > 0) {
+                if (file_exists(\TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($cssFile)) && filesize(\TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($cssFile)) > 0) {
 
                     $this->response->addAdditionalHeaderData('<link rel="stylesheet" type="text/css" href="' . $cssFile . '" />');
                 }
@@ -112,6 +93,6 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     public function getCategoryRepository() {
         return $this->categoryRepository;
-    }    
+    }
 }
 ?>

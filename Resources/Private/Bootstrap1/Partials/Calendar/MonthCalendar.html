@@ -22,14 +22,14 @@
                 </td>
             </tr>
             <tr class="calendar-row bg-info text-center">
-                <td class="calendar-kw-head">{f:translate(key:'date.cw',default:'KW')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.1',default:'Mo')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.2',default:'Di')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.3',default:'Mi')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.4',default:'Do')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.5',default:'Fr')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.6',default:'Sa')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.0',default:'So')}</td>
+                <td class="calendar-kw-head">{f:translate(key: 'date.cw', default:'CW')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.1', default:'Mon')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.2', default:'Tue')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.3', default:'Wed')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.4', default:'Thu')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.5', default:'Fri')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.6', default:'Sat')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.0', default:'Sun')}</td>
             </tr>
         </thead>
         <tbody>
@@ -62,9 +62,7 @@
                                                         <f:if condition="{appointmentIterator.index} < {settings.appointmentAmountLimit}">
                                                         <div class="list-group-item list-group-item-warning">
                                                             <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}">{appointment.title}</f:link.action>
-
                                                             <f:render partial="Calendar/Blocks/ItemCategoryColorBlock" arguments="{appointment:appointment}" />
-                                                            
                                                         </div>
                                                         </f:if>
                                                     </f:then>
@@ -91,7 +89,7 @@
                                                 </f:then>
                                                 <f:else>
                                                     <p>
-                                                        {f:translate(key:'calendar.month.noAppointments',default:'')}
+                                                        {f:translate(key: 'calendar.month.noAppointments', default:'')}
                                                     </p>
                                                 </f:else>
                                                 <br />
@@ -139,7 +137,7 @@
                                                 </f:then>
                                                 <f:else>
                                                     <p>
-                                                        {f:translate(key:'calendar.month.noAppointments',default:'')}
+                                                        {f:translate(key: 'calendar.month.noAppointments', default:'')}
                                                     </p>
                                                 </f:else>
                                                 <br />
@@ -189,7 +187,7 @@
                                         </f:then>
                                         <f:else>
                                             <p>
-                                                {f:translate(key:'calendar.month.noAppointments',default:'')}
+                                                {f:translate(key: 'calendar.month.noAppointments', default:'')}
                                             </p>
                                         </f:else>
                                         <br />
@@ -208,6 +206,6 @@
 
 <f:if condition="{viewCalendar.timestamp -> f:format.date(format: 'm.Y')} != {viewCalendar.current -> f:format.date(format: 'm.Y')}">
     <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.current, viewMode: viewCalendar.mode}">
-        {f:translate(key:'tx_dmsimplecalendar_view_date_currentmonth',default:'Aktueller Monat')}
+        {f:translate(key: 'tx_dmsimplecalendar_view_date_currentmonth', default:'Current month')}
     </f:link.action>
 </f:if>

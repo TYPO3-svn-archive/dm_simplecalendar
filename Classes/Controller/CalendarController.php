@@ -44,7 +44,6 @@ class CalendarController extends AbstractController {
     public function showAction($viewMode = NULL, $viewTimestamp = NULL) {
         /* required line for tempalte switch system */
         $this->view = $this->handleCustomTemplatePaths($this->view, $this->settings);
-        $this->setupTimezoneAndLanguage();
         $viewCalendar = $this->objectManager->get('DieMedialen\DmSimplecalendar\Domain\Model\ViewCalendar');
 
         if ($viewMode !== NULL && !empty($viewMode)) {
@@ -64,6 +63,7 @@ class CalendarController extends AbstractController {
         }
 
         $viewCalendar->setAppointments($this->appointmentRepository->findInCalendar($viewCalendar, $this->settings));
+        $viewCalendar->setCategories($this->categoryRepository->findManyByUid($this->settings['categories']));
 
         $this->view->assign('viewCalendar', $viewCalendar);
 

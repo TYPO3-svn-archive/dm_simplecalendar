@@ -67,6 +67,13 @@ class ViewCalendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
     protected $appointments;
 
     /**
+     * categories
+     *
+     * @var \array
+     */
+    protected $categories;
+
+    /**
      * Construct with default mode.
      */
     public function __construct() {
@@ -148,6 +155,24 @@ class ViewCalendar extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject {
      */
     public function setAppointments($appointments) {
         $this->appointments = $appointments;
+    }
+
+    /**
+     * Gets the categories.
+     *
+     * @return \array
+     */
+    public function getCategories() {
+        return $this->categories;
+    }
+    
+    /**
+     * Sets the categories.
+     *
+     * @param \array $categories
+     */
+    public function setCategories($categories) {
+        $this->categories = $categories;
     }
 
     /**

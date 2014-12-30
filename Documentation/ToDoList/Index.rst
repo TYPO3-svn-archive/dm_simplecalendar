@@ -11,7 +11,6 @@
 To-Do list
 ==========
 
-- Add property ``filesize`` to attachment
 - Registrations for appointments
 - FrontEnd Edit
 - Create recurring appointments

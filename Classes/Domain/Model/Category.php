@@ -31,7 +31,7 @@ namespace DieMedialen\DmSimplecalendar\Domain\Model;
  * @package dm_simplecalendar
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category {
 
     /**
      * title
@@ -60,7 +60,7 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * Sets the title
      *
-     * @param \string $title
+     * @param string $title
      * @return void
      */
     public function setTitle($title) {
@@ -79,7 +79,7 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * Sets the color
      *
-     * @param \string $color
+     * @param string $color
      * @return void
      */
     public function setColor($color) {

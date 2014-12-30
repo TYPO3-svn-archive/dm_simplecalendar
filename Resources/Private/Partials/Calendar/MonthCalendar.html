@@ -6,7 +6,7 @@
             <td class="calendar-month-name" colspan="8">
 
                 <span class="navigationMonthPrev">
-                    <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.previous, viewMode: viewCalendar.mode}">{f:translate(key:'calendar.month.navigation.link.prew',default:'&lt;')}</f:link.action>
+                    <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.previous, viewMode: viewCalendar.mode}">{f:translate(key: 'calendar.month.navigation.link.prew', default:'&lt;')}</f:link.action>
                 </span>
 
                 <span>
@@ -14,19 +14,19 @@
                 </span>
 
                 <span class="navigationMonthNext">
-                    <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.next, viewMode: viewCalendar.mode}">{f:translate(key:'calendar.month.navigation.link.prew',default:'&gt;')}</f:link.action>
+                    <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.next, viewMode: viewCalendar.mode}">{f:translate(key: 'calendar.month.navigation.link.prew', default:'&gt;')}</f:link.action>
                 </span>
             </td>
         </tr>
         <tr class="calendar-row">
-            <td class="calendar-kw-head">{f:translate(key:'date.cw',default:'KW')}</td>
-            <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.1',default:'Mo')}</td>
-            <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.2',default:'Di')}</td>
-            <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.3',default:'Mi')}</td>
-            <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.4',default:'Do')}</td>
-            <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.5',default:'Fr')}</td>
-            <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.6',default:'Sa')}</td>
-            <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.0',default:'So')}</td>
+            <td class="calendar-kw-head">{f:translate(key: 'date.cw', default:'CW')}</td>
+            <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.1', default:'Mon')}</td>
+            <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.2', default:'Tue')}</td>
+            <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.3', default:'Wed')}</td>
+            <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.4', default:'Thu')}</td>
+            <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.5', default:'Fri')}</td>
+            <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.6', default:'Sat')}</td>
+            <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.0', default:'Sun')}</td>
         </tr>
     </thead>
     <tbody>
@@ -44,7 +44,7 @@
                         <f:then>
                             <f:if condition="{dayCalendar.timestamp} <= {viewCalendar.endDate.timestamp}">
                                 <f:then>
-                                    <td class="calendar-day">
+                                    <td class="calendar-day{f:if(condition: '{dayCalendar.isWeekend}', then: ' weekend', else: '')}">
                                         <div class="day-number">
                                             <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">
                                                 <f:format.date format="d">{dayCalendar.timestamp}</f:format.date>
@@ -53,21 +53,36 @@
                                         <f:if condition="{dayCalendar.appointments -> f:count()} > 0">
                                             <f:then>
                                                 <f:for each="{dayCalendar.appointments}" as="appointment" iteration="appointmentIterator">
-                                                    <f:if condition="{appointmentIterator.index} < 3">
-                                                    <div class="calendar-item">
+                                                <f:if condition="{settings.appointmentAmountLimit}">
+                                                <f:then>
+                                                    <f:if condition="{appointmentIterator.index} < {settings.appointmentAmountLimit}">
+                                                    <div class="item">
                                                         <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}">{appointment.title}</f:link.action>
+
+                                                        <f:render partial="Calendar/Blocks/ItemCategoryColorBlock" arguments="{appointment:appointment}" />
                                                     </div>
                                                     </f:if>
-                                                </f:for>
-                                                <!-- START: More Link to day mode -->
-                                                <f:if condition="{dayCalendar.appointments -> f:count()} > 3">
-                                                    <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">...</f:link.action>
+                                                </f:then>
+                                                <f:else>
+                                                    <div class="item">
+                                                        <f:link.action action="show" controller="Appointment" arguments="{appointment:appointment}">{appointment.title}</f:link.action>
+
+                                                        <f:render partial="Calendar/Blocks/ItemCategoryColorBlock" arguments="{appointment:appointment}" />
+                                                    </div>
+                                                </f:else>
                                                 </f:if>
-                                                <!-- END: More Link to day mode -->
+                                                </f:for>
+                                                <f:if condition="{settings.appointmentAmountLimit}">
+                                                    <!-- START: More Link to day mode -->
+                                                    <f:if condition="{dayCalendar.appointments -> f:count()} > {settings.appointmentAmountLimit}">
+                                                        <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">...</f:link.action>
+                                                    </f:if>
+                                                    <!-- END: More Link to day mode -->
+                                                </f:if>
                                             </f:then>
                                             <f:else>
                                                 <p>
-                                                    {f:translate(key:'tx_dmsimplecalendar_view_appointment_none',default:'')}
+                                                    {f:translate(key: 'calendar.month.noAppointments', default:'')}
                                                 </p>
                                             </f:else>
                                             <br />
@@ -75,7 +90,7 @@
                                     </td>
                                 </f:then>
                                 <f:else>
-                                    <td class="calendar-day-np">
+                                    <td class="calendar-day-np{f:if(condition: '{dayCalendar.isWeekend}', then: ' weekend', else: '')}">
                                         <div class="day-number">
                                             <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">
                                                 <f:format.date format="d">{dayCalendar.timestamp}</f:format.date>
@@ -86,7 +101,7 @@
                             </f:if>
                         </f:then>
                         <f:else>
-                            <td class="calendar-day-np">
+                            <td class="calendar-day-np{f:if(condition: '{dayCalendar.isWeekend}', then: ' weekend', else: '')}">
                                 <div class="day-number">
                                     <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: dayCalendar.timestamp, viewMode: dayCalendar.mode}">
                                         <f:format.date format="d">{dayCalendar.timestamp}</f:format.date>
@@ -104,6 +119,6 @@
 
 <f:if condition="{viewCalendar.timestamp -> f:format.date(format: 'm.Y')} != {viewCalendar.current -> f:format.date(format: 'm.Y')}">
     <f:link.action action="show" controller="Calendar" arguments="{viewTimestamp: viewCalendar.current, viewMode: viewCalendar.mode}">
-        {f:translate(key:'tx_dmsimplecalendar_view_date_currentmonth',default:'Aktueller Monat')}
+        {f:translate(key: 'tx_dmsimplecalendar_view_date_currentmonth', default:'Current month')}
     </f:link.action>
 </f:if>

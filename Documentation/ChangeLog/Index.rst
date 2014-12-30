@@ -29,7 +29,11 @@ commit listing.
 	0.1.3                             Restructured extension and documentation for TER
 	.                                 ReST documentation updated
 	0.1.4                             Added class 'weekend'
-	.                                 Upadted HTML and CSS of internal themes
+	.                                 Updated HTML and CSS of internal themes
 	.                                 Code cleanup
 	.                                 Updated dayView html
+	0.2.0                             Added SYS_CATEGORY Support
+	.                                 Removed old attachments -> added FAL Media properties to appointment
+	.                                 Removed SET_LOCALE declarations
+	.                                 Code cleanup and small bugfixes
 	================================= ===================================================================

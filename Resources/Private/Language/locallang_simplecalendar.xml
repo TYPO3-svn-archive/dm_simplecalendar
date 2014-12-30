@@ -37,10 +37,11 @@
 
             <label index="templatesheet.template">Template</label>
             <label index="templatesheet.appointmentAmountLimit">Limit appointments (use in template: {settings.appointmentAmountLimit})</label>
+            <label index="templatesheet.useOwnTemplates">Use own templates</label>
             <label index="templatesheet.useThemeBundle">Choose a 'SimpleCalendar Themes Bundle'</label>
-            <label index="templatesheet.templateRootPath">Template directory (e.g. fileadmin/tempaltes/extensions/dm_simplecalendar/Resources/Private/Templates)</label>
-            <label index="templatesheet.partialRootPath">Partial directory (e.g. fileadmin/tempaltes/extensions/dm_simplecalendar/Resources/Private/Partials)</label>
-            <label index="templatesheet.layoutRootPath">Layout directory (e.g. fileadmin/tempaltes/extensions/dm_simplecalendar/Resources/Private/Layouts)</label>
+            <label index="templatesheet.templateRootPath">Template directory (e.g. fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Templates)</label>
+            <label index="templatesheet.partialRootPath">Partial directory (e.g. fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Partials)</label>
+            <label index="templatesheet.layoutRootPath">Layout directory (e.g. fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Layouts)</label>
             
         </languageKey>
         <languageKey index="de" type="array">
@@ -76,9 +77,10 @@
             <label index="templatesheet.template">Template</label>
             <label index="templatesheet.useThemeBundle">Wähle ein 'SimpleCalendar Themes Bundle'</label>
             <label index="templatesheet.appointmentAmountLimit">Anzahl Termine begrenzen (Verwende im Template: {settings.appointmentAmountLimit})</label>
-            <label index="templatesheet.templateRootPath">Template Verzeichnis (z.B. fileadmin/tempaltes/extensions/dm_simplecalendar/Resources/Private/Templates)</label>
-            <label index="templatesheet.partialRootPath">Partial Verzeichnis (z.B. fileadmin/tempaltes/extensions/dm_simplecalendar/Resources/Private/Partials)</label>
-            <label index="templatesheet.layoutRootPath">Layout Verzeichnis (z.B. fileadmin/tempaltes/extensions/dm_simplecalendar/Resources/Private/Layouts)</label>
+            <label index="templatesheet.useOwnTemplates">Eigene Templates verwenden</label>
+            <label index="templatesheet.templateRootPath">Template Verzeichnis (z.B. fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Templates)</label>
+            <label index="templatesheet.partialRootPath">Partial Verzeichnis (z.B. fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Partials)</label>
+            <label index="templatesheet.layoutRootPath">Layout Verzeichnis (z.B. fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Layouts)</label>
             
         </languageKey>
     </data>

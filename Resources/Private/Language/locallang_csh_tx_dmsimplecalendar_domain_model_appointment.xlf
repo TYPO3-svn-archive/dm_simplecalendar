@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="de" datatype="plaintext" original="messages" date="2013-12-09T16:09:55Z" product-name="dm_simplecalendar">
+    <file source-language="en" datatype="plaintext" original="messages" date="2013-12-09T16:09:55Z" product-name="dm_simplecalendar">
         <header/>
         <body>
             <trans-unit id="location.description">
-                <source>Ort</source>
+                <source>Location</source>
             </trans-unit>
             <trans-unit id="description.description">
-                <source>Beschreibung</source>
+                <source>Description</source>
             </trans-unit>
             <trans-unit id="shortdescription.description">
-                <source>Kurz-Beschreibung</source>
+                <source>Short-description</source>
             </trans-unit>
             <trans-unit id="startdate.description">
-                <source>Start-Datum</source>
+                <source>Startdate</source>
             </trans-unit>
             <trans-unit id="enddate.description">
-                <source>End-Datum</source>
+                <source>Enddate</source>
             </trans-unit>
             <trans-unit id="title.description">
-                <source>Titel</source>
+                <source>Title</source>
             </trans-unit>
             <trans-unit id="calendar.description">
-                <source>Kalendar</source>
+                <source>Calendar</source>
             </trans-unit>
             <trans-unit id="attachments.description">
                 <source>Attachments</source>
@@ -35,7 +35,7 @@
             </trans-unit>
         </body>
     </file>
-    <file source-language="de" datatype="plaintext" original="messages" date="2013-12-09T16:09:55Z" product-name="dm_simplecalendar">
+    <file source-language="default" datatype="plaintext" original="messages" date="2013-12-09T16:09:55Z" product-name="dm_simplecalendar">
         <header/>
         <body>
             <trans-unit id="location.description">

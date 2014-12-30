@@ -6,15 +6,14 @@
 
     <f:render section="main" />
 
-
     <f:if condition="{settings.displayCategoryColors}">
-        <f:render partial="Calendar/Blocks/ColorLegendBlock" />
+        <f:render partial="Calendar/Blocks/ColorLegendBlock" arguments="{viewCalendar:viewCalendar}" />
     </f:if>
 
     <f:if condition="{hideBackToCalendarLink} != 1">
     <div class="backToCalendarLink">
         <p>
-            <f:link.action class="backToCalendar" action="show" controller="Calendar">{f:translate(key:'general.backToCalendar')}</f:link.action>
+            <f:link.action class="backToCalendar" action="show" controller="Calendar">{f:translate(key: 'general.backToCalendar')}</f:link.action>
         </p>
     </div>
     </f:if>

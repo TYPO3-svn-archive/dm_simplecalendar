@@ -15,14 +15,14 @@
     <table cellpadding="0" cellspacing="0" class="table table-bordered">
         <thead>
             <tr class="calendar-row bg-primary text-center">
-                <td class="calendar-kw-head">{f:translate(key:'date.cw',default:'KW')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.1',default:'Mo')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.2',default:'Di')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.3',default:'Mi')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.4',default:'Do')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.5',default:'Fr')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.6',default:'Sa')}</td>
-                <td class="calendar-day-head">{f:translate(key:'date.weekday.{settings.weekdayLength}.0',default:'So')}</td>
+                <td class="calendar-kw-head">{f:translate(key: 'date.cw', default:'CW')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.1', default:'Mon')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.2', default:'Tue')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.3', default:'Wed')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.4', default:'Thu')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.5', default:'Fri')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.6', default:'Sat')}</td>
+                <td class="calendar-day-head">{f:translate(key: 'date.weekday.{settings.weekdayLength}.0', default:'Sun')}</td>
             </tr>
         </thead>
         <tbody>
@@ -69,7 +69,7 @@
                                                 </f:then>
                                                 <f:else>
                                                     <p>
-                                                        {f:translate(key:'calendar.year.noAppointments',default:'Keine Termine')}
+                                                        {f:translate(key: 'calendar.year.noAppointments', default:'')}
                                                     </p>
                                                 </f:else>
                                                 <br />

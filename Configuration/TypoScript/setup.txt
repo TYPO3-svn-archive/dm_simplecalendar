@@ -8,24 +8,10 @@ plugin.tx_dmsimplecalendar {
         storagePid = {$plugin.tx_dmsimplecalendar.persistence.storagePid}
     }
     features {
-        # uncomment the following line to enable the new Property Mapper.
         # rewrittenPropertyMapper = 1
     }
 }
-
 plugin.tx_dmsimplecalendar._CSS_DEFAULT_STYLE (
-    textarea.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
-    }
-    input.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
-    }
-    select.f3-form-error {
-        background-color:#FF9F9F;
-        border: 1px #FF0000 solid;
-    }
     .tx-dm-simplecalendar table.table,
     .tx-dm-simplecalendar table.calendar {
         width: 100%;
@@ -40,4 +26,28 @@ plugin.tx_dmsimplecalendar._CSS_DEFAULT_STYLE (
     .tx-dm-simplecalendar table tr.table_head .icsArea {
         float: right;
     }
+    /* Category Legend/Lines */
+    .tx-dm-simplecalendar div.categoryLegend {
+        margin-bottom: 15px;
+    }
+    .tx-dm-simplecalendar div.categoryLegend div.categoryLegendItem {
+        display: inline-block;
+        margin-right: 5px;
+    }
+    .tx-dm-simplecalendar div.categoryLegend div.categoryLegendItem span.block {
+        border: 1px #888 solid;
+        margin-right: 5px;
+        display: inline-block;
+        width: 25px;
+        height: 12px;
+    }
+    .tx-dm-simplecalendar .categoryColorLine {
+        height: 5px;
+    }
 )
+page.includeJSFooter {
+    js_dmsimplecalendar = EXT:dm_simplecalendar/Resources/Public/Js/default.js
+}
+page.includeCSS {
+    css__dmsimplecalendar = EXT:dm_simplecalendar/Resources/Public/Css/style.css
+}

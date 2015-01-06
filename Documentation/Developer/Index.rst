@@ -88,7 +88,7 @@ Lets say, you choose **year** as dispaly mode in plugin, the property ``{viewCal
 
 	<div class="yearItem">
 
-		<f:format.date format="Y">{viewCalendar.timestamp}</f:format.date> <!-- 2014 -->
+		<f:format.date format="Y">{viewCalendar.timestamp}</f:format.date> <!-- 2015 -->
 
 		<!-- Iterates 12 times, return every loop a monthCalendar -->
 		<dmc:renderAsMonthCalendars viewCalendar="{viewCalendar}" as="monthCalendar">
@@ -107,7 +107,7 @@ Lets say, you choose **year** as dispaly mode in plugin, the property ``{viewCal
 
 				<div class="dayItem">
 
-					<f:format.date format="d.m.Y H:m:s">{dayCalendar.timestamp}</f:format.date> <!-- 01.01.2014, 02.01.2014, 03.01.2014.. -->
+					<f:format.date format="d.m.Y H:m:s">{dayCalendar.timestamp}</f:format.date> <!-- 01.01.2015, 02.01.2015, 03.01.2015.. -->
 
 				</div>
 
@@ -129,7 +129,7 @@ The generated HTML Code will be:
 
 	<div class="yearItem">
 
-		2014
+		2015
 
 		<div class="monthItem">
 
@@ -139,8 +139,8 @@ The generated HTML Code will be:
 
 				<div class="dayItem">30.12.2013</div>
 				<div class="dayItem">31.12.2013</div>
-				<div class="dayItem">01.01.2014</div>
-				<div class="dayItem">02.01.2014</div>
+				<div class="dayItem">01.01.2015</div>
+				<div class="dayItem">02.01.2015</div>
 				<div class="dayItem">......</div>
 				...
 
@@ -148,7 +148,7 @@ The generated HTML Code will be:
 
 			<div class="weekItem">
 
-				<div class="dayItem">06.01.2014</div>
+				<div class="dayItem">06.01.2015</div>
 				...
 
 			</div>
@@ -164,15 +164,15 @@ The generated HTML Code will be:
 			<div class="weekItem">
 
 				...
-				<div class="dayItem">02.02.2014</div>
-				<div class="dayItem">03.02.2014</div>
+				<div class="dayItem">02.02.2015</div>
+				<div class="dayItem">03.02.2015</div>
 				...
 
 			</div>
 
 			<div class="weekItem">
 
-				<div class="dayItem">06.01.2014</div>
+				<div class="dayItem">06.01.2015</div>
 				...
 
 			</div>

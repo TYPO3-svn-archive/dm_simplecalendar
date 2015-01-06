@@ -72,7 +72,9 @@
                                     <dmc:link.external uri="{file.originalResource.publicUrl}" insertHost="1" target="_blank">{file.originalResource.name}</dmc:link.external>
                                 </td>
                                 <td>
-                                    <dmc:link.external uri="{file.originalResource.publicUrl}" insertHost="1" target="_blank">56{f:translate(key: 'appointment.attackment.sizeFormat', default:'kb')}</dmc:link.external>
+                                    <dmc:link.external uri="{file.originalResource.publicUrl}" insertHost="1" target="_blank">
+                                        <f:format.bytes decimals="1">{file.originalResource.properties.size}</f:format.bytes>
+                                    </dmc:link.external>
                                 </td>
                             </tr>
                             </f:for>
@@ -101,7 +103,9 @@
                                     <dmc:link.external uri="{image.originalResource.publicUrl}" insertHost="1" target="_blank">{image.originalResource.name}</dmc:link.external>
                                 </td>
                                 <td>
-                                    <dmc:link.external uri="{image.originalResource.publicUrl}" insertHost="1" target="_blank">56{f:translate(key: 'appointment.attackment.sizeFormat', default:'kb')}</dmc:link.external>
+                                    <dmc:link.external uri="{image.originalResource.publicUrl}" insertHost="1" target="_blank">
+                                        <f:format.bytes decimals="1">{image.originalResource.properties.size}</f:format.bytes>
+                                    </dmc:link.external>
                                 </td>
                             </tr>
                             </f:for>

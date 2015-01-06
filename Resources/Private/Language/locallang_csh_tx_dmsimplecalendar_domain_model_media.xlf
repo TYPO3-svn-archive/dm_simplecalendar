@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-10T23:39:40Z" product-name="dm_simplecalendar">
+		<header/>
+		<body>
+			<trans-unit id="files.description">
+				<source>fal files</source>
+			</trans-unit>
+			<trans-unit id="images.description">
+				<source>fal images</source>
+			</trans-unit>
+		</body>
+	</file>
+	<file source-language="default" datatype="plaintext" original="messages" date="2014-11-10T23:39:40Z" product-name="dm_simplecalendar">
+		<header/>
+		<body>
+			<trans-unit id="files.description">
+				<source>Fal Dokumente</source>
+			</trans-unit>
+			<trans-unit id="images.description">
+				<source>Fal Bilder</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

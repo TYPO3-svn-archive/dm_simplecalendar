@@ -4,7 +4,8 @@ namespace DieMedialen\DmSimplecalendar\Controller;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Kai Ratzeburg <hello@kai-ratzeburg.de>, Die Medialen
+ *  (c) 2015 Kai Ratzeburg <hello@kai-ratzeburg.de>, Die Medialen GmbH
+ *  (c) 2015 Salvatore Eckel <salvatore.eckel@diemedialen.de>, Die Medialen GmbH
  *  
  *  All rights reserved
  *
@@ -33,6 +34,10 @@ namespace DieMedialen\DmSimplecalendar\Controller;
  *
  */
 class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+    private static $designs = array(
+        'default' => "EXT:dm_simplecalendar/Resources/Private/",
+        'bootstrap1' => "EXT:dm_simplecalendar/Resources/Private/Bootstrap1/"
+    );
 
     /**
      * appointmentRepository
@@ -59,28 +64,11 @@ class AbstractController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      * @return \TYPO3\CMS\Fluid\View\TemplateView $view
      */
     protected function handleCustomTemplatePaths($view, $settings) {
-        /* The Template System will be rewritten, don't worry! */
-        $extPathPrivateResources = 'EXT:dm_simplecalendar/Resources/Private/';
-
-        $customTemplateSettings = array();
-        $customTemplateSettings[$extPathPrivateResources] = array();
-        $customTemplateSettings[$extPathPrivateResources]['cssFilePath'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . "Resources/Public/Css/style.css";
-        $customTemplateSettings[$extPathPrivateResources . 'Bootstrap1/'] = array();
-        $customTemplateSettings[$extPathPrivateResources . 'Bootstrap1/']['cssFilePath'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . "Resources/Public/Css/Bootstrap1/style.css";
-
-        if($settings['useCustomTemplates'] != 1) {
-            $view->setPartialRootPath($settings['customTemplatePath'] . "Partials");
-            $view->setLayoutRootPath($settings['customTemplatePath'] . "Layouts");
-            $view->setTemplateRootPath($settings['customTemplatePath'] . "Templates");
-
-            $cssFile = $customTemplateSettings[$settings['customTemplatePath']]['cssFilePath'];
-
-            if (!empty($cssFile) && substr($cssFile, -1) != '/') {
-                if (file_exists(\TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($cssFile)) && filesize(\TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($cssFile)) > 0) {
-
-                    $this->response->addAdditionalHeaderData('<link rel="stylesheet" type="text/css" href="' . $cssFile . '" />');
-                }
-            }            
+        $designPath = self::$designs[$settings['customTemplatePath']];
+        if($settings['useCustomTemplates'] != 1 && !empty($designPath)) {
+            $view->setPartialRootPath($designPath . "Partials");
+            $view->setLayoutRootPath($designPath . "Layouts");
+            $view->setTemplateRootPath($designPath . "Templates");
         }
 
         return $view;

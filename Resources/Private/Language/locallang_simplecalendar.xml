@@ -83,5 +83,43 @@
             <label index="templatesheet.layoutRootPath">Layout Verzeichnis (z.B. fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Layouts)</label>
             
         </languageKey>
+        <languageKey index="nl" type="array">
+            <label index="general.year">Jaar</label>
+            <label index="general.month">Maand</label>
+            <label index="general.week">Week</label>
+            <label index="general.day">Dag</label>
+            <label index="general.hour">Uur</label>
+            <label index="general.minute">Minuut</label>
+            <label index="general.second">Seconde</label>
+
+            <label index="mainsheet.title">Algemene Instellingen</label>
+            <label index="mainsheet.calendarName">Kalendernaam (De naam van de Kalenderplugin - wordt getoond in de Frontend)</label>
+            <label index="mainsheet.periodType">Keuze van de Kalenderweergave</label>
+            <label index="mainsheet.jqFullcalendarViews">Weergaven activeren</label>
+            <label index="mainsheet.categories">Er moet min. een Categorie gekozen worden, om de afspraken van een Categorie weer te geven</label>
+
+            <label index="eventconfigurationsheet">Afspraak weergave instellingen</label>
+            <label index="eventconfigurationsheet.showIcsLink">ICS Link weergeven (iCalendar Download - .ics bestand)</label>
+            <label index="eventconfigurationsheet.showQrCode">Laat een QR Code zien om te scannen. Deel de URL van de afspraak</label>
+            <label index="eventconfigurationsheet.excludeSelectedEvents">Gekozen afspraken in de Kalender verbergen</label>
+            <label index="eventconfigurationsheet.includeSelectedEvents">Afspraken aan de Kalender toevoegen</label>
+
+            <label index="customizesheet.title">Maandweergave Instellingen</label>
+            <label index="customizesheet.displayCategoryColors">Kleur legenda weergeven</label>
+            <label index="customizesheet.displayCategoryColors.deactivate">Niet weergeven</label>
+            <label index="customizesheet.displayCategoryColors.calendar">Onder de Kalender weergeven</label>
+            <label index="customizesheet.displayCategoryColors.calendarAppointments">Ook afspraken markeren</label>
+            <label index="customizesheet.weekdayLength">Hoe dienen de Weekdagen weergeven te worden?</label>
+            <label index="customizesheet.weekdayLength.labelShort">Verkorte weekdagnamen (Ma Di Wo..)</label>
+            <label index="customizesheet.weekdayLength.labelFull">Volledige weekdagnamen (Maandag Dinsdag Woensdag..)</label>
+
+            <label index="templatesheet.template">Template</label>
+            <label index="templatesheet.useThemeBundle">Kies een 'SimpleCalendar Themes Bundle'</label>
+            <label index="templatesheet.appointmentAmountLimit">Aantal afspraken begrenzen (Gebruik in de template: {settings.appointmentAmountLimit})</label>
+            <label index="templatesheet.useOwnTemplates">Eigen Templates gebruiken</label>
+            <label index="templatesheet.templateRootPath">Template locatie (b.v. fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Templates)</label>
+            <label index="templatesheet.partialRootPath">Partial locatie (b.v. fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Partials)</label>
+            <label index="templatesheet.layoutRootPath">Layout locatie (b.v. fileadmin/templates/extensions/dm_simplecalendar/Resources/Private/Layouts)</label>
+        </languageKey>        
     </data>
 </T3locallang>

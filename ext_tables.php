@@ -19,7 +19,6 @@ $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature_simplec
 
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'SimpleCalendar');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript/DefaultStyle', 'Default CSS');
 
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_dmsimplecalendar_domain_model_appointment', 'EXT:dm_simplecalendar/Resources/Private/Language/locallang_csh_tx_dmsimplecalendar_domain_model_appointment.xlf');

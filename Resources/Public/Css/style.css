@@ -1,0 +1,148 @@
+/*
+ * Bootstrap1 Design (.tx-dm-simplecalendar.design_bootstrap1{})
+ */
+.tx-dm-simplecalendar.design_bootstrap1 .calendar-month-name a {
+    color: #ffffff;
+}
+.tx-dm-simplecalendar.design_bootstrap1 .calendar-day-header a {
+    color: #ffffff;
+}
+
+/*
+ * Default Design (.tx-dm-simplecalendar.design_default{})
+ */
+.tx-dm-simplecalendar.design_default table.calendar {
+    border-left:1px solid #999;
+    width: 100%;
+}
+.tx-dm-simplecalendar.design_default table.calendar td {
+    border-bottom:1px solid #999;
+    border-top:1px solid #999;
+    border-right:1px solid #999;
+
+    vertical-align: top;
+    font-size: 11px;
+}
+.tx-dm-simplecalendar.design_default table.calendar td.calendar-kw {
+    min-height:80px;
+    font-size:14px;
+    text-align: center;
+    position:relative;
+}
+.tx-dm-simplecalendar.design_default div.calendar-kw {
+    height:80px;
+}
+.tx-dm-simplecalendar.design_default table.calendar td.calendar-kw:hover {
+    background:#eceff5;
+}
+.tx-dm-simplecalendar.design_default table.calendar td.calendar-day {
+    min-height:80px;
+    position:relative;
+}
+.tx-dm-simplecalendar.design_default  div.calendar-day {
+    height:80px;
+}
+.tx-dm-simplecalendar.design_default table.calendar td.calendar-day:hover {
+    background:#eceff5;
+}
+.tx-dm-simplecalendar.design_default table.calendar td.calendar-day-np {
+    opacity: 0.6;
+    background:#eee;
+    min-height:80px;
+}
+.tx-dm-simplecalendar.design_default table.calendar td.calendar-day-np:hover {
+    opacity: 1;
+}
+.tx-dm-simplecalendar.design_default  div.calendar-day-np {
+    height:80px;
+}
+.tx-dm-simplecalendar.design_default table.calendar td.calendar-month-name {
+    font-size: 1.4em;
+    background: #C1CBF5;
+    color: black;
+    text-align:center;
+
+    padding:4px;
+}
+.tx-dm-simplecalendar.design_default table.calendar td.calendar-month-name a {
+    color: black;
+}
+
+.tx-dm-simplecalendar.design_default table.calendar td.calendar-kw-head, table.calendar td.calendar-day-head {
+    background: #C1DBF5;
+    font-weight:bold;
+    text-align:center;
+    width:140px;
+    padding:4px;
+    font-size: 14px;
+}
+.tx-dm-simplecalendar.design_default table.calendar .calendar-day ul {
+    padding-left: 15px;
+}
+.tx-dm-simplecalendar.design_default table.calendar div.day-number {
+    color:#fff;
+    font-weight:bold;
+    text-align: right;
+}
+.tx-dm-simplecalendar.design_default table.calendar td.calendar-kw, table.calendar td.calendar-day, table.calendar td.calendar-day-np {
+    width:140px;
+    padding:4px;
+}
+.tx-dm-simplecalendar.design_default table.calendar td.calendar-kw-head, table.calendar td.calendar-kw {
+    width: 50px !important;
+}
+.tx-dm-simplecalendar.design_default table.calendar td.calendar-day:hover:not(.nohover), table.calendar td.calendar-day.hover:not(.nohover) {
+    background-color: #8cf;
+}
+.tx-dm-simplecalendar p.calendar-item {
+    padding: 5px;
+    background-color: #D7D5E8;
+    margin-bottom: 0px;
+}
+.tx-dm-simplecalendar span.navigationMonthPrev,
+.tx-dm-simplecalendar span.navigationMonthNext {
+    padding: 0 10px;
+    font-weight: bold;
+}
+.tx-dm-simplecalendar span.navigationMonthPrev {
+    float: left;
+
+}
+.tx-dm-simplecalendar span.navigationMonthNext {
+    float: right;
+}
+
+.tx-dm-simplecalendar img {
+    display: inline-block;
+}
+.tx-dm-simplecalendar.design_default table.calendar_table_class a {
+    color: #1d92ae;
+}
+
+.tx-dm-simplecalendar.design_default table.calendar_table_class {
+    color: #ffffff;
+    width: 100%;
+    border-top: 1px #c3c3c3 solid;
+    border-left: 1px #c3c3c3 solid;
+    border-spacing: 0px;
+    margin-bottom: 15px;
+}
+.tx-dm-simplecalendar.design_default table.calendar_table_class tr.table_head {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.tx-dm-simplecalendar.design_default table.calendar_table_class tr.table_head td {
+    background: #C1CBF5;
+    text-align: center;
+}
+.tx-dm-simplecalendar.design_default table.calendar_table_class > tr > td,
+.tx-dm-simplecalendar.design_default table.calendar_table_class > tbody > tr > td {
+    padding: 6px;
+    border-bottom: 1px #c3c3c3 solid;
+    border-right: 1px #c3c3c3 solid;
+    background: #ffffff;
+    color: #5E5E5E;
+    width: 14%;
+
+    vertical-align: top;
+}

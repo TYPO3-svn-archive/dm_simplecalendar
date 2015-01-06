@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" original="messages" date="2014-11-11T14:00:00Z" product-name="dm_simplecalendar">
+        <header/>
+        <body>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment">
+                <target>Termin</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.location">
+                <target>Ort</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.description">
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.shortDescription">
+                <target>Kurz-Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.startdate">
+                <target>Start-Datum</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.enddate">
+                <target>End-Datum</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.title">
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.calendar">
+                <target>Kalendar</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.starttime">
+                <target>Startzeitpunkt</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.endtime">
+                <target>Endzeitpunkt</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.icsDownload">
+                <target>ICS Download</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.media">
+                <target>Media</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.media.files">
+                <target>Dokumente</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.media.images">
+                <target>Bilder</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.categories">
+                <target>Kategorien</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_appointment.pre_event">
+                <target>Der vorherige Termin in einer Kette von automatisch generierten Terminen</target>
+            </trans-unit>
+
+
+            <trans-unit id="tx_dmsimplecalendar_domain_model_calendar">
+                <target>Kalendar</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_domain_model_calendar.appointments">
+                <target>Termine</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_title">
+                <target>Kalendar</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_dayview">
+                <target>Tagesansicht</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_weekview">
+                <target>Wochenansicht</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_monthview">
+                <target>Monatsansicht</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_yearview">
+                <target>Jahresansicht</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_the">
+                <target>den</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_kw">
+                <target>KW</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_nextday">
+                <target>Nächster Tag</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_prevday">
+                <target>Vorheriger Tag</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_currentday">
+                <target>Aktueller Tag</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_nextweek">
+                <target>Nächste Woche</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_prevweek">
+                <target>Vorherige Woche</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_currentweek">
+                <target>Aktuelle Woche</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_nextmonth">
+                <target>Nächster Monat</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_prevmonth">
+                <target>Vorheriger Monat</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_currentmonth">
+                <target>Aktueller Monat</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_nextyear">
+                <target>Nächstes Jahr</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_prevyear">
+                <target>Vorheriges Jahr</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_date_currentyear">
+                <target>Aktuelles Jahr</target>
+            </trans-unit>
+            <trans-unit id="tx_dmsimplecalendar_view_appointment_count">
+                <target>Termine-Anzahl</target>
+            </trans-unit>
+
+    <!-- MERGING EXTENSIONS -->
+
+            <trans-unit id="general.back">
+                <target>Zurück</target>
+            </trans-unit>
+            <trans-unit id="general.backToCalendar">
+                <target>Zurück zum Kalender</target>
+            </trans-unit>
+            <trans-unit id="general.edit">
+                <target>Bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="general.delete">
+                <target>Löschen</target>
+            </trans-unit>
+            <trans-unit id="general.select.placeholder">
+                <target>Keine</target>
+            </trans-unit>
+            <trans-unit id="general.legend">
+                <target>Legende</target>
+            </trans-unit>
+            
+            <trans-unit id="general.daily">
+                <target>Täglich</target>
+            </trans-unit>
+            <trans-unit id="general.weekly">
+                <target>Wöchentlich</target>
+            </trans-unit>
+            <trans-unit id="general.monthly">
+                <target>Monatlich</target>
+            </trans-unit>
+            <trans-unit id="general.yearly">
+                <target>Jährlich</target>
+            </trans-unit>
+
+        <!-- Date translations -->
+
+            <!-- calendar week  -->
+            <trans-unit id="date.calendarWeek">
+                <target>Kalenderwoche</target>
+            </trans-unit>
+            <trans-unit id="date.cw">
+                <target>KW</target>
+            </trans-unit>
+            <trans-unit id="date.today">
+                <target>Heute</target>
+            </trans-unit>
+            
+        <!-- monthnames -->
+            <trans-unit id="date.month.full.January">
+                <target>Januar</target>
+            </trans-unit>
+            <trans-unit id="date.month.full.February">
+                <target>Februar</target>
+            </trans-unit>
+            <trans-unit id="date.month.full.March">
+                <target>März</target>
+            </trans-unit>
+            <trans-unit id="date.month.full.April">
+                <target>April</target>
+            </trans-unit>
+            <trans-unit id="date.month.full.May">
+                <target>Mai</target>
+            </trans-unit>
+            <trans-unit id="date.month.full.June">
+                <target>Juni</target>
+            </trans-unit>
+            <trans-unit id="date.month.full.July">
+                <target>Juli</target>
+            </trans-unit>
+            <trans-unit id="date.month.full.August">
+                <target>August</target>
+            </trans-unit>
+            <trans-unit id="date.month.full.September">
+                <target>September</target>
+            </trans-unit>
+            <trans-unit id="date.month.full.October">
+                <target>Oktober</target>
+            </trans-unit>
+            <trans-unit id="date.month.full.November">
+                <target>November</target>
+            </trans-unit>
+            <trans-unit id="date.month.full.December">
+                <target>Dezember</target>
+            </trans-unit>
+
+            <trans-unit id="date.month.short.January">
+                <target>Jan</target>
+            </trans-unit>
+            <trans-unit id="date.month.short.February">
+                <target>Feb</target>
+            </trans-unit>
+            <trans-unit id="date.month.short.March">
+                <target>Mär</target>
+            </trans-unit>
+            <trans-unit id="date.month.short.April">
+                <target>Apr</target>
+            </trans-unit>
+            <trans-unit id="date.month.short.May">
+                <target>Mai</target>
+            </trans-unit>
+            <trans-unit id="date.month.short.June">
+                <target>Jun</target>
+            </trans-unit>
+            <trans-unit id="date.month.short.July">
+                <target>Jul</target>
+            </trans-unit>
+            <trans-unit id="date.month.short.August">
+                <target>Aug</target>
+            </trans-unit>
+            <trans-unit id="date.month.short.September">
+                <target>Sep</target>
+            </trans-unit>
+            <trans-unit id="date.month.short.October">
+                <target>Okt</target>
+            </trans-unit>
+            <trans-unit id="date.month.short.November">
+                <target>Nov</target>
+            </trans-unit>
+            <trans-unit id="date.month.short.December">
+                <target>Dez</target>
+            </trans-unit>
+            
+        <!-- weekday names -->
+            <trans-unit id="date.weekday.full.0">
+                <target>Sonntag</target>
+            </trans-unit>
+            <trans-unit id="date.weekday.full.1">
+                <target>Montag</target>
+            </trans-unit>
+            <trans-unit id="date.weekday.full.2">
+                <target>Dienstag</target>
+            </trans-unit>
+            <trans-unit id="date.weekday.full.3">
+                <target>Mittwoch</target>
+            </trans-unit>
+            <trans-unit id="date.weekday.full.4">
+                <target>Donnerstag</target>
+            </trans-unit>
+            <trans-unit id="date.weekday.full.5">
+                <target>Freitag</target>
+            </trans-unit>
+            <trans-unit id="date.weekday.full.6">
+                <target>Samstag</target>
+            </trans-unit>
+
+        <!-- weekday shortNames -->
+            <trans-unit id="date.weekday.short.0">
+                <target>So</target>
+            </trans-unit>
+            <trans-unit id="date.weekday.short.1">
+                <target>Mo</target>
+            </trans-unit>
+            <trans-unit id="date.weekday.short.2">
+                <target>Di</target>
+            </trans-unit>
+            <trans-unit id="date.weekday.short.3">
+                <target>Mi</target>
+            </trans-unit>
+            <trans-unit id="date.weekday.short.4">
+                <target>Do</target>
+            </trans-unit>
+            <trans-unit id="date.weekday.short.5">
+                <target>Fr</target>
+            </trans-unit>
+            <trans-unit id="date.weekday.short.6">
+                <target>Sa</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

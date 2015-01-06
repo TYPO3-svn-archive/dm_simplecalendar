@@ -36,4 +36,9 @@ commit listing.
 	.                                 Removed old attachments -> added FAL Media properties to appointment
 	.                                 Removed SET_LOCALE declarations
 	.                                 Code cleanup and small bugfixes
+	0.2.1                             Bugfixes (enabled clearCacheOnLoad)
+	.                                 Added <f:format.bytes>{file.originalResource.properties.size}</f:format.bytes> for filesizes
+	0.2.2                             Bugfixes JS
+	0.2.3                             Cleanup template system, merge extension css files
+	.                                 Added NL language in BE for calendar plugin
 	================================= ===================================================================

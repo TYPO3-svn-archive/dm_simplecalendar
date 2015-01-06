@@ -307,11 +307,11 @@
                                 <items type="array">
                                   <numIndex index="0" type="array">
                                     <numIndex index="0">Standard Template</numIndex>
-                                    <numIndex index="1">EXT:dm_simplecalendar/Resources/Private/</numIndex>
+                                    <numIndex index="1">default</numIndex>
                                   </numIndex>
                                   <numIndex index="1" type="array">
                                     <numIndex index="0">Bootstrap Template</numIndex>
-                                    <numIndex index="1">EXT:dm_simplecalendar/Resources/Private/Bootstrap1/</numIndex>
+                                    <numIndex index="1">bootstrap1</numIndex>
                                   </numIndex>
                                 </items>
                                 <maxitems>1</maxitems>
